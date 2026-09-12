@@ -1070,3 +1070,110 @@ stride parameters and temporal movement.
 </body>
 
 </html>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>ROM Assessment</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#07111f;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+.box{
+max-width:600px;
+margin:auto;
+background:#102236;
+padding:35px;
+border-radius:25px;
+}
+
+select,input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:10px;
+border:0;
+}
+
+button{
+padding:14px 25px;
+border:0;
+border-radius:12px;
+background:#58e0c4;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>📐 ROM Assessment</h1>
+
+<select id="joint">
+
+<option>Shoulder Flexion</option>
+<option>Elbow Flexion</option>
+<option>Wrist Flexion</option>
+<option>Hip Flexion</option>
+<option>Knee Flexion</option>
+<option>Ankle Dorsiflexion</option>
+
+</select>
+
+<input
+type="number"
+id="rom"
+placeholder="ROM in degrees">
+
+<button onclick="saveROM()">
+Save Measurement
+</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+
+function saveROM(){
+
+const joint=
+document.getElementById("joint").value;
+
+const value=
+document.getElementById("rom").value;
+
+if(!value){
+
+alert("Enter ROM value.");
+
+return;
+
+}
+
+document.getElementById("result").innerText=
+joint+" : "+value+"°";
+
+}
+
+</script>
+
+</body>
+
+</html>
