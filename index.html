@@ -19,3 +19,13 @@ Physio-wellness-by-sahin/
 │   └── rom.js
 │
 └── assets/
+const SUPABASE_URL =
+  "https://vcwnxyyeugfylmgpasjp.supabase.co";
+
+const SUPABASE_ANON_KEY =
+  "sb_publishable_lbQ_38viYhFJxVPO8nZp2w_ivdZaCWX";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
