@@ -676,11 +676,11 @@
         appointment_time: formData.get("appointment_time"),
         message: formData.get("message") || null,
         status: "pending"
-      };
+      };const { error } = await supabaseClient
+  .from("appointments")
+  .insert([appointment]);
 
-      const { error } = await supabaseClient
-        .from("appointments")
-        .insert([appointment]);
+     
 
       if (error) {
         console.error(error);
