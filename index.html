@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dr Sahin Ahamed Laskar | Physiotherapy & Rehabilitation</title>
+  <title>Dr Sahin Ahamed Laskar (P.T) | Physiotherapy & Rehabilitation</title>
 
-  <meta name="description" content="Professional physiotherapy and rehabilitation care by Dr Sahin Ahamed Laskar, Bachelor of Physiotherapy (BPT).">
+  <meta name="description" content="Professional physiotherapy and rehabilitation care by Dr Sahin Ahamed Laskar (P.T), Bachelor of Physiotherapy (BPT).">
 
   <style>
     * {
@@ -230,6 +230,79 @@
       box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     }
 
+    .appointment {
+      background: #f7fbfc;
+    }
+
+    .appointment-container {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: 45px;
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #102a43;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px 17px;
+      border: 1px solid #d8e3e8;
+      border-radius: 12px;
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+      transition: 0.3s;
+      background: #fbfdfe;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #087f8c;
+      box-shadow: 0 0 0 3px rgba(8,127,140,0.10);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .appointment-btn {
+      width: 100%;
+      border: none;
+      padding: 17px;
+      border-radius: 50px;
+      background: #087f8c;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .appointment-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(8,127,140,0.25);
+    }
+
     @media (max-width: 850px) {
       nav a {
         display: none;
@@ -258,89 +331,18 @@
         font-size: 34px;
       }
     }
-  .appointment {
-  background: #f7fbfc;
-}
 
-.appointment-container {
-  max-width: 850px;
-  margin: auto;
-  background: white;
-  padding: 45px;
-  border-radius: 30px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-}
+    @media (max-width: 650px) {
+      .appointment-container {
+        padding: 25px 20px;
+      }
 
-.form-group {
-  margin-bottom: 22px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #102a43;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 15px 17px;
-  border: 1px solid #d8e3e8;
-  border-radius: 12px;
-  font-size: 15px;
-  font-family: inherit;
-  outline: none;
-  transition: 0.3s;
-  background: #fbfdfe;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: #087f8c;
-  box-shadow: 0 0 0 3px rgba(8,127,140,0.10);
-}
-
-.form-group textarea {
-  resize: vertical;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.appointment-btn {
-  width: 100%;
-  border: none;
-  padding: 17px;
-  border-radius: 50px;
-  background: #087f8c;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.appointment-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(8,127,140,0.25);
-}
-
-@media (max-width: 650px) {
-  .appointment-container {
-    padding: 25px 20px;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-}</style>
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -377,6 +379,7 @@
       </p>
 
       <div class="buttons">
+
         <a class="btn primary" href="#appointment">
           Book Appointment
         </a>
@@ -384,6 +387,7 @@
         <a class="btn secondary" href="#services">
           Explore Services
         </a>
+
       </div>
 
     </div>
@@ -403,7 +407,7 @@
 
     <div class="about-box">
 
-      <h2>Dr Sahin Ahamed Laskar</h2>
+      <h2>Dr Sahin Ahamed Laskar (P.T)</h2>
 
       <p>
         Bachelor of Physiotherapy (BPT)<br>
@@ -491,129 +495,192 @@
 
   <section class="appointment" id="appointment">
 
-  <div class="section-title">
-    <h2>Book an Appointment</h2>
-    <p>Take the first step towards better movement and recovery.</p>
-  </div>
+    <div class="section-title">
+      <h2>Book an Appointment</h2>
+      <p>
+        Take the first step towards better movement and recovery.
+      </p>
+    </div>
 
-  <div class="appointment-container">
+    <div class="appointment-container">
 
-    <form id="appointmentForm">
-
-      <div class="form-group">
-        <label>Full Name</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Enter your full name"
-          required>
-      </div>
-
-      <div class="form-group">
-        <label>Phone Number</label>
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Enter your phone number"
-          required>
-      </div>
-
-      <div class="form-group">
-        <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email">
-      </div>
-
-      <div class="form-group">
-        <label>Select Treatment</label>
-
-        <select name="treatment" required>
-          <option value="">Choose a treatment</option>
-          <option>Knee Pain & Rehabilitation</option>
-          <option>Back & Neck Pain</option>
-          <option>Sports Injury Rehabilitation</option>
-          <option>Orthopedic Physiotherapy</option>
-          <option>Neurological Rehabilitation</option>
-          <option>Home Physiotherapy</option>
-          <option>General Physiotherapy Consultation</option>
-        </select>
-      </div>
-
-      <div class="form-row">
+      <form id="appointmentForm">
 
         <div class="form-group">
-          <label>Preferred Date</label>
+          <label>Full Name</label>
           <input
-            type="date"
-            name="appointment_date"
+            type="text"
+            name="name"
+            placeholder="Enter your full name"
             required>
         </div>
 
         <div class="form-group">
-          <label>Preferred Time</label>
+          <label>Phone Number</label>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Enter your phone number"
+            required>
+        </div>
 
-          <select name="appointment_time" required>
-            <option value="">Choose time</option>
-            <option>10:00 AM</option>
-            <option>11:00 AM</option>
-            <option>12:00 PM</option>
-            <option>4:00 PM</option>
-            <option>5:00 PM</option>
-            <option>6:00 PM</option>
-            <option>7:00 PM</option>
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+          <label>Select Treatment</label>
+
+          <select name="treatment" required>
+
+            <option value="">
+              Choose a treatment
+            </option>
+
+            <option>
+              Knee Pain & Rehabilitation
+            </option>
+
+            <option>
+              Back & Neck Pain
+            </option>
+
+            <option>
+              Sports Injury Rehabilitation
+            </option>
+
+            <option>
+              Orthopedic Physiotherapy
+            </option>
+
+            <option>
+              Neurological Rehabilitation
+            </option>
+
+            <option>
+              Home Physiotherapy
+            </option>
+
+            <option>
+              General Physiotherapy Consultation
+            </option>
+
           </select>
         </div>
 
-      </div>
+        <div class="form-row">
 
-      <div class="form-group">
-        <label>Your Message</label>
+          <div class="form-group">
 
-        <textarea
-          name="message"
-          rows="5"
-          placeholder="Tell us briefly about your problem"></textarea>
-      </div>
+            <label>Preferred Date</label>
 
-      <button type="submit" class="appointment-btn" id="appointmentSubmit">
-        Book Appointment
-      </button>
-      <p id="appointmentStatus" style="margin-top:15px;text-align:center;font-weight:600;"></p>
+            <input
+              type="date"
+              name="appointment_date"
+              required>
 
-    </form>
+          </div>
 
-  </div>
+          <div class="form-group">
 
-</section>
+            <label>Preferred Time</label>
+
+            <select
+              name="appointment_time"
+              required>
+
+              <option value="">
+                Choose time
+              </option>
+
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>4:00 PM</option>
+              <option>5:00 PM</option>
+              <option>6:00 PM</option>
+              <option>7:00 PM</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Your Message</label>
+
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Tell us briefly about your problem"></textarea>
+
+        </div>
+
+        <button
+          type="submit"
+          class="appointment-btn"
+          id="appointmentSubmit">
+
+          Book Appointment
+
+        </button>
+
+        <p
+          id="appointmentStatus"
+          style="margin-top:15px;text-align:center;font-weight:600;">
+        </p>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <section class="cta">
 
     <h2>Ready to Start Your Recovery?</h2>
 
     <p>
       Book your physiotherapy consultation today.
     </p>
-    <a class="btn" href="mailto:laskarsahin6152@gmail.com?subject=Physiotherapy%20Appointment">
-  Book Appointment
-</a>
-    
+
+    <a
+      class="btn"
+      href="#appointment">
+
+      Book Appointment
+
+    </a>
 
   </section>
 
   <section id="contact">
 
     <div class="section-title">
+
       <h2>Contact</h2>
-      <p>Get in touch for appointments and enquiries</p>
+
+      <p>
+        Get in touch for appointments and enquiries
+      </p>
+
     </div>
 
     <div class="about-box">
 
-      <h3>Dr Sahin Ahamed Laskar</h3>
+      <h3>
+        Dr Sahin Ahamed Laskar (P.T)
+      </h3>
 
       <p>
         Bachelor of Physiotherapy (BPT)<br>
-        The Neotia University
+        The Neotia University (TNU)
       </p>
 
       <br>
@@ -621,7 +688,7 @@
       <p>
         📞 Phone: 7584814152<br>
         📧 Email: laskarsahin6152@gmail.com<br>
-        📍 Clinic:Joynagar, Baruipur, West Bengal, India
+        📍 Clinic: Joynagar, Baruipur, West Bengal, India
       </p>
 
     </div>
@@ -629,101 +696,215 @@
   </section>
 
   <footer>
+
     <p>
       © 2026 Physio Wellness. All Rights Reserved.
     </p>
+
   </footer>
 
   <a
     class="whatsapp"
     href="https://wa.me/917584814152"
     target="_blank"
-    title="WhatsApp"
-  >
+    title="WhatsApp">
+
     💬
+
   </a>
 
-
   <!-- Supabase -->
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <script>
-    const SUPABASE_URL = "https://vcwnxyyeugfylmgpasjp.supabase.co";
-    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lbQ_38viYhFJxVPO8nZp2w_ivdZaCWX";
 
-    const supabaseClient = window.supabase.createClient(
-      SUPABASE_URL,
-      SUPABASE_PUBLISHABLE_KEY
-    );
+    const SUPABASE_URL =
+      "https://vcwnxyyeugfylmgpasjp.supabase.co";
 
-    const appointmentForm = document.getElementById("appointmentForm");
-    const appointmentStatus = document.getElementById("appointmentStatus");
-    const appointmentSubmit = document.getElementById("appointmentSubmit");
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_lbQ_38viYhFJxVPO8nZp2w_ivdZaCWX";
 
-    appointmentForm.addEventListener("submit", async function (event) {
-      event.preventDefault();
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
 
-      appointmentSubmit.disabled = true;
-      appointmentSubmit.textContent = "Booking...";
+    const appointmentForm =
+      document.getElementById("appointmentForm");
 
-      const formData = new FormData(appointmentForm);
+    const appointmentStatus =
+      document.getElementById("appointmentStatus");
 
-      const appointment = {
-        name: formData.get("name"),
-        phone: formData.get("phone"),
-        email: formData.get("email") || null,
-        treatment: formData.get("treatment"),
-        appointment_date: formData.get("appointment_date"),
-        appointment_time: formData.get("appointment_time"),
-        message: formData.get("message") || null,
-        status: "pending"
-      };const { error } = await supabaseClient
-  .from("appointments")
-  .insert([appointment]);
-const { error } = await supabaseClient
-  .from("appointments")
-  .insert([appointment]);
+    const appointmentSubmit =
+      document.getElementById("appointmentSubmit");
 
-// Send email notification
-const { error: emailError } =
-  await supabaseClient.functions.invoke("resend-email", {
-    body: {
-      to: "laskarsahin6152@gmail.com",
-      subject: "New Physiotherapy Appointment",
-      html: `
-        <h2>New Appointment Request</h2>
-        <p><strong>Name:</strong> ${appointment.name}</p>
-        <p><strong>Phone:</strong> ${appointment.phone}</p>
-        <p><strong>Email:</strong> ${appointment.email || "Not provided"}</p>
-        <p><strong>Treatment:</strong> ${appointment.treatment}</p>
-        <p><strong>Date:</strong> ${appointment.appointment_date}</p>
-        <p><strong>Time:</strong> ${appointment.appointment_time}</p>
-        <p><strong>Message:</strong> ${appointment.message || "No message"}</p>
-      `
-    }
-  });
 
-if (emailError) {
-  console.error("Email notification error:", emailError);
-}
-     
+    appointmentForm.addEventListener(
+      "submit",
+      async function (event) {
 
-      if (error) {
-        console.error(error);
+        event.preventDefault();
+
+        appointmentSubmit.disabled = true;
+
+        appointmentSubmit.textContent =
+          "Booking...";
+
+
+        const formData =
+          new FormData(appointmentForm);
+
+
+        const appointment = {
+
+          name: formData.get("name"),
+
+          phone: formData.get("phone"),
+
+          email:
+            formData.get("email") || null,
+
+          treatment:
+            formData.get("treatment"),
+
+          appointment_date:
+            formData.get("appointment_date"),
+
+          appointment_time:
+            formData.get("appointment_time"),
+
+          message:
+            formData.get("message") || null,
+
+          status: "pending"
+
+        };
+
+
+        // Save appointment to Supabase
+
+        const { error } =
+          await supabaseClient
+            .from("appointments")
+            .insert([appointment]);
+
+
+        if (error) {
+
+          console.error(error);
+
+          appointmentStatus.textContent =
+            "Booking failed. Please try again or contact us on WhatsApp.";
+
+          appointmentStatus.style.color =
+            "#c62828";
+
+          appointmentSubmit.disabled =
+            false;
+
+          appointmentSubmit.textContent =
+            "Book Appointment";
+
+          return;
+
+        }
+
+
+        // Send email notification
+
+        const { error: emailError } =
+          await supabaseClient.functions.invoke(
+            "resend-email",
+            {
+
+              body: {
+
+                to:
+                  "laskarsahin6152@gmail.com",
+
+                subject:
+                  "New Physiotherapy Appointment",
+
+                html: `
+
+                  <h2>
+                    New Appointment Request
+                  </h2>
+
+                  <p>
+                    <strong>Name:</strong>
+                    ${appointment.name}
+                  </p>
+
+                  <p>
+                    <strong>Phone:</strong>
+                    ${appointment.phone}
+                  </p>
+
+                  <p>
+                    <strong>Email:</strong>
+                    ${appointment.email || "Not provided"}
+                  </p>
+
+                  <p>
+                    <strong>Treatment:</strong>
+                    ${appointment.treatment}
+                  </p>
+
+                  <p>
+                    <strong>Date:</strong>
+                    ${appointment.appointment_date}
+                  </p>
+
+                  <p>
+                    <strong>Time:</strong>
+                    ${appointment.appointment_time}
+                  </p>
+
+                  <p>
+                    <strong>Message:</strong>
+                    ${appointment.message || "No message"}
+                  </p>
+
+                `
+
+              }
+
+            }
+          );
+
+
+        if (emailError) {
+
+          console.error(
+            "Email notification error:",
+            emailError
+          );
+
+        }
+
+
         appointmentStatus.textContent =
-          "Booking failed. Please try again or contact us on WhatsApp.";
-        appointmentStatus.style.color = "#c62828";
-        appointmentSubmit.disabled = false;
-        appointmentSubmit.textContent = "Book Appointment";
-        return;
+          "Appointment request submitted successfully! We will contact you soon.";
+
+        appointmentStatus.style.color =
+          "#087f8c";
+
+
+        appointmentForm.reset();
+
+        appointmentSubmit.disabled =
+          false;
+
+        appointmentSubmit.textContent =
+          "Book Appointment";
+
       }
 
-      appointmentStatus.textContent =
-        "Appointment request submitted successfully! We will contact you soon.";
-      appointmentStatus.style.color = "#087f8c";
-      appointmentForm.reset();
-      appointmentSubmit.disabled = false;
-      appointmentSubmit.textContent = "Book Appointment";
-    });
+    );
+
   </script>
 
 </body>
