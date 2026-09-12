@@ -935,3 +935,138 @@ assessment aid, not a medical diagnosis.
 </body>
 
 </html>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>AI Gait Analysis</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#07111f;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+.box{
+max-width:700px;
+margin:auto;
+background:#102236;
+padding:35px;
+border-radius:25px;
+}
+
+button{
+padding:14px 25px;
+border:0;
+border-radius:12px;
+background:#58e0c4;
+cursor:pointer;
+}
+
+video{
+width:100%;
+margin-top:20px;
+border-radius:15px;
+display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🚶 AI Gait Analysis</h1>
+
+<p>
+Upload a walking video for movement assessment.
+</p>
+
+<input
+type="file"
+id="videoFile"
+accept="video/*">
+
+<video id="preview"
+controls>
+</video>
+
+<br><br>
+
+<button onclick="analyzeGait()">
+Analyze Gait
+</button>
+
+<div id="result"></div>
+
+</div>
+
+
+<script>
+
+const input=
+document.getElementById("videoFile");
+
+input.addEventListener("change",function(){
+
+const file=this.files[0];
+
+if(!file)return;
+
+const video=
+document.getElementById("preview");
+
+video.src=
+URL.createObjectURL(file);
+
+video.style.display="block";
+
+});
+
+
+function analyzeGait(){
+
+if(!input.files.length){
+
+alert("Please upload a walking video.");
+
+return;
+
+}
+
+document.getElementById("result").innerHTML=`
+
+<h2>Gait Analysis</h2>
+
+<p>
+The uploaded video is ready for
+pose-landmark processing.
+</p>
+
+<p>
+Advanced implementation can calculate
+step symmetry, cadence, joint angles,
+stride parameters and temporal movement.
+</p>
+
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>
