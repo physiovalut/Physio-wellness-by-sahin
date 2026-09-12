@@ -669,3 +669,130 @@ this.reset();
 
   SUPABASE_ANON_KEY
 );
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>Physiotherapy Exercises</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#07111f;
+color:white;
+padding:30px;
+}
+
+h1{
+font-size:42px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+padding:25px;
+border-radius:20px;
+background:#102236;
+border:1px solid #22384d;
+}
+
+.card h2{
+color:#58e0c4;
+}
+
+button{
+padding:12px 18px;
+border:0;
+border-radius:10px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Exercise Library</h1>
+
+<div class="grid">
+
+<div class="card">
+<h2>Neck Mobility</h2>
+<p>Gentle cervical range-of-motion exercise.</p>
+<button onclick="show('Neck Mobility')">
+View
+</button>
+</div>
+
+<div class="card">
+<h2>Shoulder Mobility</h2>
+<p>Controlled shoulder movement exercise.</p>
+<button onclick="show('Shoulder Mobility')">
+View
+</button>
+</div>
+
+<div class="card">
+<h2>Knee Strengthening</h2>
+<p>Basic quadriceps strengthening exercise.</p>
+<button onclick="show('Knee Strengthening')">
+View
+</button>
+</div>
+
+<div class="card">
+<h2>Ankle Mobility</h2>
+<p>Gentle ankle mobility exercise.</p>
+<button onclick="show('Ankle Mobility')">
+View
+</button>
+</div>
+
+<div class="card">
+<h2>Core Activation</h2>
+<p>Basic abdominal and trunk control exercise.</p>
+<button onclick="show('Core Activation')">
+View
+</button>
+</div>
+
+<div class="card">
+<h2>Balance Training</h2>
+<p>Simple balance and stability exercise.</p>
+<button onclick="show('Balance Training')">
+View
+</button>
+</div>
+
+</div>
+
+<script>
+
+function show(name){
+
+alert(
+name+
+"\n\nPerform only if appropriate for your condition. "+
+"Stop if you experience significant pain, dizziness or other concerning symptoms."
+);
+
+}
+
+</script>
+
+</body>
+</html>
