@@ -7,7 +7,7 @@
 
 <title>Dr Sahin Ahamed Laskar (P.T) | Physio Wellness</title>
 
-<meta name="description" content="Professional physiotherapy and rehabilitation care by Dr Sahin Ahamed Laskar (P.T), Bachelor of Physiotherapy (BPT).">
+<meta name="description" content="Premium physiotherapy and rehabilitation care by Dr Sahin Ahamed Laskar (P.T).">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,16 +15,16 @@
 
 <style>
 :root{
-  --primary:#087f8c;
-  --primary-dark:#05636d;
-  --accent:#16a6a6;
-  --navy:#102a43;
-  --text:#425466;
-  --muted:#718096;
-  --light:#f4fbfb;
+  --ink:#102a43;
+  --ink2:#193b56;
+  --teal:#087f8c;
+  --teal2:#0eaaa5;
+  --mint:#e8f8f7;
+  --cream:#f7faf9;
   --white:#ffffff;
-  --border:#e4eeee;
-  --shadow:0 20px 60px rgba(16,42,67,.09);
+  --muted:#718096;
+  --line:#e5eeee;
+  --shadow:0 25px 80px rgba(16,42,67,.09);
 }
 
 *{
@@ -36,10 +36,9 @@
 
 body{
   font-family:"DM Sans",sans-serif;
-  color:var(--navy);
+  color:var(--ink);
   background:#fff;
   line-height:1.7;
-  overflow-x:hidden;
 }
 
 h1,h2,h3,h4{
@@ -50,194 +49,1789 @@ a{
   text-decoration:none;
 }
 
-/* NAVBAR */
+.container{
+  width:min(1160px,88%);
+  margin:auto;
+}
+
+/* ================= NAV ================= */
 
 nav{
   position:fixed;
-  top:16px;
+  z-index:1000;
+  top:18px;
   left:50%;
   transform:translateX(-50%);
-  width:92%;
-  max-width:1250px;
-  z-index:1000;
-  padding:14px 20px;
+  width:min(1160px,92%);
+  padding:11px 13px 11px 18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  background:rgba(255,255,255,.88);
-  backdrop-filter:blur(18px);
-  border:1px solid rgba(255,255,255,.8);
-  border-radius:18px;
-  box-shadow:0 10px 35px rgba(16,42,67,.08);
+  border:1px solid rgba(255,255,255,.75);
+  border-radius:20px;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(20px);
+  box-shadow:0 15px 50px rgba(16,42,67,.09);
 }
 
 .logo{
   display:flex;
   align-items:center;
-  gap:10px;
-  color:var(--navy);
+  gap:11px;
+  color:var(--ink);
   font-family:"Manrope",sans-serif;
   font-weight:800;
-  font-size:19px;
+  font-size:17px;
 }
 
-.logo-mark{
+.logo-icon{
   width:40px;
   height:40px;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,var(--primary),#14b8b8);
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  background:var(--ink);
   color:#fff;
-  font-size:19px;
-  box-shadow:0 8px 20px rgba(8,127,140,.22);
+  font-size:20px;
 }
 
 .nav-links{
   display:flex;
   align-items:center;
-  gap:6px;
+  gap:4px;
 }
 
-nav a{
-  color:#425466;
-  font-size:14px;
-  font-weight:600;
-  padding:9px 13px;
+.nav-links a{
+  padding:10px 13px;
+  color:#526777;
+  font-size:13px;
+  font-weight:700;
   border-radius:10px;
   transition:.25s;
 }
 
-nav a:hover{
-  color:var(--primary);
-  background:#eefafa;
+.nav-links a:hover{
+  color:var(--teal);
+  background:var(--mint);
 }
 
-.nav-appointment{
-  background:var(--primary);
+.nav-book{
   color:#fff!important;
+  background:var(--teal)!important;
   padding:11px 18px!important;
   border-radius:30px!important;
 }
 
-.nav-appointment:hover{
-  background:var(--primary-dark)!important;
-}
-
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
   min-height:100vh;
-  padding:160px 7% 90px;
-  display:flex;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
   align-items:center;
-  justify-content:space-between;
-  gap:70px;
+  gap:60px;
+  padding:150px 6% 90px;
   position:relative;
   overflow:hidden;
   background:
-    radial-gradient(circle at 80% 25%,rgba(22,166,166,.15),transparent 32%),
-    linear-gradient(135deg,#f0fbfb 0%,#ffffff 55%,#f7fcfc 100%);
-}
-
-.hero:before{
-  content:"";
-  position:absolute;
-  width:500px;
-  height:500px;
-  border-radius:50%;
-  background:rgba(8,127,140,.045);
-  right:-180px;
-  top:130px;
+    radial-gradient(circle at 85% 20%,rgba(14,170,165,.13),transparent 28%),
+    radial-gradient(circle at 20% 90%,rgba(8,127,140,.07),transparent 30%),
+    #f8fcfb;
 }
 
 .hero-content{
-  max-width:690px;
+  max-width:680px;
   position:relative;
   z-index:2;
 }
 
-.badge{
+.hero-label{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  padding:9px 15px;
-  border-radius:30px;
-  background:#e5f8f8;
-  color:var(--primary-dark);
-  font-size:12px;
+  gap:9px;
+  padding:8px 14px;
+  border-radius:40px;
+  background:#e5f6f5;
+  color:var(--teal);
+  font-size:11px;
   font-weight:800;
-  letter-spacing:1.1px;
-  margin-bottom:22px;
+  letter-spacing:1.5px;
+  margin-bottom:23px;
 }
 
-.badge span{
+.hero-label i{
   width:7px;
   height:7px;
   border-radius:50%;
-  background:#19b38b;
+  background:#13a77f;
 }
 
 .hero h1{
-  font-size:clamp(46px,6vw,78px);
-  line-height:1.03;
-  letter-spacing:-2.8px;
+  font-size:clamp(48px,6.5vw,82px);
+  line-height:1.01;
+  letter-spacing:-4px;
   margin-bottom:25px;
 }
 
-.hero h1 em{
-  font-style:normal;
-  color:var(--primary);
+.hero h1 span{
+  color:var(--teal);
 }
 
-.hero-text{
-  color:var(--text);
+.hero-description{
+  max-width:600px;
   font-size:18px;
-  max-width:610px;
+  color:#607486;
   margin-bottom:32px;
 }
 
-.buttons{
+.hero-actions{
   display:flex;
-  gap:13px;
   flex-wrap:wrap;
+  gap:12px;
 }
 
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:15px 24px;
+  gap:8px;
+  padding:15px 23px;
   border-radius:14px;
-  font-weight:700;
+  font-weight:800;
+  font-size:14px;
   transition:.3s;
 }
 
-.primary{
-  background:var(--primary);
+.btn-primary{
   color:#fff;
-  box-shadow:0 12px 28px rgba(8,127,140,.2);
+  background:var(--teal);
+  box-shadow:0 14px 35px rgba(8,127,140,.2);
 }
 
-.primary:hover{
-  background:var(--primary-dark);
+.btn-primary:hover{
   transform:translateY(-3px);
+  background:#056b76;
 }
 
-.secondary{
-  color:var(--navy);
+.btn-outline{
+  color:var(--ink);
   background:#fff;
-  border:1px solid #dbe9eb;
+  border:1px solid #dce8e9;
 }
 
-.secondary:hover{
-  border-color:var(--primary);
-  color:var(--primary);
+.btn-outline:hover{
+  color:var(--teal);
+  border-color:var(--teal);
   transform:translateY(-3px);
 }
 
-/* HERO VISUAL WITHOUT PHOTO */
+/* HERO VISUAL */
 
-.hero-visual{
+.hero-art{
+  position:relative;
+  min-height:510px;
+  display:grid;
+  place-items:center;
+}
+
+.art-circle{
+  width:390px;
+  height:390px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#d8f4f2,#f7ffff);
+  position:relative;
+  box-shadow:
+    inset 0 0 0 1px rgba(8,127,140,.08),
+    0 35px 90px rgba(8,127,140,.12);
+}
+
+.art-circle:before{
+  content:"";
+  position:absolute;
+  inset:45px;
+  border-radius:50%;
+  border:1px solid rgba(8,127,140,.15);
+}
+
+.art-circle:after{
+  content:"";
+  position:absolute;
+  inset:85px;
+  border-radius:50%;
+  background:rgba(8,127,140,.07);
+}
+
+.body-line{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:90px;
+  height:220px;
+  border:7px solid var(--teal);
+  border-radius:50px 50px 35px 35px;
+  opacity:.85;
+}
+
+.body-line:before{
+  content:"";
+  position:absolute;
+  width:52px;
+  height:52px;
+  border:7px solid var(--teal);
+  border-radius:50%;
+  left:50%;
+  top:-67px;
+  transform:translateX(-50%);
+}
+
+.body-line:after{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:7px;
+  background:var(--teal);
+  border-radius:10px;
+  left:50%;
+  top:65px;
+  transform:translateX(-50%);
+}
+
+.floating{
+  position:absolute;
+  padding:16px 20px;
+  background:#fff;
+  border:1px solid #e7eeee;
+  border-radius:18px;
+  box-shadow:0 18px 45px rgba(16,42,67,.1);
+  font-size:12px;
+  font-weight:700;
+}
+
+.floating strong{
+  display:block;
+  font-family:"Manrope",sans-serif;
+  color:var(--teal);
+  font-size:22px;
+}
+
+.float-a{
+  left:0;
+  top:90px;
+}
+
+.float-b{
+  right:0;
+  bottom:85px;
+}
+
+/* ================= TRUST BAR ================= */
+
+.trust{
+  margin-top:-35px;
+  position:relative;
+  z-index:5;
+}
+
+.trust-box{
+  width:min(1050px,88%);
+  margin:auto;
+  padding:25px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  box-shadow:var(--shadow);
+}
+
+.trust-item{
+  text-align:center;
+}
+
+.trust-item:not(:last-child){
+  border-right:1px solid var(--line);
+}
+
+.trust-item strong{
+  display:block;
+  font-family:"Manrope",sans-serif;
+  font-size:20px;
+}
+
+.trust-item span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* ================= GENERAL SECTION ================= */
+
+section{
+  padding:110px 6%;
+}
+
+.section-head{
+  max-width:680px;
+  margin:0 auto 55px;
+  text-align:center;
+}
+
+.kicker{
+  color:var(--teal);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:11px;
+}
+
+.section-head h2{
+  font-size:clamp(34px,4vw,50px);
+  line-height:1.12;
+  letter-spacing:-2px;
+  margin-bottom:13px;
+}
+
+.section-head p{
+  color:var(--muted);
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+  background:#fff;
+}
+
+.about-grid{
+  max-width:1080px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:70px;
+  align-items:center;
+}
+
+.profile-card{
+  min-height:400px;
+  padding:38px;
+  border-radius:32px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(255,255,255,.15),transparent 25%),
+    linear-gradient(145deg,#102a43,#174764);
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 30px 70px rgba(16,42,67,.16);
+}
+
+.profile-card:before,
+.profile-card:after{
+  content:"";
+  position:absolute;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+}
+
+.profile-card:before{
+  width:310px;
+  height:310px;
+  right:-150px;
+  bottom:-120px;
+}
+
+.profile-card:after{
+  width:190px;
+  height:190px;
+  right:-90px;
+  bottom:-60px;
+}
+
+.profile-mark{
+  width:72px;
+  height:72px;
+  display:grid;
+  place-items:center;
+  border-radius:22px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.16);
+  font-size:32px;
+  margin-bottom:100px;
+}
+
+.profile-card h3{
+  font-size:25px;
+  line-height:1.25;
+  margin-bottom:7px;
+}
+
+.profile-card p{
+  color:rgba(255,255,255,.68);
+  font-size:13px;
+}
+
+.about-content h3{
+  font-size:31px;
+  margin-bottom:5px;
+}
+
+.qualification{
+  color:var(--teal);
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.about-content p{
+  color:#607486;
+  margin-bottom:15px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+  margin-top:25px;
+}
+
+.feature{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:13px;
+  font-weight:700;
+}
+
+.feature-dot{
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#e7f7f5;
+  color:var(--teal);
+}
+
+/* ================= SERVICES ================= */
+
+.services-section{
+  background:#f7fbfb;
+}
+
+.services{
+  max-width:1120px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.service{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:30px;
+  position:relative;
+  overflow:hidden;
+  transition:.35s;
+}
+
+.service:hover{
+  transform:translateY(-9px);
+  box-shadow:var(--shadow);
+  border-color:#cfe4e5;
+}
+
+.service-number{
+  position:absolute;
+  top:20px;
+  right:23px;
+  font-family:"Manrope",sans-serif;
+  color:#e2eeee;
+  font-size:34px;
+  font-weight:800;
+}
+
+.service-icon{
+  width:52px;
+  height:52px;
+  border-radius:15px;
+  background:#eaf8f7;
+  display:grid;
+  place-items:center;
+  margin-bottom:25px;
+  position:relative;
+}
+
+.service-icon:before{
+  content:"";
+  width:18px;
+  height:18px;
+  border:3px solid var(--teal);
+  border-radius:50%;
+}
+
+.service h3{
+  font-size:18px;
+  margin-bottom:9px;
+}
+
+.service p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ================= PROCESS ================= */
+
+.process{
+  background:#fff;
+}
+
+.process-grid{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.process-card{
+  text-align:center;
+  padding:30px 20px;
+}
+
+.process-no{
+  width:55px;
+  height:55px;
+  margin:0 auto 20px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background:var(--ink);
+  font-family:"Manrope",sans-serif;
+  font-weight:800;
+}
+
+.process-card h3{
+  font-size:17px;
+  margin-bottom:7px;
+}
+
+.process-card p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ================= APPOINTMENT ================= */
+
+.appointment{
+  background:#f6fbfb;
+}
+
+.appointment-wrap{
+  max-width:900px;
+  margin:auto;
+  padding:48px;
+  border-radius:32px;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:8px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:15px 16px;
+  border:1px solid #dce7e8;
+  border-radius:13px;
+  background:#fbfefe;
+  color:var(--ink);
+  font-family:inherit;
+  font-size:14px;
+  outline:none;
+  transition:.25s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--teal);
+  box-shadow:0 0 0 4px rgba(8,127,140,.07);
+  background:#fff;
+}
+
+.form-group textarea{
+  resize:vertical;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.appointment-btn{
+  width:100%;
+  border:0;
+  padding:17px;
+  border-radius:14px;
+  color:#fff;
+  background:linear-gradient(135deg,var(--teal),var(--teal2));
+  font-family:inherit;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:0 14px 30px rgba(8,127,140,.18);
+  transition:.3s;
+}
+
+.appointment-btn:hover{
+  transform:translateY(-2px);
+}
+
+/* ================= CTA ================= */
+
+.cta{
+  max-width:1120px;
+  margin:20px auto;
+  padding:85px 30px!important;
+  text-align:center;
+  border-radius:38px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.13),transparent 24%),
+    radial-gradient(circle at 90% 90%,rgba(255,255,255,.09),transparent 25%),
+    linear-gradient(135deg,#102a43,#087f8c);
+  box-shadow:0 30px 80px rgba(16,42,67,.15);
+}
+
+.cta h2{
+  font-size:clamp(34px,5vw,52px);
+  line-height:1.1;
+  margin-bottom:13px;
+}
+
+.cta p{
+  color:rgba(255,255,255,.72);
+  margin-bottom:30px;
+}
+
+.cta .btn{
+  background:#fff;
+  color:var(--ink);
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+  background:#fff;
+}
+
+.contact-grid{
+  max-width:1050px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.contact-card{
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:21px;
+  background:#fbfdfd;
+}
+
+.contact-card small{
+  display:block;
+  color:var(--teal);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  margin-bottom:7px;
+}
+
+.contact-card strong{
+  font-size:16px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  padding:45px 20px;
+  text-align:center;
+  color:#fff;
+  background:#0c2235;
+}
+
+.footer-logo{
+  font-family:"Manrope",sans-serif;
+  font-weight:800;
+  font-size:20px;
+  margin-bottom:7px;
+}
+
+footer p{
+  color:rgba(255,255,255,.55);
+  font-size:12px;
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp{
+  position:fixed;
+  right:23px;
+  bottom:23px;
+  width:62px;
+  height:62px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  z-index:2000;
+  font-size:26px;
+  box-shadow:0 12px 35px rgba(0,0,0,.2);
+  transition:.3s;
+}
+
+.whatsapp:hover{
+  transform:scale(1.08);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  .nav-links a:not(.nav-book){
+    display:none;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding-top:145px;
+  }
+
+  .hero-content{
+    margin:auto;
+  }
+
+  .hero-description{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-actions{
+    justify-content:center;
+  }
+
+  .hero-art{
+    min-height:390px;
+  }
+
+  .art-circle{
+    width:310px;
+    height:310px;
+  }
+
+  .body-line{
+    transform:translate(-50%,-50%) scale(.75);
+  }
+
+  .float-a{
+    left:2%;
+  }
+
+  .float-b{
+    right:2%;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .services{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .process-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+
+  nav{
+    top:9px;
+  }
+
+  .logo{
+    font-size:15px;
+  }
+
+  .logo-icon{
+    width:36px;
+    height:36px;
+  }
+
+  .hero{
+    padding-left:6%;
+    padding-right:6%;
+  }
+
+  .hero h1{
+    font-size:49px;
+    letter-spacing:-2.5px;
+  }
+
+  .hero-description{
+    font-size:16px;
+  }
+
+  .hero-art{
+    min-height:350px;
+  }
+
+  .art-circle{
+    width:270px;
+    height:270px;
+  }
+
+  .float-a{
+    left:-5px;
+    top:40px;
+  }
+
+  .float-b{
+    right:-5px;
+    bottom:35px;
+  }
+
+  .trust-box{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .trust-item:not(:last-child){
+    border-right:0;
+    border-bottom:1px solid var(--line);
+    padding-bottom:16px;
+  }
+
+  section{
+    padding:80px 6%;
+  }
+
+  .features{
+    grid-template-columns:1fr;
+  }
+
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .appointment-wrap{
+    padding:28px 20px;
+  }
+
+  .form-row{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .cta{
+    margin:10px 5%;
+    padding:60px 20px!important;
+  }
+
+  .whatsapp{
+    right:17px;
+    bottom:17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+
+  <div class="logo">
+    <div class="logo-icon">+</div>
+    Physio Wellness
+  </div>
+
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#appointment" class="nav-book">Book Appointment</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="hero-label">
+      <i></i>
+      PHYSIOTHERAPY & REHABILITATION
+    </div>
+
+    <h1>
+      Restore movement.<br>
+      <span>Rediscover life.</span>
+    </h1>
+
+    <p class="hero-description">
+      Personalized physiotherapy and rehabilitation designed
+      around your condition, your goals and your journey to
+      better movement.
+    </p>
+
+    <div class="hero-actions">
+
+      <a class="btn btn-primary" href="#appointment">
+        Book an Appointment →
+      </a>
+
+      <a class="btn btn-outline" href="#services">
+        Explore Treatment
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-art">
+
+    <div class="art-circle">
+
+      <div class="body-line"></div>
+
+    </div>
+
+    <div class="floating float-a">
+      <strong>BPT</strong>
+      Qualified Physiotherapist
+    </div>
+
+    <div class="floating float-b">
+      <strong>Patient First</strong>
+      Personalized Care
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TRUST -->
+
+<div class="trust">
+
+  <div class="trust-box">
+
+    <div class="trust-item">
+      <strong>Bachelor of Physiotherapy</strong>
+      <span>Professional Qualification</span>
+    </div>
+
+    <div class="trust-item">
+      <strong>Evidence-Based Care</strong>
+      <span>Individualized Treatment</span>
+    </div>
+
+    <div class="trust-item">
+      <strong>Home Physiotherapy</strong>
+      <span>Care at Your Convenience</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+  <div class="section-head">
+    <div class="kicker">Meet Your Physiotherapist</div>
+    <h2>Care that begins with understanding.</h2>
+    <p>
+      A personalized approach to physiotherapy,
+      rehabilitation and functional recovery.
+    </p>
+  </div>
+
+
+  <div class="about-grid">
+
+    <div class="profile-card">
+
+      <div class="profile-mark">+</div>
+
+      <h3>
+        Dr Sahin Ahamed Laskar (P.T)
+      </h3>
+
+      <p>
+        Bachelor of Physiotherapy (BPT)<br>
+        The Neotia University (TNU)
+      </p>
+
+    </div>
+
+
+    <div class="about-content">
+
+      <h3>Dr Sahin Ahamed Laskar (P.T)</h3>
+
+      <div class="qualification">
+        Bachelor of Physiotherapy (BPT)
+      </div>
+
+      <p>
+        My goal is to provide patient-focused physiotherapy
+        and rehabilitation through careful assessment,
+        evidence-based treatment and individualized
+        exercise programs.
+      </p>
+
+      <p>
+        Each treatment approach is tailored to the patient's
+        condition, functional needs and recovery goals.
+      </p>
+
+      <div class="features">
+
+        <div class="feature">
+          <div class="feature-dot">✓</div>
+          Personalized Treatment
+        </div>
+
+        <div class="feature">
+          <div class="feature-dot">✓</div>
+          Evidence-Based Approach
+        </div>
+
+        <div class="feature">
+          <div class="feature-dot">✓</div>
+          Functional Rehabilitation
+        </div>
+
+        <div class="feature">
+          <div class="feature-dot">✓</div>
+          Patient Education
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services-section" id="services">
+
+  <div class="section-head">
+
+    <div class="kicker">Specialized Care</div>
+
+    <h2>Move with confidence.</h2>
+
+    <p>
+      Comprehensive physiotherapy services for pain,
+      injury and rehabilitation.
+    </p>
+
+  </div>
+
+
+  <div class="services">
+
+    <div class="service">
+
+      <div class="service-number">01</div>
+
+      <div class="service-icon"></div>
+
+      <h3>Knee Rehabilitation</h3>
+
+      <p>
+        Individualized rehabilitation for knee pain,
+        weakness and functional limitations.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-number">02</div>
+
+      <div class="service-icon"></div>
+
+      <h3>Sports Injury</h3>
+
+      <p>
+        Structured recovery programs for athletes
+        and active individuals.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-number">03</div>
+
+      <div class="service-icon"></div>
+
+      <h3>Back & Neck Pain</h3>
+
+      <p>
+        Physiotherapy approaches for back, neck and
+        posture-related conditions.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-number">04</div>
+
+      <div class="service-icon"></div>
+
+      <h3>Orthopedic Rehab</h3>
+
+      <p>
+        Functional rehabilitation following orthopedic
+        conditions and injuries.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-number">05</div>
+
+      <div class="service-icon"></div>
+
+      <h3>Neurological Rehab</h3>
+
+      <p>
+        Rehabilitation focused on mobility, balance
+        and functional independence.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-number">06</div>
+
+      <div class="service-icon"></div>
+
+      <h3>Home Physiotherapy</h3>
+
+      <p>
+        Professional physiotherapy support in
+        the comfort of your home.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section class="process">
+
+  <div class="section-head">
+
+    <div class="kicker">Your Recovery Journey</div>
+
+    <h2>A simple approach to better movement.</h2>
+
+  </div>
+
+
+  <div class="process-grid">
+
+    <div class="process-card">
+
+      <div class="process-no">01</div>
+
+      <h3>Assessment</h3>
+
+      <p>
+        Understand your symptoms, movement and
+        functional needs.
+      </p>
+
+    </div>
+
+
+    <div class="process-card">
+
+      <div class="process-no">02</div>
+
+      <h3>Personalized Plan</h3>
+
+      <p>
+        Create a treatment and exercise approach
+        around your goals.
+      </p>
+
+    </div>
+
+
+    <div class="process-card">
+
+      <div class="process-no">03</div>
+
+      <h3>Progress & Recovery</h3>
+
+      <p>
+        Work progressively towards better movement
+        and function.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- APPOINTMENT -->
+
+<section class="appointment" id="appointment">
+
+  <div class="section-head">
+
+    <div class="kicker">Appointments</div>
+
+    <h2>Take the first step.</h2>
+
+    <p>
+      Send your appointment request and we will
+      contact you soon.
+    </p>
+
+  </div>
+
+
+  <div class="appointment-wrap">
+
+    <form id="appointmentForm">
+
+      <div class="form-group">
+
+        <label>Full Name</label>
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter your full name"
+          required>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Phone Number</label>
+
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Enter your phone number"
+          required>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Email</label>
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email">
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Select Treatment</label>
+
+        <select name="treatment" required>
+
+          <option value="">
+            Choose a treatment
+          </option>
+
+          <option>Knee Pain & Rehabilitation</option>
+          <option>Back & Neck Pain</option>
+          <option>Sports Injury Rehabilitation</option>
+          <option>Orthopedic Physiotherapy</option>
+          <option>Neurological Rehabilitation</option>
+          <option>Home Physiotherapy</option>
+          <option>General Physiotherapy Consultation</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label>Preferred Date</label>
+
+          <input
+            type="date"
+            name="appointment_date"
+            required>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>Preferred Time</label>
+
+          <select
+            name="appointment_time"
+            required>
+
+            <option value="">
+              Choose time
+            </option>
+
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>4:00 PM</option>
+            <option>5:00 PM</option>
+            <option>6:00 PM</option>
+            <option>7:00 PM</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Your Message</label>
+
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="Tell us briefly about your problem"></textarea>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="appointment-btn"
+        id="appointmentSubmit">
+
+        Book Appointment
+
+      </button>
+
+
+      <p
+        id="appointmentStatus"
+        style="margin-top:15px;text-align:center;font-weight:700;">
+      </p>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+  <h2>
+    Your movement matters.
+  </h2>
+
+  <p>
+    Start your physiotherapy journey today.
+  </p>
+
+  <a
+    class="btn"
+    href="#appointment">
+
+    Book Your Appointment →
+
+  </a>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div class="section-head">
+
+    <div class="kicker">Contact</div>
+
+    <h2>Let's get you moving.</h2>
+
+    <p>
+      Contact us for appointments and enquiries.
+    </p>
+
+  </div>
+
+
+  <div class="contact-grid">
+
+    <div class="contact-card">
+
+      <small>Physiotherapist</small>
+
+      <strong>
+        Dr Sahin Ahamed Laskar (P.T)
+      </strong>
+
+    </div>
+
+
+    <div class="contact-card">
+
+      <small>Qualification</small>
+
+      <strong>
+        Bachelor of Physiotherapy (BPT)
+      </strong>
+
+    </div>
+
+
+    <div class="contact-card">
+
+      <small>Phone</small>
+
+      <strong>
+        7584814152
+      </strong>
+
+    </div>
+
+
+    <div class="contact-card">
+
+      <small>Email</small>
+
+      <strong>
+        laskarsahin6152@gmail.com
+      </strong>
+
+    </div>
+
+
+    <div class="contact-card">
+
+      <small>Clinic</small>
+
+      <strong>
+        Joynagar, Baruipur, West Bengal
+      </strong>
+
+    </div>
+
+
+    <div class="contact-card">
+
+      <small>University</small>
+
+      <strong>
+        The Neotia University (TNU)
+      </strong>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-logo">
+    Physio Wellness
+  </div>
+
+  <p>
+    Dr Sahin Ahamed Laskar (P.T) • Physiotherapy & Rehabilitation
+  </p>
+
+  <p style="margin-top:7px;">
+    © 2026 Physio Wellness. All Rights Reserved.
+  </p>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/917584814152"
+  target="_blank"
+  title="Chat on WhatsApp">
+
+  ☎
+
+</a>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL =
+"https://vcwnxyyeugfylmgpasjp.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+"sb_publishable_lbQ_38viYhFJxVPO8nZp2w_ivdZaCWX";
+
+const supabaseClient =
+window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+const appointmentForm =
+document.getElementById("appointmentForm");
+
+const appointmentStatus =
+document.getElementById("appointmentStatus");
+
+const appointmentSubmit =
+document.getElementById("appointmentSubmit");
+
+
+appointmentForm.addEventListener(
+"submit",
+async function(event){
+
+  event.preventDefault();
+
+  appointmentSubmit.disabled = true;
+
+  appointmentSubmit.textContent =
+  "Submitting...";
+
+  appointmentStatus.textContent = "";
+
+
+  const formData =
+  new FormData(appointmentForm);
+
+
+  const appointment = {
+
+    name:formData.get("name"),
+
+    phone:formData.get("phone"),
+
+    email:
+    formData.get("email") || null,
+
+    treatment:
+    formData.get("treatment"),
+
+    appointment_date:
+    formData.get("appointment_date"),
+
+    appointment_time:
+    formData.get("appointment_time"),
+
+    message:
+    formData.get("message") || null,
+
+    status:"pending"
+
+  };
+
+
+  /* SAVE TO SUPABASE */
+
+  const { error } =
+  await supabaseClient
+  .from("appointments")
+  .insert([appointment]);
+
+
+  if(error){
+
+    console.error(error);
+
+    appointmentStatus.textContent =
+    "Booking failed. Please try again or contact us on WhatsApp.";
+
+    appointmentStatus.style.color =
+    "#c62828";
+
+    appointmentSubmit.disabled =
+    false;
+
+    appointmentSubmit.textContent =
+    "Book Appointment";
+
+    return;
+
+  }
+
+
+  /* EMAIL NOTIFICATION */
+
+  const { error: emailError } =
+  await supabaseClient.functions.invoke(
+    "resend-email",
+    {
+      body:{
+
+        to:
+        "laskarsahin6152@gmail.com",
+
+        subject:
+        "New Physiotherapy Appointment",
+
+        html:`
+
+        <h2>New Appointment Request</h2>
+
+        <p>
+        <strong>Name:</strong>
+        ${appointment.name}
+        </p>
+
+        <p>
+        <strong>Phone:</strong>
+        ${appointment.phone}
+        </p>
+
+        <p>
+        <strong>Email:</strong>
+        ${appointment.email || "Not provided"}
+        </p>
+
+        <p>
+        <strong>Treatment:</strong>
+        ${appointment.treatment}
+        </p>
+
+        <p>
+        <strong>Date:</strong>
+        ${appointment.appointment_date}
+        </p>
+
+        <p>
+        <strong>Time:</strong>
+        ${appointment.appointment_time}
+        </p>
+
+        <p>
+        <strong>Message:</strong>
+        ${appointment.message || "No message"}
+        </p>
+
+        `
+      }
+    }
+  );
+
+
+  if(emailError){
+
+    console.error(
+      "Email notification error:",
+      emailError
+    );
+
+  }
+
+
+  appointmentStatus.textContent =
+  "✓ Appointment request submitted successfully! We will contact you soon.";
+
+  appointmentStatus.style.color =
+  "#087f8c";
+
+
+  appointmentForm.reset();
+
+  appointmentSubmit.disabled =
+  false;
+
+  appointmentSubmit.textContent =
+  "Book Appointment";
+
+});
+
+</script>
+
+</body>
+</html>
 ```
