@@ -489,7 +489,7 @@
 
   </section>
 
-  <<section class="appointment" id="appointment">
+  <section class="appointment" id="appointment">
 
   <div class="section-title">
     <h2>Book an Appointment</h2>
@@ -498,15 +498,13 @@
 
   <div class="appointment-container">
 
-    <form action="mailto:laskarsahin6152@gmail.com"
-          method="post"
-          enctype="text/plain">
+    <form id="appointmentForm">
 
       <div class="form-group">
         <label>Full Name</label>
         <input
           type="text"
-          name="Name"
+          name="name"
           placeholder="Enter your full name"
           required>
       </div>
@@ -515,7 +513,7 @@
         <label>Phone Number</label>
         <input
           type="tel"
-          name="Phone"
+          name="phone"
           placeholder="Enter your phone number"
           required>
       </div>
@@ -524,14 +522,14 @@
         <label>Email</label>
         <input
           type="email"
-          name="Email"
+          name="email"
           placeholder="Enter your email">
       </div>
 
       <div class="form-group">
         <label>Select Treatment</label>
 
-        <select name="Treatment" required>
+        <select name="treatment" required>
           <option value="">Choose a treatment</option>
           <option>Knee Pain & Rehabilitation</option>
           <option>Back & Neck Pain</option>
@@ -549,14 +547,14 @@
           <label>Preferred Date</label>
           <input
             type="date"
-            name="Date"
+            name="appointment_date"
             required>
         </div>
 
         <div class="form-group">
           <label>Preferred Time</label>
 
-          <select name="Time" required>
+          <select name="appointment_time" required>
             <option value="">Choose time</option>
             <option>10:00 AM</option>
             <option>11:00 AM</option>
@@ -574,20 +572,21 @@
         <label>Your Message</label>
 
         <textarea
-          name="Message"
+          name="message"
           rows="5"
           placeholder="Tell us briefly about your problem"></textarea>
       </div>
 
-      <button type="submit" class="appointment-btn">
+      <button type="submit" class="appointment-btn" id="appointmentSubmit">
         Book Appointment
       </button>
+      <p id="appointmentStatus" style="margin-top:15px;text-align:center;font-weight:600;"></p>
 
     </form>
 
   </div>
 
-</section>">
+</section>
 
     <h2>Ready to Start Your Recovery?</h2>
 
@@ -637,12 +636,70 @@
 
   <a
     class="whatsapp"
-    href="https://wa.me/7584814152"
+    href="https://wa.me/917584814152"
     target="_blank"
     title="WhatsApp"
   >
     💬
   </a>
+
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://vcwnxyyeugfylmgpasjp.supabase.co";
+    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lbQ_38viYhFJxVPO8nZp2w_ivdZaCWX";
+
+    const supabaseClient = window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+
+    const appointmentForm = document.getElementById("appointmentForm");
+    const appointmentStatus = document.getElementById("appointmentStatus");
+    const appointmentSubmit = document.getElementById("appointmentSubmit");
+
+    appointmentForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      appointmentSubmit.disabled = true;
+      appointmentSubmit.textContent = "Booking...";
+
+      const formData = new FormData(appointmentForm);
+
+      const appointment = {
+        name: formData.get("name"),
+        phone: formData.get("phone"),
+        email: formData.get("email") || null,
+        treatment: formData.get("treatment"),
+        appointment_date: formData.get("appointment_date"),
+        appointment_time: formData.get("appointment_time"),
+        message: formData.get("message") || null,
+        status: "pending"
+      };
+
+      const { error } = await supabaseClient
+        .from("appointments")
+        .insert([appointment]);
+
+      if (error) {
+        console.error(error);
+        appointmentStatus.textContent =
+          "Booking failed. Please try again or contact us on WhatsApp.";
+        appointmentStatus.style.color = "#c62828";
+        appointmentSubmit.disabled = false;
+        appointmentSubmit.textContent = "Book Appointment";
+        return;
+      }
+
+      appointmentStatus.textContent =
+        "Appointment request submitted successfully! We will contact you soon.";
+      appointmentStatus.style.color = "#087f8c";
+      appointmentForm.reset();
+      appointmentSubmit.disabled = false;
+      appointmentSubmit.textContent = "Book Appointment";
+    });
+  </script>
 
 </body>
 </html>
