@@ -2579,6 +2579,152 @@ footer{
 }
 </style>
 
+
+<style id="theme-visibility-fix">
+/* Theme readability fix: keep text visible in every theme */
+[data-theme="normal"], [data-theme="rose"], [data-theme="violet"], [data-theme="blue"], [data-theme="emerald"], [data-theme="dark"], [data-theme="midnight"] {
+  color-scheme: light;
+}
+[data-theme="dark"], [data-theme="midnight"] { color-scheme: dark; }
+
+[data-theme] .section-head h2,
+[data-theme] .section-head p,
+[data-theme] .about-content h2,
+[data-theme] .about-content p,
+[data-theme] .service-card h3,
+[data-theme] .service-card p,
+[data-theme] .faq-question,
+[data-theme] .faq-answer,
+[data-theme] .contact-card h3,
+[data-theme] .contact-card p,
+[data-theme] .contact-card a,
+[data-theme] .dashboard-stat span,
+[data-theme] .dashboard-stat strong,
+[data-theme] .dashboard-head strong,
+[data-theme] .dashboard-note,
+[data-theme] .appointment-form label,
+[data-theme] .form-group label,
+[data-theme] .footer-copy,
+[data-theme] .footer-links a,
+[data-theme] .theme-title,
+[data-theme] .theme-option {
+  color: var(--text);
+}
+
+[data-theme] .section-head p,
+[data-theme] .about-content p,
+[data-theme] .service-card p,
+[data-theme] .faq-answer,
+[data-theme] .dashboard-stat span,
+[data-theme] .dashboard-note,
+[data-theme] .footer-copy,
+[data-theme] .brand-text small,
+[data-theme] .nav-links a {
+  color: var(--muted);
+}
+
+[data-theme] .card,
+[data-theme] .service-card,
+[data-theme] .faq,
+[data-theme] .faq-item,
+[data-theme] .appointment-form,
+[data-theme] .dashboard-stat,
+[data-theme] .contact-card,
+[data-theme] .contact-dashboard,
+[data-theme] .theme-panel,
+[data-theme] .icon-btn,
+[data-theme] input,
+[data-theme] select,
+[data-theme] textarea {
+  color: var(--text);
+}
+
+[data-theme] input,
+[data-theme] select,
+[data-theme] textarea {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme] input::placeholder,
+[data-theme] textarea::placeholder { color: var(--muted); opacity: .9; }
+
+[data-theme="normal"] .theme-option,
+[data-theme="rose"] .theme-option,
+[data-theme="violet"] .theme-option,
+[data-theme="blue"] .theme-option,
+[data-theme="emerald"] .theme-option {
+  background: var(--surface2);
+}
+
+/* Do not let the animated border layer wash out box content. */
+[data-theme] :where(.card,.service-card,.feature-card,.stat-card,.info-card,.testimonial-card,.faq-item,.contact-card,.dashboard-stat,.appointment-form,.hero-card,.trust-card,.process-card,.pricing-card,.review-card,.benefit-card,.why-card) {
+  background-color: var(--surface);
+}
+</style>
+
+<style id="all-theme-visibility-fix">
+/* Final theme contrast fix: every theme keeps text readable */
+[data-theme="normal"]{--text:#102020;--muted:#637575;--surface:#ffffff;--surface2:#eefafa;}
+[data-theme="rose"]{--text:#35131c;--muted:#80636c;--surface:#ffffff;--surface2:#fff0f3;}
+[data-theme="violet"]{--text:#211534;--muted:#746685;--surface:#ffffff;--surface2:#f4edff;}
+[data-theme="blue"]{--text:#10233d;--muted:#64748b;--surface:#ffffff;--surface2:#edf5ff;}
+[data-theme="emerald"]{--text:#09291c;--muted:#62796d;--surface:#ffffff;--surface2:#e9f9f1;}
+[data-theme="dark"]{--text:#fafafa;--muted:#a1a1aa;--surface:#151518;--surface2:#202024;}
+[data-theme="midnight"]{--text:#eaf7ff;--muted:#9bb1c7;--surface:#0d1b2d;--surface2:#11253b;}
+
+[data-theme] body, body[data-theme]{color:var(--text);background:var(--bg);}
+[data-theme] h1,[data-theme] h2,[data-theme] h3,[data-theme] h4,[data-theme] h5,[data-theme] h6,[data-theme] strong,[data-theme] b{color:var(--text);}
+[data-theme] p,[data-theme] li,[data-theme] label,[data-theme] small{color:var(--muted);}
+[data-theme] .section-head p,[data-theme] .about-content p,[data-theme] .service-card p,[data-theme] .faq-answer p,[data-theme] .dashboard-note{color:var(--muted)!important;}
+[data-theme] .nav-links a,[data-theme] .brand-text strong,[data-theme] .brand-text small{color:var(--text);}
+[data-theme] .nav-links a{color:var(--muted);}
+[data-theme] .card,[data-theme] .service-card,[data-theme] .feature-card,[data-theme] .feature-box,[data-theme] .trust-card,[data-theme] .hero-feature,[data-theme] .why-card,[data-theme] .stat-card,[data-theme] .info-card,[data-theme] .testimonial-card,[data-theme] .faq,[data-theme] .faq-item,[data-theme] .appointment-form,[data-theme] .appointment-info,[data-theme] .contact-card,[data-theme] .dashboard-stat,[data-theme] .contact-dashboard,[data-theme] .appointment-dashboard,[data-theme] .cta-box{color:var(--text);background-color:var(--surface)!important;}
+[data-theme] .dashboard-stat span,[data-theme] .dashboard-note,[data-theme] .contact-card p,[data-theme] .contact-card a{color:var(--muted);}
+[data-theme] input,[data-theme] select,[data-theme] textarea{color:var(--text)!important;background:var(--surface)!important;border-color:var(--border)!important;}
+[data-theme] input::placeholder,[data-theme] textarea::placeholder{color:var(--muted)!important;}
+[data-theme="normal"] .theme-option,[data-theme="rose"] .theme-option,[data-theme="violet"] .theme-option,[data-theme="blue"] .theme-option,[data-theme="emerald"] .theme-option{color:var(--text)!important;background:var(--surface2)!important;}
+[data-theme="dark"] .theme-option,[data-theme="midnight"] .theme-option{color:var(--text)!important;background:var(--surface2)!important;}
+</style>
+
+<style id="appointment-countdown-style">
+.appointment-countdown{margin-top:13px;padding:14px 16px;border-radius:18px;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;gap:13px;position:relative;z-index:1;overflow:hidden;}
+.appointment-countdown::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#14b8a6,#22d3ee,#8b5cf6,#ec4899);background-size:100% 300%;animation:countdownBorder 4s linear infinite;}
+.countdown-icon{width:42px;height:42px;min-width:42px;border-radius:13px;display:grid;place-items:center;background:var(--surface);border:1px solid var(--border);font-size:20px;animation:countdownPulse 2s ease-in-out infinite;}
+.countdown-content{min-width:0;}
+.countdown-label{display:block;font-size:9px;letter-spacing:1.4px;font-weight:1000;color:var(--primary);margin-bottom:3px;}
+#countdownText{display:block;color:var(--text);font-size:14px;line-height:1.3;}
+#countdownSubtext{display:block;color:var(--muted);font-size:10px;font-weight:700;margin-top:3px;}
+@keyframes countdownBorder{to{background-position:0 300%;}}
+@keyframes countdownPulse{50%{transform:scale(1.06);}}
+@media(max-width:600px){.appointment-countdown{padding:12px}.countdown-icon{width:38px;height:38px;min-width:38px;font-size:18px}#countdownText{font-size:12px}}
+</style>
+
+
+<style id="v23-feedback-whatsapp">
+/* V23 — Patient Feedback Slider + WhatsApp Assistant */
+.feedback-section{padding:70px 0}
+.feedback-wrap{max-width:920px;margin:0 auto;position:relative}
+.feedback-slider{position:relative;min-height:245px}
+.feedback-slide{display:none;padding:34px 34px 30px;border-radius:24px;background:var(--surface);border:1px solid transparent;background-clip:padding-box;box-shadow:0 12px 35px rgba(0,0,0,.10);text-align:center}
+.feedback-slide.active{display:block;animation:feedbackIn .45s ease}
+.feedback-stars{font-size:1.25rem;letter-spacing:3px;color:#f59e0b;margin-bottom:15px}
+.feedback-quote{font-size:1.08rem;line-height:1.75;color:var(--text);max-width:720px;margin:0 auto 18px}
+.feedback-name{font-weight:800;color:var(--text);margin-bottom:4px}
+.feedback-label{font-size:.85rem;color:var(--muted)}
+.feedback-controls{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:20px}
+.feedback-dot{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:var(--muted);opacity:.35;cursor:pointer;transition:.25s}
+.feedback-dot.active{width:25px;border-radius:10px;opacity:1;background:linear-gradient(90deg,var(--primary),var(--accent))}
+.feedback-arrow{width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:1.1rem;transition:.25s}
+.feedback-arrow:hover{transform:translateY(-2px);border-color:var(--primary);color:var(--primary)}
+@keyframes feedbackIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:translateX(0)}}
+.v23-wa-assistant{position:fixed;right:22px;bottom:22px;z-index:9999;display:flex;align-items:center;gap:10px;padding:10px 15px 10px 11px;border-radius:999px;text-decoration:none;color:#fff;background:#25D366;box-shadow:0 10px 28px rgba(37,211,102,.30);font-weight:800;font-size:.9rem;animation:waPulse 2.8s ease-in-out infinite}
+.v23-wa-icon{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.18);font-size:1.15rem}
+.v23-wa-text{white-space:nowrap}
+@keyframes waPulse{0%,100%{box-shadow:0 10px 28px rgba(37,211,102,.25)}50%{box-shadow:0 10px 34px rgba(37,211,102,.48)}}
+@media(max-width:600px){.feedback-slide{padding:27px 20px;min-height:270px}.feedback-quote{font-size:1rem}.v23-wa-assistant{right:14px;bottom:14px;padding:9px 12px 9px 9px}.v23-wa-text{font-size:.82rem}}
+@media(prefers-reduced-motion:reduce){.feedback-slide.active,.v23-wa-assistant{animation:none}}
+</style>
 </head>
 
 <body data-theme="normal">
@@ -3409,6 +3555,14 @@ footer{
             <div class="dashboard-stat"><span>📋 Appointment</span><strong id="dashboardVisitType">Not selected</strong></div>
             <div class="dashboard-stat"><span>📲 Booking</span><strong id="dashboardStatus">Complete details</strong></div>
         </div>
+        <div class="appointment-countdown" id="appointmentCountdown" aria-live="polite">
+            <div class="countdown-icon">⏳</div>
+            <div class="countdown-content">
+                <span class="countdown-label">APPOINTMENT COUNTDOWN</span>
+                <strong id="countdownText">Select a date &amp; time to start</strong>
+                <small id="countdownSubtext">Your live appointment countdown will appear here.</small>
+            </div>
+        </div>
     </div>
 
 
@@ -4160,7 +4314,67 @@ function updateAppointmentDashboard(){
     if(dashboardVisitType)dashboardVisitType.textContent=type;
     const ready=name!=="Not entered"&&concern!=="Not selected"&&date!=="Not selected"&&time!=="Not selected"&&mode!=="Not selected"&&type!=="Not selected";
     dashboardStatus.textContent=ready?"Ready to book":"Complete details";
+    updateAppointmentCountdown();
 }
+
+/* =========================================================
+   LIVE APPOINTMENT COUNTDOWN
+========================================================= */
+const countdownText=document.getElementById("countdownText");
+const countdownSubtext=document.getElementById("countdownSubtext");
+const countdownBox=document.getElementById("appointmentCountdown");
+let countdownTimer=null;
+
+function getAppointmentDateTime(){
+    if(!dateInput||!timeSelect||!dateInput.value||!timeSelect.value)return null;
+    const match=timeSelect.value.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+    if(!match)return null;
+    let hour=parseInt(match[1],10);
+    const minute=parseInt(match[2],10);
+    const meridiem=match[3].toUpperCase();
+    if(meridiem==="PM"&&hour!==12)hour+=12;
+    if(meridiem==="AM"&&hour===12)hour=0;
+    const parts=dateInput.value.split("-").map(Number);
+    const target=new Date(parts[0],parts[1]-1,parts[2],hour,minute,0,0);
+    return isNaN(target.getTime())?null:target;
+}
+
+function updateAppointmentCountdown(){
+    if(!countdownText||!countdownSubtext)return;
+    const target=getAppointmentDateTime();
+    if(countdownTimer){clearInterval(countdownTimer);countdownTimer=null;}
+    if(!target){
+        countdownText.textContent="Select a date & time to start";
+        countdownSubtext.textContent="Your live appointment countdown will appear here.";
+        if(countdownBox)countdownBox.removeAttribute("data-state");
+        return;
+    }
+    function tick(){
+        const diff=target.getTime()-Date.now();
+        if(diff<=0){
+            countdownText.textContent="Your appointment time is now";
+            countdownSubtext.textContent="Please check your appointment details or contact Physio Wellness.";
+            if(countdownBox)countdownBox.dataset.state="now";
+            clearInterval(countdownTimer);
+            countdownTimer=null;
+            return;
+        }
+        const totalSeconds=Math.floor(diff/1000);
+        const days=Math.floor(totalSeconds/86400);
+        const hours=Math.floor((totalSeconds%86400)/3600);
+        const minutes=Math.floor((totalSeconds%3600)/60);
+        const seconds=totalSeconds%60;
+        const pieces=[];
+        if(days)pieces.push(days+"d");
+        pieces.push(String(hours).padStart(2,"0")+"h",String(minutes).padStart(2,"0")+"m",String(seconds).padStart(2,"0")+"s");
+        countdownText.textContent=pieces.join(" ")+" remaining";
+        countdownSubtext.textContent="Countdown to "+target.toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"})+" at "+target.toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"});
+        if(countdownBox)countdownBox.dataset.state="active";
+    }
+    tick();
+    countdownTimer=setInterval(tick,1000);
+}
+
 
 [patientName,treatment,dateInput,timeSelect,consultMode,visitType].forEach(el=>{
     if(el){
@@ -4304,6 +4518,43 @@ window.addEventListener(
 
 
 <script>
+
+
+/* =========================================================
+   V23 PATIENT FEEDBACK SLIDER
+========================================================= */
+(function(){
+  const slides=[...document.querySelectorAll('.feedback-slide')];
+  const dots=[...document.querySelectorAll('.feedback-dot')];
+  const prev=document.getElementById('feedbackPrev');
+  const next=document.getElementById('feedbackNext');
+  if(!slides.length)return;
+  let index=0;
+  let timer;
+  function showFeedback(i){
+    index=(i+slides.length)%slides.length;
+    slides.forEach((slide,n)=>slide.classList.toggle('active',n===index));
+    dots.forEach((dot,n)=>dot.classList.toggle('active',n===index));
+  }
+  function restart(){clearInterval(timer);timer=setInterval(()=>showFeedback(index+1),5500)}
+  prev?.addEventListener('click',()=>{showFeedback(index-1);restart()});
+  next?.addEventListener('click',()=>{showFeedback(index+1);restart()});
+  dots.forEach(dot=>dot.addEventListener('click',()=>{showFeedback(Number(dot.dataset.feedback));restart()}));
+  restart();
+})();
+
+/* =========================================================
+   V23 SMART THEME MEMORY — reinforce saved theme on reload
+========================================================= */
+(function(){
+  const saved=localStorage.getItem('physio-theme');
+  if(saved && document.body.dataset.theme!==saved) document.body.dataset.theme=saved;
+})();
 </script>
+
+<!-- V23 Floating WhatsApp Assistant -->
+<a class="v23-wa-assistant" href="https://wa.me/917584814152?text=Hello%20Dr.%20Sahin%20Ahamed%20Laskar%20(P.T),%20I%20need%20help%20with%20a%20physiotherapy%20appointment." target="_blank" rel="noopener" aria-label="Need help? Chat with us on WhatsApp">
+  <span class="v23-wa-icon">☏</span><span class="v23-wa-text">Need help? Chat with us</span>
+</a>
 </body>
 </html>
