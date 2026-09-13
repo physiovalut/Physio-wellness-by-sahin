@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,55 +6,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dr Sahin Ahamed Laskar (P.T) | Physio Wellness</title>
+<title>Dr Sahin Ahamed Laskar | Physio Wellness</title>
 
-<meta name="description" content="Professional physiotherapy and rehabilitation care by Dr Sahin Ahamed Laskar (P.T) in Joynagar, Baruipur, West Bengal.">
-<meta name="theme-color" content="#087f8c">
+<meta name="description"
+content="Physio Wellness by Dr Sahin Ahamed Laskar, Bachelor of Physiotherapy (BPT), The Neotia University.">
 
-<meta property="og:title" content="Dr Sahin Ahamed Laskar (P.T) | Physio Wellness">
-<meta property="og:description" content="Personalized physiotherapy and rehabilitation care.">
-<meta property="og:type" content="website">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0f766e">
 
 <style>
 
-:root{
-  --ink:#102a43;
-  --ink2:#193b56;
-  --teal:#087f8c;
-  --teal2:#0eaaa5;
-  --mint:#e8f8f7;
-  --cream:#f5faf9;
-  --white:#ffffff;
-  --muted:#718096;
-  --line:#e3eeee;
-  --danger:#c62828;
-  --success:#087f8c;
+/* =========================================================
+   ROOT
+========================================================= */
 
-  --shadow-sm:0 10px 30px rgba(16,42,67,.06);
-  --shadow:0 25px 80px rgba(16,42,67,.10);
-  --shadow-lg:0 35px 100px rgba(16,42,67,.15);
+:root{
+  --primary:#0f766e;
+  --primary2:#14b8a6;
+  --primary3:#5eead4;
+
+  --dark:#10201f;
+  --text:#334442;
+  --muted:#6b7c79;
+
+  --bg:#f6faf9;
+  --white:#ffffff;
+
+  --soft:#e7f5f2;
+  --border:#dce9e6;
+
+  --shadow:0 20px 60px rgba(15,118,110,.12);
 
   --radius:24px;
 }
 
-body.dark{
-  --ink:#edfafa;
-  --ink2:#d5eeee;
-  --teal:#31c6c0;
-  --teal2:#54ddd5;
-  --mint:#12383a;
-  --cream:#081b25;
-  --white:#0d2531;
-  --muted:#9ab0b8;
-  --line:#1c3b46;
-  --shadow:0 25px 80px rgba(0,0,0,.28);
-  background:#071923;
-}
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
   margin:0;
@@ -63,1352 +52,4340 @@ body.dark{
 }
 
 html{
-  scroll-padding-top:100px;
+  overflow-x:hidden;
 }
 
 body{
-  font-family:"DM Sans",sans-serif;
-  color:var(--ink);
-  background:#fff;
-  line-height:1.7;
-  transition:background .35s,color .35s;
-}
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-body.dark{
-  background:#071923;
-}
+  color:var(--text);
+  background:var(--bg);
 
-h1,h2,h3,h4{
-  font-family:"Manrope",sans-serif;
+  line-height:1.55;
+
+  overflow-x:hidden;
 }
 
 a{
-  text-decoration:none;
   color:inherit;
+  text-decoration:none;
 }
 
 button,
 input,
 select,
 textarea{
-  font-family:inherit;
+  font:inherit;
 }
 
-.container{
-  width:min(1180px,90%);
-  margin:auto;
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes floatUp{
+
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+
 }
 
-/* ================= SCROLL PROGRESS ================= */
 
-.progress-bar{
+@keyframes floatDown{
+
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(10px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+
+}
+
+
+@keyframes rotateSlow{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+
+@keyframes pulseGlow{
+
+  0%{
+    box-shadow:
+      0 0 0 0 rgba(20,184,166,.28);
+  }
+
+  70%{
+    box-shadow:
+      0 0 0 22px rgba(20,184,166,0);
+  }
+
+  100%{
+    box-shadow:
+      0 0 0 0 rgba(20,184,166,0);
+  }
+
+}
+
+
+@keyframes shine{
+
+  0%{
+    background-position:
+      200% center;
+  }
+
+  100%{
+    background-position:
+      -200% center;
+  }
+
+}
+
+
+@keyframes nameGlow{
+
+  0%{
+    filter:
+      drop-shadow(
+        0 0 0 rgba(20,184,166,0)
+      );
+  }
+
+  50%{
+    filter:
+      drop-shadow(
+        0 0 12px rgba(20,184,166,.22)
+      );
+  }
+
+  100%{
+    filter:
+      drop-shadow(
+        0 0 0 rgba(20,184,166,0)
+      );
+  }
+
+}
+
+
+@keyframes reveal{
+
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+
   position:fixed;
+
   top:0;
   left:0;
-  width:0;
-  height:3px;
-  background:linear-gradient(90deg,var(--teal),var(--teal2));
-  z-index:3000;
+
+  width:100%;
+  height:68px;
+
+  background:
+    rgba(255,255,255,.92);
+
+  backdrop-filter:
+    blur(18px);
+
+  border-bottom:
+    1px solid var(--border);
+
+  z-index:1000;
 }
 
-/* ================= NAV ================= */
 
-nav{
-  position:fixed;
-  z-index:2000;
-  top:18px;
-  left:50%;
-  transform:translateX(-50%);
-  width:min(1180px,94%);
-  padding:10px 12px 10px 18px;
+.nav{
+
+  max-width:1200px;
+
+  height:100%;
+
+  margin:auto;
+
+  padding:
+    0 20px;
 
   display:flex;
+
   align-items:center;
-  justify-content:space-between;
 
-  border:1px solid rgba(255,255,255,.65);
-  border-radius:20px;
-
-  background:rgba(255,255,255,.86);
-  backdrop-filter:blur(22px);
-
-  box-shadow:0 15px 50px rgba(16,42,67,.09);
-
-  transition:.3s;
+  gap:12px;
 }
 
-body.dark nav{
-  background:rgba(9,31,42,.88);
-  border-color:rgba(255,255,255,.08);
-}
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
 
-  font-family:"Manrope",sans-serif;
-  font-weight:800;
-  font-size:16px;
-  color:var(--ink);
+  font-size:20px;
+
+  font-weight:900;
+
+  color:var(--primary);
+
+  letter-spacing:-.6px;
+
+  margin-right:auto;
 }
 
-.logo-icon{
-  width:42px;
-  height:42px;
-  border-radius:14px;
 
-  display:grid;
-  place-items:center;
-
-  color:#fff;
-  background:linear-gradient(135deg,var(--ink),var(--teal));
-
-  box-shadow:0 8px 22px rgba(8,127,140,.18);
+.logo span{
+  color:var(--dark);
 }
+
 
 .nav-links{
+
   display:flex;
+
   align-items:center;
-  gap:3px;
+
+  gap:23px;
 }
 
-.nav-links a{
-  padding:10px 13px;
-  border-radius:10px;
 
-  color:#526777;
+.nav-links a{
+
+  position:relative;
+
+  color:var(--text);
+
   font-size:13px;
-  font-weight:700;
+
+  font-weight:800;
+
+  padding:5px 0;
 
   transition:.25s;
 }
 
-body.dark .nav-links a{
-  color:#b6cbd0;
-}
 
-.nav-links a:hover{
-  color:var(--teal);
-  background:var(--mint);
-}
+.nav-links a::after{
 
-.nav-book{
-  color:#fff!important;
-  background:var(--teal)!important;
-  border-radius:30px!important;
-  padding:11px 17px!important;
-}
+  content:"";
 
-.nav-actions{
-  display:flex;
-  align-items:center;
-  gap:7px;
-}
-
-.theme-btn,
-.menu-btn{
-  width:42px;
-  height:42px;
-
-  border:1px solid var(--line);
-  border-radius:13px;
-
-  background:var(--white);
-  color:var(--ink);
-
-  cursor:pointer;
-  display:grid;
-  place-items:center;
-
-  font-size:18px;
-}
-
-.menu-btn{
-  display:none;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  min-height:100vh;
-
-  display:grid;
-  grid-template-columns:1.08fr .92fr;
-  align-items:center;
-
-  gap:50px;
-
-  padding:150px 6% 100px;
-
-  position:relative;
-  overflow:hidden;
-
-  background:
-    radial-gradient(circle at 85% 18%,rgba(14,170,165,.16),transparent 28%),
-    radial-gradient(circle at 12% 85%,rgba(8,127,140,.08),transparent 30%),
-    linear-gradient(180deg,#f8fcfb,#ffffff);
-}
-
-body.dark .hero{
-  background:
-    radial-gradient(circle at 85% 18%,rgba(14,170,165,.13),transparent 28%),
-    radial-gradient(circle at 10% 90%,rgba(8,127,140,.09),transparent 30%),
-    #071923;
-}
-
-.hero-grid{
   position:absolute;
-  inset:0;
 
-  background-image:
-    linear-gradient(rgba(8,127,140,.035) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(8,127,140,.035) 1px,transparent 1px);
+  left:50%;
+  bottom:-3px;
 
-  background-size:55px 55px;
+  width:0;
+  height:2px;
 
-  mask-image:linear-gradient(to bottom,black,transparent);
-  pointer-events:none;
-}
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--primary2)
+    );
 
-.hero-content{
-  max-width:700px;
-  position:relative;
-  z-index:2;
-}
-
-.hero-label{
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-
-  padding:8px 14px;
-
-  border:1px solid rgba(8,127,140,.10);
-  border-radius:40px;
-
-  background:var(--mint);
-  color:var(--teal);
-
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1.6px;
-
-  margin-bottom:23px;
-}
-
-.hero-label i{
-  width:7px;
-  height:7px;
-
-  border-radius:50%;
-  background:#13a77f;
-
-  box-shadow:0 0 0 5px rgba(19,167,127,.10);
-}
-
-.hero h1{
-  font-size:clamp(48px,6.3vw,82px);
-  line-height:1.02;
-  letter-spacing:-4px;
-
-  margin-bottom:25px;
-}
-
-.hero h1 span{
-  color:var(--teal);
-}
-
-.hero-description{
-  max-width:620px;
-
-  color:#607486;
-  font-size:18px;
-
-  margin-bottom:32px;
-}
-
-body.dark .hero-description{
-  color:#9bb1b9;
-}
-
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-
-  padding:15px 23px;
-
-  border-radius:14px;
-
-  font-size:14px;
-  font-weight:800;
+  transform:
+    translateX(-50%);
 
   transition:.3s;
 }
 
-.btn-primary{
-  color:#fff;
-  background:linear-gradient(135deg,var(--teal),var(--teal2));
 
-  box-shadow:0 14px 35px rgba(8,127,140,.22);
+.nav-links a:hover{
+  color:var(--primary);
 }
 
-.btn-primary:hover{
-  transform:translateY(-3px);
-  box-shadow:0 18px 42px rgba(8,127,140,.28);
+
+.nav-links a:hover::after{
+  width:100%;
 }
 
-.btn-outline{
-  color:var(--ink);
-  background:var(--white);
-  border:1px solid var(--line);
+
+.menu-btn{
+
+  display:none;
+
+  width:41px;
+  height:41px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:11px;
+
+  background:white;
+
+  color:var(--primary);
+
+  font-size:20px;
+
+  cursor:pointer;
 }
 
-.btn-outline:hover{
-  color:var(--teal);
-  border-color:var(--teal);
-  transform:translateY(-3px);
+
+.theme-btn{
+
+  width:40px;
+  height:40px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:50%;
+
+  background:white;
+
+  color:var(--dark);
+
+  cursor:pointer;
+
+  transition:.25s;
 }
 
-/* HERO VISUAL */
 
-.hero-art{
+.theme-btn:hover{
+  transform:rotate(20deg);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+  padding:
+    100px 20px 45px;
+
   position:relative;
-  min-height:520px;
+
+  overflow:hidden;
+}
+
+
+.hero::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:500px;
+  height:500px;
+
+  border-radius:50%;
+
+  background:
+    rgba(20,184,166,.07);
+
+  top:-250px;
+  right:-180px;
+
+  filter:blur(10px);
+
+  pointer-events:none;
+}
+
+
+.hero-inner{
+
+  max-width:1200px;
+
+  margin:auto;
 
   display:grid;
-  place-items:center;
+
+  grid-template-columns:
+    1.05fr .95fr;
+
+  gap:55px;
+
+  align-items:center;
 }
 
-.art-glow{
-  position:absolute;
-  width:420px;
-  height:420px;
 
-  border-radius:50%;
+/* =========================================================
+   DOCTOR NAME
+========================================================= */
 
-  background:radial-gradient(circle,rgba(8,127,140,.18),transparent 68%);
+.doctor-info{
 
-  filter:blur(8px);
+  margin-bottom:13px;
+
+  animation:
+    reveal .8s ease both;
 }
 
-.art-circle{
-  width:410px;
-  height:410px;
 
-  border-radius:50%;
+.doctor-name{
 
   position:relative;
 
+  display:inline-block;
+
+  font-size:
+    clamp(
+      24px,
+      3vw,
+      34px
+    );
+
+  line-height:1.1;
+
+  font-weight:950;
+
+  letter-spacing:-1.3px;
+
   background:
-    radial-gradient(circle at 35% 25%,#ffffff,transparent 25%),
-    linear-gradient(145deg,#d9f5f3,#f8ffff);
+    linear-gradient(
+      110deg,
+      var(--dark) 20%,
+      var(--primary) 38%,
+      var(--primary3) 50%,
+      var(--primary) 62%,
+      var(--dark) 80%
+    );
 
-  box-shadow:
-    inset 0 0 0 1px rgba(8,127,140,.08),
-    0 35px 90px rgba(8,127,140,.13);
+  background-size:
+    250% auto;
+
+  -webkit-background-clip:text;
+  background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    shine 5s linear infinite,
+    nameGlow 4s ease-in-out infinite;
 }
 
-body.dark .art-circle{
-  background:
-    radial-gradient(circle at 35% 25%,rgba(255,255,255,.08),transparent 25%),
-    linear-gradient(145deg,#12383a,#0d2531);
-}
 
-.art-circle:before{
+.doctor-name::after{
+
   content:"";
 
   position:absolute;
-  inset:45px;
 
-  border:1px solid rgba(8,127,140,.15);
-  border-radius:50%;
-}
-
-.art-circle:after{
-  content:"";
-
-  position:absolute;
-  inset:88px;
-
-  border-radius:50%;
-
-  background:rgba(8,127,140,.06);
-}
-
-.body-line{
-  position:absolute;
-
-  left:50%;
-  top:51%;
-
-  transform:translate(-50%,-50%);
-
-  width:96px;
-  height:230px;
-
-  border:7px solid var(--teal);
-  border-radius:55px 55px 35px 35px;
-
-  opacity:.85;
-}
-
-.body-line:before{
-  content:"";
-
-  position:absolute;
+  left:0;
+  bottom:-7px;
 
   width:55px;
-  height:55px;
+  height:3px;
 
-  border:7px solid var(--teal);
-  border-radius:50%;
+  border-radius:20px;
 
-  left:50%;
-  top:-70px;
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--primary2),
+      transparent
+    );
 
-  transform:translateX(-50%);
+  animation:
+    lineGrow 1.2s ease both;
 }
 
-.body-line:after{
+
+@keyframes lineGrow{
+
+  from{
+    width:0;
+  }
+
+  to{
+    width:55px;
+  }
+
+}
+
+
+.doctor-degree{
+
+  margin-top:13px;
+
+  color:var(--primary);
+
+  font-size:13px;
+
+  font-weight:900;
+}
+
+
+.doctor-university{
+
+  margin-top:2px;
+
+  color:var(--muted);
+
+  font-size:10px;
+
+  font-weight:800;
+
+  letter-spacing:1.5px;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.eyebrow{
+
+  display:inline-block;
+
+  color:var(--primary);
+
+  font-size:11px;
+
+  font-weight:900;
+
+  letter-spacing:2.5px;
+
+  margin-bottom:11px;
+
+  animation:
+    reveal .8s .15s ease both;
+}
+
+
+.hero h1{
+
+  color:var(--dark);
+
+  font-size:
+    clamp(
+      46px,
+      6vw,
+      74px
+    );
+
+  line-height:.98;
+
+  letter-spacing:-4px;
+
+  margin-bottom:15px;
+
+  animation:
+    reveal .8s .25s ease both;
+}
+
+
+.hero h1 span{
+
+  background:
+    linear-gradient(
+      100deg,
+      var(--primary),
+      var(--primary2),
+      var(--primary)
+    );
+
+  background-size:
+    200% auto;
+
+  -webkit-background-clip:text;
+  background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    shine 4s linear infinite;
+}
+
+
+.hero-text{
+
+  max-width:610px;
+
+  color:var(--muted);
+
+  font-size:16px;
+
+  margin-bottom:22px;
+
+  animation:
+    reveal .8s .35s ease both;
+}
+
+
+.hero-buttons{
+
+  display:flex;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+  animation:
+    reveal .8s .45s ease both;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn{
+
+  min-height:48px;
+
+  padding:
+    0 21px;
+
+  border-radius:13px;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:13px;
+
+  font-weight:900;
+
+  border:1px solid transparent;
+
+  cursor:pointer;
+
+  transition:
+    transform .25s,
+    box-shadow .25s,
+    background .25s,
+    border .25s;
+}
+
+
+.btn-primary{
+
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary2)
+    );
+
+  box-shadow:
+    0 12px 28px
+    rgba(15,118,110,.22);
+}
+
+
+.btn-primary:hover{
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 16px 35px
+    rgba(15,118,110,.3);
+}
+
+
+.btn-outline{
+
+  color:var(--dark);
+
+  background:white;
+
+  border-color:var(--border);
+}
+
+
+.btn-outline:hover{
+
+  color:var(--primary);
+
+  border-color:var(--primary);
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual{
+
+  position:relative;
+
+  min-height:410px;
+
+  overflow:hidden;
+
+  border-radius:32px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(20,184,166,.22),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(15,118,110,.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #e3f5f1,
+      #f9fcfb
+    );
+
+  box-shadow:
+    var(--shadow);
+
+  animation:
+    reveal .9s .2s ease both;
+}
+
+
+.hero-visual::before{
+
   content:"";
 
   position:absolute;
 
-  width:200px;
-  height:7px;
+  width:270px;
+  height:270px;
 
-  background:var(--teal);
-  border-radius:10px;
+  border-radius:50%;
+
+  border:
+    1px solid
+    rgba(15,118,110,.13);
 
   left:50%;
-  top:68px;
+  top:50%;
 
-  transform:translateX(-50%);
+  transform:
+    translate(-50%,-50%);
+
+  animation:
+    pulseGlow 3s infinite;
 }
 
-.floating{
+
+.hero-visual::after{
+
+  content:"";
+
   position:absolute;
 
-  padding:16px 20px;
+  width:380px;
+  height:380px;
 
-  background:var(--white);
-  border:1px solid var(--line);
+  border-radius:50%;
 
-  border-radius:18px;
+  border:
+    1px dashed
+    rgba(15,118,110,.12);
 
-  box-shadow:0 18px 45px rgba(16,42,67,.10);
+  left:50%;
+  top:50%;
 
-  font-size:12px;
-  font-weight:700;
+  transform:
+    translate(-50%,-50%);
+
+  animation:
+    rotateSlow 30s linear infinite;
+}
+
+
+/* =========================================================
+   HERO CIRCLE
+========================================================= */
+
+.hero-circle{
+
+  position:absolute;
+
+  width:225px;
+  height:225px;
+
+  left:50%;
+  top:50%;
+
+  transform:
+    translate(-50%,-50%);
+
+  border-radius:50%;
+
+  background:white;
+
+  border:
+    9px solid #d3ede8;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-align:center;
+
+  box-shadow:
+    0 25px 60px
+    rgba(15,118,110,.15);
+
+  z-index:2;
+
+  animation:
+    floatUp 5s ease-in-out infinite;
+}
+
+
+.hero-circle strong{
+
+  display:block;
+
+  color:var(--primary);
+
+  font-size:23px;
+}
+
+
+.hero-circle small{
+
+  display:block;
+
+  margin-top:4px;
+
+  color:var(--muted);
+
+  font-size:10px;
+
+  font-weight:800;
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.float-card{
+
+  position:absolute;
 
   z-index:5;
 
-  animation:float 4s ease-in-out infinite;
+  background:white;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:15px;
+
+  padding:
+    13px 16px;
+
+  box-shadow:
+    0 15px 35px
+    rgba(0,0,0,.07);
 }
 
-.floating strong{
+
+.float-card strong{
+
   display:block;
 
-  color:var(--teal);
+  color:var(--dark);
 
-  font-family:"Manrope",sans-serif;
-  font-size:21px;
-}
-
-.float-a{
-  left:-5px;
-  top:80px;
-}
-
-.float-b{
-  right:-5px;
-  bottom:75px;
-  animation-delay:1s;
-}
-
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
-}
-
-/* ================= TRUST ================= */
-
-.trust{
-  margin-top:-40px;
-  position:relative;
-  z-index:20;
-}
-
-.trust-box{
-  width:min(1080px,88%);
-  margin:auto;
-
-  padding:27px;
-
-  background:var(--white);
-  border:1px solid var(--line);
-
-  border-radius:24px;
-
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-
-  box-shadow:var(--shadow);
-}
-
-.trust-item{
-  text-align:center;
-  padding:4px 15px;
-}
-
-.trust-item:not(:last-child){
-  border-right:1px solid var(--line);
-}
-
-.trust-item strong{
-  display:block;
-
-  font-family:"Manrope",sans-serif;
-  font-size:19px;
-}
-
-.trust-item span{
-  color:var(--muted);
   font-size:12px;
 }
 
-/* ================= GENERAL ================= */
 
-section{
-  padding:115px 6%;
+.float-card span{
+
+  display:block;
+
+  color:var(--muted);
+
+  font-size:10px;
+
+  margin-top:2px;
 }
+
+
+.card-one{
+
+  top:30px;
+  left:24px;
+
+  animation:
+    floatDown 4s ease-in-out infinite;
+}
+
+
+.card-two{
+
+  right:24px;
+  bottom:30px;
+
+  animation:
+    floatUp 4.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   TRUST
+========================================================= */
+
+.trust{
+
+  background:white;
+
+  border-top:
+    1px solid var(--border);
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+
+.trust-inner{
+
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:
+    14px 20px;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+}
+
+
+.trust-item{
+
+  text-align:center;
+
+  padding:6px;
+
+  border-right:
+    1px solid var(--border);
+}
+
+
+.trust-item:last-child{
+  border-right:0;
+}
+
+
+.trust-item strong{
+
+  display:block;
+
+  color:var(--primary);
+
+  font-size:18px;
+}
+
+
+.trust-item span{
+
+  color:var(--muted);
+
+  font-size:10px;
+
+  font-weight:700;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+.section{
+
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:
+    68px 20px;
+}
+
 
 .section-head{
+
   max-width:700px;
-  margin:0 auto 55px;
-  text-align:center;
+
+  margin-bottom:30px;
 }
 
-.kicker{
-  color:var(--teal);
 
-  font-size:11px;
-  font-weight:800;
+.section-title{
 
-  letter-spacing:2px;
-  text-transform:uppercase;
+  color:var(--dark);
+
+  font-size:
+    clamp(
+      32px,
+      4vw,
+      49px
+    );
+
+  line-height:1.05;
+
+  letter-spacing:-2.5px;
+
+  margin-bottom:10px;
+}
+
+
+.section-description{
+
+  color:var(--muted);
+
+  font-size:14px;
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+
+  opacity:0;
+
+  transform:
+    translateY(25px);
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+
+.reveal.show{
+
+  opacity:1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+
+  display:grid;
+
+  grid-template-columns:.75fr 1.25fr;
+
+  gap:50px;
+
+  align-items:center;
+}
+
+
+.about-visual{
+
+  min-height:320px;
+
+  border-radius:27px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e0f4f0,
+      #f9fcfb
+    );
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  position:relative;
+
+  overflow:hidden;
+
+  box-shadow:
+    var(--shadow);
+}
+
+
+.about-visual::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:240px;
+  height:240px;
+
+  border-radius:50%;
+
+  border:
+    1px dashed
+    rgba(15,118,110,.18);
+
+  animation:
+    rotateSlow 25s linear infinite;
+}
+
+
+.about-symbol{
+
+  width:175px;
+  height:175px;
+
+  border-radius:50%;
+
+  background:white;
+
+  border:
+    8px solid #d3ebe7;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-align:center;
+
+  position:relative;
+
+  z-index:2;
+
+  box-shadow:
+    0 20px 45px
+    rgba(15,118,110,.12);
+
+  animation:
+    pulseGlow 3.5s infinite;
+}
+
+
+.about-symbol strong{
+
+  color:var(--primary);
+
+  font-size:22px;
+
+  line-height:1.15;
+}
+
+
+.about-text h3{
+
+  color:var(--dark);
+
+  font-size:27px;
+
+  line-height:1.15;
+
+  margin-bottom:12px;
+}
+
+
+.about-text > p{
+
+  color:var(--muted);
+
+  font-size:14px;
 
   margin-bottom:11px;
 }
 
-.section-head h2{
-  font-size:clamp(34px,4vw,52px);
-  line-height:1.1;
-  letter-spacing:-2px;
 
-  margin-bottom:14px;
-}
-
-.section-head p{
-  color:var(--muted);
-}
-
-/* ================= ABOUT ================= */
-
-.about{
-  background:var(--white);
-}
-
-.about-grid{
-  max-width:1100px;
-  margin:auto;
+.feature-list{
 
   display:grid;
-  grid-template-columns:.82fr 1.18fr;
 
-  gap:70px;
-
-  align-items:center;
-}
-
-.profile-card{
-  min-height:420px;
-
-  padding:38px;
-
-  border-radius:34px;
-
-  color:#fff;
-
-  background:
-    radial-gradient(circle at 90% 10%,rgba(255,255,255,.15),transparent 25%),
-    linear-gradient(145deg,#102a43,#087f8c);
-
-  position:relative;
-  overflow:hidden;
-
-  box-shadow:0 30px 75px rgba(16,42,67,.18);
-}
-
-.profile-card:before,
-.profile-card:after{
-  content:"";
-
-  position:absolute;
-
-  border:1px solid rgba(255,255,255,.13);
-  border-radius:50%;
-}
-
-.profile-card:before{
-  width:340px;
-  height:340px;
-
-  right:-170px;
-  bottom:-140px;
-}
-
-.profile-card:after{
-  width:210px;
-  height:210px;
-
-  right:-100px;
-  bottom:-65px;
-}
-
-.profile-mark{
-  width:76px;
-  height:76px;
-
-  display:grid;
-  place-items:center;
-
-  border-radius:23px;
-
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.16);
-
-  font-size:34px;
-
-  margin-bottom:115px;
-}
-
-.profile-card h3{
-  font-size:25px;
-  line-height:1.25;
-
-  margin-bottom:8px;
-
-  position:relative;
-  z-index:2;
-}
-
-.profile-card p{
-  color:rgba(255,255,255,.70);
-
-  font-size:13px;
-
-  position:relative;
-  z-index:2;
-}
-
-.about-content h3{
-  font-size:31px;
-  margin-bottom:4px;
-}
-
-.qualification{
-  color:var(--teal);
-  font-weight:800;
-  margin-bottom:20px;
-}
-
-.about-content p{
-  color:var(--muted);
-  margin-bottom:16px;
-}
-
-.features{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:13px;
-
-  margin-top:27px;
-}
-
-.feature{
-  display:flex;
-  align-items:center;
   gap:10px;
 
-  font-size:13px;
-  font-weight:700;
+  margin-top:18px;
 }
 
-.feature-dot{
-  width:26px;
-  height:26px;
+
+.feature{
+
+  display:flex;
+
+  gap:10px;
+
+  align-items:flex-start;
+}
+
+
+.feature-icon{
 
   flex:none;
 
-  display:grid;
-  place-items:center;
+  width:25px;
+  height:25px;
 
   border-radius:50%;
 
-  background:var(--mint);
-  color:var(--teal);
+  background:var(--soft);
+
+  color:var(--primary);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:12px;
+
+  font-weight:900;
 }
 
-/* ================= SERVICES ================= */
 
-.services-section{
-  background:var(--cream);
-}
+.feature strong{
 
-.services{
-  max-width:1140px;
-  margin:auto;
+  color:var(--dark);
 
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.service{
-  background:var(--white);
-
-  border:1px solid var(--line);
-  border-radius:26px;
-
-  padding:31px;
-
-  position:relative;
-  overflow:hidden;
-
-  transition:.35s;
-}
-
-.service:after{
-  content:"";
-
-  position:absolute;
-
-  width:130px;
-  height:130px;
-
-  border-radius:50%;
-
-  right:-70px;
-  bottom:-70px;
-
-  background:var(--mint);
-
-  opacity:.55;
-}
-
-.service:hover{
-  transform:translateY(-9px);
-  box-shadow:var(--shadow);
-  border-color:rgba(8,127,140,.25);
-}
-
-.service-number{
-  position:absolute;
-
-  top:19px;
-  right:22px;
-
-  color:#e2eeee;
-
-  font-family:"Manrope",sans-serif;
-  font-size:34px;
-  font-weight:800;
-}
-
-body.dark .service-number{
-  color:#193a42;
-}
-
-.service-icon{
-  width:54px;
-  height:54px;
-
-  display:grid;
-  place-items:center;
-
-  border-radius:16px;
-
-  background:var(--mint);
-
-  margin-bottom:25px;
-}
-
-.service-icon:before{
-  content:"";
-
-  width:19px;
-  height:19px;
-
-  border:3px solid var(--teal);
-  border-radius:50%;
-}
-
-.service h3{
-  font-size:18px;
-  margin-bottom:9px;
-}
-
-.service p{
-  color:var(--muted);
   font-size:13px;
 }
 
-/* ================= PROCESS ================= */
 
-.process{
-  background:var(--white);
+.feature p{
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  margin-top:1px;
 }
 
-.process-grid{
-  max-width:1050px;
-  margin:auto;
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-grid{
 
   display:grid;
-  grid-template-columns:repeat(3,1fr);
 
-  gap:20px;
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:14px;
 }
 
-.process-card{
-  text-align:center;
-  padding:32px 22px;
 
-  border:1px solid var(--line);
-  border-radius:25px;
+.service-card{
+
+  background:white;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:20px;
+
+  padding:23px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:
+    transform .3s,
+    box-shadow .3s,
+    border .3s;
+}
+
+
+.service-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--primary2)
+    );
+
+  transform:
+    scaleX(0);
+
+  transform-origin:left;
 
   transition:.3s;
 }
 
-.process-card:hover{
-  transform:translateY(-6px);
-  box-shadow:var(--shadow-sm);
+
+.service-card:hover{
+
+  transform:
+    translateY(-7px);
+
+  box-shadow:
+    var(--shadow);
+
+  border-color:
+    #b8ddd8;
 }
 
-.process-no{
-  width:58px;
-  height:58px;
 
-  margin:0 auto 20px;
-
-  border-radius:50%;
-
-  display:grid;
-  place-items:center;
-
-  color:#fff;
-
-  background:linear-gradient(135deg,var(--ink),var(--teal));
-
-  font-family:"Manrope",sans-serif;
-  font-weight:800;
+.service-card:hover::before{
+  transform:scaleX(1);
 }
 
-.process-card h3{
+
+.service-number{
+
+  color:var(--primary);
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:2px;
+
+  margin-bottom:14px;
+}
+
+
+.service-card h3{
+
+  color:var(--dark);
+
   font-size:17px;
+
+  line-height:1.25;
+
   margin-bottom:7px;
 }
 
-.process-card p{
+
+.service-card p{
+
   color:var(--muted);
-  font-size:13px;
+
+  font-size:12px;
 }
 
-/* ================= APPOINTMENT ================= */
 
-.appointment{
-  background:var(--cream);
-}
+/* =========================================================
+   CTA
+========================================================= */
 
-.appointment-wrap{
-  max-width:950px;
+.cta{
+
+  max-width:1160px;
+
   margin:auto;
 
-  padding:48px;
+  padding:
+    50px 40px;
 
-  border-radius:34px;
+  border-radius:28px;
 
-  background:var(--white);
-  border:1px solid var(--line);
+  background:
+    linear-gradient(
+      135deg,
+      #0f766e,
+      #075f59
+    );
 
-  box-shadow:var(--shadow);
+  color:white;
+
+  position:relative;
+
+  overflow:hidden;
 }
 
-.form-top{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+
+.cta::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:300px;
+  height:300px;
+
+  border-radius:50%;
+
+  border:
+    1px solid
+    rgba(255,255,255,.12);
+
+  right:-100px;
+  top:-100px;
+
+  animation:
+    rotateSlow 25s linear infinite;
 }
 
-.form-group{
-  margin-bottom:20px;
+
+.cta .eyebrow{
+  color:#9ce8df;
 }
 
-.form-group label{
-  display:block;
 
-  margin-bottom:8px;
+.cta h2{
 
-  font-size:13px;
-  font-weight:800;
+  font-size:
+    clamp(
+      31px,
+      4vw,
+      45px
+    );
+
+  line-height:1.05;
+
+  margin-bottom:9px;
+
+  position:relative;
+  z-index:2;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea{
-  width:100%;
 
-  padding:15px 16px;
+.cta p{
 
-  border:1px solid var(--line);
-  border-radius:13px;
+  max-width:620px;
 
-  background:var(--cream);
-  color:var(--ink);
+  opacity:.82;
 
   font-size:14px;
 
-  outline:none;
+  margin-bottom:20px;
 
-  transition:.25s;
+  position:relative;
+  z-index:2;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-  border-color:var(--teal);
 
-  box-shadow:0 0 0 4px rgba(8,127,140,.07);
+.cta .btn{
 
-  background:var(--white);
+  background:white;
+
+  color:var(--primary);
+
+  position:relative;
+  z-index:2;
 }
 
-.form-group textarea{
-  resize:vertical;
-  min-height:120px;
+
+/* =========================================================
+   APPOINTMENT
+========================================================= */
+
+.appointment{
+
+  display:grid;
+
+  grid-template-columns:.75fr 1.25fr;
+
+  gap:45px;
+
+  align-items:start;
 }
 
-.char-count{
-  text-align:right;
+
+.appointment-info h3{
+
+  color:var(--dark);
+
+  font-size:28px;
+
+  margin-bottom:9px;
+}
+
+
+.appointment-info > p{
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  margin-bottom:17px;
+}
+
+
+.hours{
+
+  background:white;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:17px;
+
+  padding:18px;
+}
+
+
+.hours strong{
+
+  color:var(--primary);
+
+  display:block;
+
+  font-size:13px;
+
+  margin-bottom:5px;
+}
+
+
+.hours div{
+  font-size:13px;
+}
+
+
+.hours small{
 
   color:var(--muted);
 
   font-size:11px;
-
-  margin-top:5px;
 }
 
-.appointment-btn{
-  width:100%;
 
-  border:0;
+.form{
 
-  padding:17px;
+  background:white;
 
-  border-radius:14px;
+  border:
+    1px solid var(--border);
 
-  color:#fff;
-
-  background:linear-gradient(135deg,var(--teal),var(--teal2));
-
-  font-size:15px;
-  font-weight:800;
-
-  cursor:pointer;
-
-  box-shadow:0 14px 30px rgba(8,127,140,.18);
-
-  transition:.3s;
-}
-
-.appointment-btn:hover{
-  transform:translateY(-2px);
-}
-
-.appointment-btn:disabled{
-  opacity:.65;
-  cursor:not-allowed;
-  transform:none;
-}
-
-.status{
-  min-height:24px;
-
-  margin-top:15px;
-
-  text-align:center;
-
-  font-weight:700;
-  font-size:13px;
-}
-
-/* ================= BOOKING SUMMARY ================= */
-
-.booking-summary{
-  display:none;
-
-  margin-top:20px;
-
-  padding:18px;
-
-  border-radius:18px;
-
-  background:var(--mint);
-  border:1px solid rgba(8,127,140,.12);
-}
-
-.booking-summary.show{
-  display:block;
-}
-
-.booking-summary strong{
-  display:block;
-  color:var(--teal);
-  margin-bottom:5px;
-}
-
-/* ================= FAQ ================= */
-
-.faq-section{
-  background:var(--white);
-}
-
-.faq{
-  max-width:850px;
-  margin:auto;
-}
-
-.faq-item{
-  border-bottom:1px solid var(--line);
-}
-
-.faq-question{
-  width:100%;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  gap:20px;
-
-  padding:21px 0;
-
-  border:0;
-  background:none;
-
-  color:var(--ink);
-
-  text-align:left;
-
-  font-size:15px;
-  font-weight:800;
-
-  cursor:pointer;
-}
-
-.faq-icon{
-  font-size:20px;
-  color:var(--teal);
-
-  transition:.3s;
-}
-
-.faq-answer{
-  max-height:0;
-  overflow:hidden;
-
-  transition:max-height .35s ease;
-}
-
-.faq-answer p{
-  color:var(--muted);
-  font-size:13px;
-
-  padding:0 40px 20px 0;
-}
-
-.faq-item.active .faq-icon{
-  transform:rotate(45deg);
-}
-
-/* ================= CTA ================= */
-
-.cta{
-  max-width:1150px;
-
-  margin:20px auto;
-
-  padding:90px 30px!important;
-
-  text-align:center;
-
-  border-radius:40px;
-
-  color:#fff;
-
-  background:
-    radial-gradient(circle at 20% 20%,rgba(255,255,255,.13),transparent 24%),
-    radial-gradient(circle at 90% 90%,rgba(255,255,255,.10),transparent 25%),
-    linear-gradient(135deg,#102a43,#087f8c);
-
-  box-shadow:0 30px 80px rgba(16,42,67,.16);
-}
-
-.cta h2{
-  font-size:clamp(34px,5vw,54px);
-  line-height:1.1;
-  margin-bottom:14px;
-}
-
-.cta p{
-  color:rgba(255,255,255,.73);
-  margin-bottom:30px;
-}
-
-.cta .btn{
-  background:#fff;
-  color:#102a43;
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-  background:var(--white);
-}
-
-.contact-grid{
-  max-width:1080px;
-  margin:auto;
-
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-
-  gap:16px;
-}
-
-.contact-card{
-  padding:28px;
-
-  border:1px solid var(--line);
   border-radius:21px;
 
-  background:var(--cream);
+  padding:25px;
 
-  transition:.3s;
+  box-shadow:
+    var(--shadow);
 }
 
-.contact-card:hover{
-  transform:translateY(-5px);
-  box-shadow:var(--shadow-sm);
-}
 
-.contact-card small{
-  display:block;
-
-  color:var(--teal);
-
-  font-size:10px;
-  font-weight:800;
-
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-
-  margin-bottom:7px;
-}
-
-.contact-card strong{
-  font-size:15px;
-}
-
-/* ================= QUICK CONTACT ================= */
-
-.quick-contact{
-  max-width:1080px;
-  margin:35px auto 0;
+.form-grid{
 
   display:grid;
-  grid-template-columns:1fr 1fr;
 
-  gap:15px;
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:13px;
 }
 
-.quick-btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
 
-  padding:16px;
+.field{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:5px;
+}
+
+
+.field.full{
+  grid-column:1/-1;
+}
+
+
+.field label{
+
+  color:var(--dark);
+
+  font-size:11px;
+
+  font-weight:800;
+}
+
+
+.field input,
+.field select,
+.field textarea{
+
+  width:100%;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:10px;
+
+  background:#fbfdfc;
+
+  color:var(--dark);
+
+  padding:11px 12px;
+
+  outline:none;
+
+  font-size:13px;
+
+  transition:.25s;
+}
+
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+
+  border-color:
+    var(--primary2);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(20,184,166,.08);
+}
+
+
+.field textarea{
+
+  min-height:90px;
+
+  resize:vertical;
+}
+
+
+.form .btn{
+
+  width:100%;
+
+  margin-top:15px;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location-card{
+
+  background:white;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:21px;
+
+  padding:24px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:25px;
+
+  box-shadow:
+    var(--shadow);
+}
+
+
+.location-info{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+}
+
+
+.location-icon{
+
+  width:52px;
+  height:52px;
 
   border-radius:15px;
 
-  font-weight:800;
-  font-size:14px;
+  background:var(--soft);
 
-  border:1px solid var(--line);
+  display:flex;
 
-  transition:.3s;
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:22px;
+
+  animation:
+    pulseGlow 3s infinite;
 }
 
-.quick-btn:hover{
-  transform:translateY(-3px);
+
+.location-info h3{
+
+  color:var(--dark);
+
+  font-size:17px;
 }
 
-.whatsapp-btn{
-  background:#25D366;
-  color:#fff;
-  border-color:#25D366;
-}
 
-.call-btn{
-  background:var(--cream);
-  color:var(--ink);
-}
+.location-info p{
 
-/* ================= FOOTER ================= */
+  color:var(--muted);
 
-footer{
-  padding:55px 20px;
-
-  text-align:center;
-
-  color:#fff;
-
-  background:#0c2235;
-}
-
-.footer-logo{
-  font-family:"Manrope",sans-serif;
-
-  font-weight:800;
-  font-size:21px;
-
-  margin-bottom:7px;
-}
-
-footer p{
-  color:rgba(255,255,255,.55);
   font-size:12px;
 }
 
-/* ================= FLOATING WHATSAPP ================= */
 
-.whatsapp{
-  position:fixed;
+/* =========================================================
+   FAQ
+========================================================= */
 
-  right:23px;
-  bottom:23px;
+.faq{
 
-  width:62px;
-  height:62px;
+  max-width:850px;
 
   display:grid;
-  place-items:center;
 
-  border-radius:50%;
+  gap:9px;
+}
 
-  background:#25D366;
-  color:#fff;
 
-  z-index:2500;
+details{
 
-  font-size:26px;
+  background:white;
 
-  box-shadow:0 12px 35px rgba(0,0,0,.20);
+  border:
+    1px solid var(--border);
+
+  border-radius:14px;
+
+  padding:15px 18px;
+
+  transition:.25s;
+}
+
+
+details:hover{
+
+  border-color:
+    var(--primary2);
+}
+
+
+summary{
+
+  cursor:pointer;
+
+  color:var(--dark);
+
+  font-size:13px;
+
+  font-weight:800;
+}
+
+
+details p{
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  margin-top:9px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:14px;
+}
+
+
+.contact-card{
+
+  background:white;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:19px;
+
+  padding:23px;
 
   transition:.3s;
 }
 
-.whatsapp:hover{
-  transform:scale(1.08);
+
+.contact-card:hover{
+
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    var(--shadow);
+
+  border-color:
+    #b8ddd8;
 }
 
-/* ================= TOAST ================= */
 
-.toast{
-  position:fixed;
+.contact-card .icon{
 
-  left:50%;
-  bottom:25px;
+  font-size:22px;
 
-  transform:translate(-50%,120px);
+  margin-bottom:11px;
+}
 
-  z-index:4000;
 
-  width:min(440px,90%);
+.contact-card h3{
 
-  padding:16px 20px;
+  color:var(--dark);
 
-  border-radius:16px;
+  font-size:16px;
 
-  background:#102a43;
-  color:#fff;
+  margin-bottom:4px;
+}
 
-  box-shadow:0 20px 50px rgba(0,0,0,.20);
+
+.contact-card p{
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  word-break:break-word;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+  background:#091817;
+
+  color:#d7e4e1;
+
+  margin-top:20px;
+}
+
+
+.footer-inner{
+
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:
+    45px 20px 30px;
+
+  display:grid;
+
+  grid-template-columns:
+    1.4fr .7fr .9fr;
+
+  gap:45px;
+}
+
+
+.footer-brand h3{
+
+  font-size:20px;
+
+  font-weight:950;
+
+  background:
+    linear-gradient(
+      100deg,
+      #ffffff,
+      #14b8a6,
+      #ffffff,
+      #14b8a6,
+      #ffffff
+    );
+
+  background-size:
+    250% auto;
+
+  -webkit-background-clip:text;
+  background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    shine 5s linear infinite;
+}
+
+
+.footer-brand .qualification{
+
+  color:#14b8a6;
+
+  font-size:12px;
+
+  font-weight:900;
+
+  margin-top:3px;
+}
+
+
+.footer-brand .university{
+
+  color:#8da29e;
+
+  font-size:9px;
+
+  letter-spacing:1.5px;
+
+  margin-top:1px;
+}
+
+
+.footer-brand p{
+
+  color:#849b96;
+
+  max-width:400px;
+
+  font-size:12px;
+
+  margin-top:11px;
+}
+
+
+.footer h4{
+
+  color:white;
+
+  font-size:13px;
+
+  margin-bottom:12px;
+}
+
+
+.footer-links,
+.footer-contact{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:7px;
+}
+
+
+.footer-links a,
+.footer-contact a{
+
+  color:#849b96;
+
+  font-size:12px;
+
+  transition:.2s;
+}
+
+
+.footer-links a:hover,
+.footer-contact a:hover{
+
+  color:#14b8a6;
+
+  transform:
+    translateX(3px);
+}
+
+
+.footer-bottom{
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.07);
 
   text-align:center;
 
-  font-size:13px;
-  font-weight:700;
+  color:#607671;
 
-  opacity:0;
+  font-size:10px;
 
-  transition:.4s;
+  padding:15px;
 }
 
-.toast.show{
-  transform:translate(-50%,0);
-  opacity:1;
+
+/* =========================================================
+   MOBILE ACTIONS
+========================================================= */
+
+.mobile-actions{
+  display:none;
 }
 
-/* ================= REVEAL ================= */
 
-.reveal{
-  opacity:0;
-  transform:translateY(25px);
-  transition:opacity .7s ease,transform .7s ease;
+/* =========================================================
+   TOP BUTTON
+========================================================= */
+
+.top-btn{
+
+  display:none;
+
+  position:fixed;
+
+  right:18px;
+  bottom:20px;
+
+  width:42px;
+  height:42px;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary2)
+    );
+
+  color:white;
+
+  cursor:pointer;
+
+  z-index:900;
+
+  box-shadow:
+    0 10px 25px
+    rgba(15,118,110,.25);
+
+  transition:.25s;
 }
 
-.reveal.visible{
-  opacity:1;
-  transform:none;
+
+.top-btn:hover{
+  transform:translateY(-4px);
 }
 
-/* ================= MOBILE ================= */
 
-@media(max-width:950px){
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark{
+
+  --dark:#edf7f5;
+
+  --text:#c9d9d6;
+
+  --muted:#91aaa5;
+
+  --bg:#091514;
+
+  --white:#10201f;
+
+  --soft:#123a36;
+
+  --border:#24423e;
+}
+
+
+body.dark .header{
+
+  background:
+    rgba(9,21,20,.94);
+}
+
+
+body.dark .logo span{
+  color:#edf7f5;
+}
+
+
+body.dark .menu-btn,
+body.dark .theme-btn,
+body.dark .btn-outline,
+body.dark .float-card,
+body.dark .hero-circle,
+body.dark .about-symbol,
+body.dark .form,
+body.dark .service-card,
+body.dark .location-card,
+body.dark .contact-card,
+body.dark details,
+body.dark .mobile-actions{
+
+  background:#10201f;
+
+  color:#edf7f5;
+}
+
+
+body.dark .trust{
+  background:#0c1b1a;
+}
+
+
+body.dark .hero-visual,
+body.dark .about-visual{
+
+  background:
+    linear-gradient(
+      145deg,
+      #10312e,
+      #0c211f
+    );
+}
+
+
+body.dark .field input,
+body.dark .field select,
+body.dark .field textarea{
+
+  background:#0c1b1a;
+
+  color:white;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+  .menu-btn{
+    display:block;
+  }
+
 
   .nav-links{
-    position:absolute;
 
-    top:70px;
+    position:fixed;
+
+    top:68px;
+
+    left:-290px;
+
+    width:270px;
+
+    height:
+      calc(100vh - 68px);
+
+    background:white;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:25px 22px;
+
+    gap:18px;
+
+    box-shadow:
+      15px 0 40px
+      rgba(0,0,0,.08);
+
+    transition:.3s;
+  }
+
+
+  .nav-links.active{
+    left:0;
+  }
+
+
+  .hero-inner{
+
+    grid-template-columns:1fr;
+
+    gap:28px;
+  }
+
+
+  .hero-visual{
+    min-height:380px;
+  }
+
+
+  .about-grid{
+
+    grid-template-columns:1fr;
+
+    gap:28px;
+  }
+
+
+  .appointment{
+
+    grid-template-columns:1fr;
+
+    gap:25px;
+  }
+
+
+  .services-grid{
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .footer-inner{
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+  .header{
+    height:64px;
+  }
+
+
+  .nav{
+    padding:
+      0 14px;
+  }
+
+
+  .nav-links{
+
+    top:64px;
+
+    height:
+      calc(100vh - 64px);
+  }
+
+
+  .logo{
+    font-size:18px;
+  }
+
+
+  .menu-btn{
+
+    width:39px;
+    height:39px;
+  }
+
+
+  .theme-btn{
+
+    width:38px;
+    height:38px;
+  }
+
+
+  .hero{
+
+    padding:
+      89px 17px 30px;
+  }
+
+
+  .doctor-name{
+
+    font-size:24px;
+
+    letter-spacing:-1px;
+  }
+
+
+  .doctor-degree{
+
+    font-size:12px;
+  }
+
+
+  .doctor-university{
+
+    font-size:9px;
+  }
+
+
+  .hero h1{
+
+    font-size:46px;
+
+    letter-spacing:-3px;
+
+    margin-bottom:13px;
+  }
+
+
+  .hero-text{
+
+    font-size:14px;
+
+    margin-bottom:18px;
+  }
+
+
+  .hero-visual{
+
+    min-height:315px;
+
+    border-radius:23px;
+  }
+
+
+  .hero-circle{
+
+    width:180px;
+    height:180px;
+  }
+
+
+  .hero-circle strong{
+    font-size:18px;
+  }
+
+
+  .hero-circle small{
+    font-size:9px;
+  }
+
+
+  .card-one{
+
+    top:18px;
+    left:14px;
+  }
+
+
+  .card-two{
+
+    right:14px;
+    bottom:18px;
+  }
+
+
+  .float-card{
+    padding:11px 13px;
+  }
+
+
+  .float-card strong{
+    font-size:10px;
+  }
+
+
+  .float-card span{
+    font-size:8px;
+  }
+
+
+  .trust-inner{
+
+    grid-template-columns:
+      1fr 1fr 1fr;
+
+    padding:
+      10px 7px;
+  }
+
+
+  .trust-item{
+
+    padding:5px 2px;
+  }
+
+
+  .trust-item strong{
+    font-size:14px;
+  }
+
+
+  .trust-item span{
+    font-size:8px;
+  }
+
+
+  .section{
+
+    padding:
+      52px 17px;
+  }
+
+
+  .section-head{
+
+    margin-bottom:24px;
+  }
+
+
+  .section-title{
+
+    font-size:34px;
+
+    letter-spacing:-2px;
+  }
+
+
+  .section-description{
+    font-size:13px;
+  }
+
+
+  .about-visual{
+    min-height:255px;
+  }
+
+
+  .about-symbol{
+
+    width:150px;
+    height:150px;
+  }
+
+
+  .about-symbol strong{
+    font-size:20px;
+  }
+
+
+  .services-grid{
+
+    grid-template-columns:1fr;
+
+    gap:10px;
+  }
+
+
+  .service-card{
+    padding:19px;
+  }
+
+
+  .cta{
+
+    margin:
+      0 17px;
+
+    padding:
+      38px 23px;
+
+    border-radius:22px;
+  }
+
+
+  .cta h2{
+    font-size:31px;
+  }
+
+
+  .form{
+    padding:19px;
+  }
+
+
+  .form-grid{
+
+    grid-template-columns:1fr;
+  }
+
+
+  .field.full{
+    grid-column:auto;
+  }
+
+
+  .location-card{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:20px;
+  }
+
+
+  .location-card .btn{
+    width:100%;
+  }
+
+
+  .contact-grid{
+
+    grid-template-columns:1fr;
+  }
+
+
+  .footer-inner{
+
+    grid-template-columns:1fr;
+
+    gap:27px;
+
+    padding:
+      38px 17px 27px;
+  }
+
+
+  .mobile-actions{
+
+    position:fixed;
+
     left:0;
     right:0;
+    bottom:0;
 
-    padding:15px;
+    display:grid;
 
-    display:none;
-    flex-direction:column;
-    a
+    grid-template-columns:
+      1fr 1fr;
+
+    background:white;
+
+    border-top:
+      1px solid var(--border);
+
+    z-index:999;
+  }
 
 
-This is my website code try to uporer 3 te line dandik theke bamdike din
+  .mobile-actions a{
+
+    padding:
+      13px 8px;
+
+    text-align:center;
+
+    font-size:12px;
+
+    font-weight:900;
+  }
+
+
+  .mobile-actions a:first-child{
+    color:var(--primary);
+  }
+
+
+  .mobile-actions a:last-child{
+
+    background:
+      linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary2)
+      );
+
+    color:white;
+  }
+
+
+  .top-btn{
+    bottom:70px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+
+    animation-duration:.01ms !important;
+
+    animation-iteration-count:1 !important;
+
+    scroll-behavior:auto !important;
+
+    transition-duration:.01ms !important;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body id="home">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+<nav class="nav">
+
+
+<button
+  class="menu-btn"
+  id="menuBtn"
+  aria-label="Open menu"
+>
+  ☰
+</button>
+
+
+<a
+  href="#home"
+  class="logo"
+>
+  Physio <span>Wellness</span>
+</a>
+
+
+<div
+  class="nav-links"
+  id="navLinks"
+>
+
+  <a href="#home">Home</a>
+
+  <a href="#about">About</a>
+
+  <a href="#services">Services</a>
+
+  <a href="#appointment">Appointment</a>
+
+  <a href="#location">Location</a>
+
+  <a href="#faq">FAQ</a>
+
+  <a href="#contact">Contact</a>
+
+</div>
+
+
+<button
+  class="theme-btn"
+  id="themeBtn"
+  aria-label="Toggle dark mode"
+>
+  ☾
+</button>
+
+
+</nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+  class="hero"
+  id="home"
+>
+
+
+<div class="hero-inner">
+
+
+<div class="hero-content">
+
+
+<div class="doctor-info">
+
+  <div class="doctor-name">
+    Dr Sahin Ahamed Laskar
+  </div>
+
+  <div class="doctor-degree">
+    Bachelor of Physiotherapy (BPT)
+  </div>
+
+  <div class="doctor-university">
+    The Neotia University
+  </div>
+
+</div>
+
+
+<span class="eyebrow">
+  PHYSIO WELLNESS
+</span>
+
+
+<h1>
+
+  Move Better.<br>
+
+  <span>
+    Live Better.
+  </span>
+
+</h1>
+
+
+<p class="hero-text">
+
+  Helping patients work toward better movement,
+  function and everyday confidence through
+  individualized care.
+
+</p>
+
+
+<div class="hero-buttons">
+
+  <a
+    href="#appointment"
+    class="btn btn-primary"
+  >
+    Book Appointment
+  </a>
+
+
+  <a
+    href="#services"
+    class="btn btn-outline"
+  >
+    Explore Services
+  </a>
+
+</div>
+
+
+</div>
+
+
+
+<!-- HERO VISUAL -->
+
+<div class="hero-visual">
+
+
+<div class="hero-circle">
+
+  <div>
+
+    <strong>
+      Movement
+    </strong>
+
+    <small>
+      Recovery • Function
+    </small>
+
+  </div>
+
+</div>
+
+
+<div class="float-card card-one">
+
+  <strong>
+    Personalized Care
+  </strong>
+
+  <span>
+    Patient-focused approach
+  </span>
+
+</div>
+
+
+<div class="float-card card-two">
+
+  <strong>
+    30 Minute Sessions
+  </strong>
+
+  <span>
+    Structured appointments
+  </span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRUST
+===================================================== -->
+
+<section class="trust">
+
+<div class="trust-inner">
+
+
+<div class="trust-item">
+
+  <strong>
+    BPT
+  </strong>
+
+  <span>
+    Qualification
+  </span>
+
+</div>
+
+
+<div class="trust-item">
+
+  <strong>
+    30 Min
+  </strong>
+
+  <span>
+    Sessions
+  </span>
+
+</div>
+
+
+<div class="trust-item">
+
+  <strong>
+    Care
+  </strong>
+
+  <span>
+    Patient Focused
+  </span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+  class="section reveal"
+  id="about"
+>
+
+
+<div class="section-head">
+
+<span class="eyebrow">
+  ABOUT
+</span>
+
+
+<h2 class="section-title">
+  Care designed around your movement.
+</h2>
+
+
+<p class="section-description">
+
+  A focused approach to physiotherapy that considers
+  your comfort, goals and functional needs.
+
+</p>
+
+</div>
+
+
+
+<div class="about-grid">
+
+
+<div class="about-visual">
+
+  <div class="about-symbol">
+
+    <strong>
+      Movement<br>
+      Matters
+    </strong>
+
+  </div>
+
+</div>
+
+
+
+<div class="about-text">
+
+
+<h3>
+  Better movement starts with the right approach.
+</h3>
+
+
+<p>
+
+  Physiotherapy can help improve mobility,
+  strength, flexibility and functional independence
+  through appropriate assessment and exercise-based care.
+
+</p>
+
+
+<p>
+
+  Every patient's needs are different. The goal is to
+  develop practical care that supports recovery and
+  helps you return to everyday activities with greater confidence.
+
+</p>
+
+
+
+<div class="feature-list">
+
+
+<div class="feature">
+
+  <div class="feature-icon">
+    ✓
+  </div>
+
+  <div>
+
+    <strong>
+      Individualized Care
+    </strong>
+
+    <p>
+      Care focused on your specific needs and goals.
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<div class="feature">
+
+  <div class="feature-icon">
+    ✓
+  </div>
+
+  <div>
+
+    <strong>
+      Exercise-Based Approach
+    </strong>
+
+    <p>
+      Progressive movement and therapeutic exercise.
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<div class="feature">
+
+  <div class="feature-icon">
+    ✓
+  </div>
+
+  <div>
+
+    <strong>
+      Functional Recovery
+    </strong>
+
+    <p>
+      Focus on everyday movement and function.
+    </p>
+
+  </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section
+  class="section reveal"
+  id="services"
+>
+
+
+<div class="section-head">
+
+<span class="eyebrow">
+  SERVICES
+</span>
+
+
+<h2 class="section-title">
+  Support for movement, recovery and function.
+</h2>
+
+
+<p class="section-description">
+
+  Professional physiotherapy care for a range of
+  musculoskeletal and functional needs.
+
+</p>
+
+</div>
+
+
+
+<div class="services-grid">
+
+
+<article class="service-card">
+
+  <div class="service-number">
+    01
+  </div>
+
+  <h3>
+    Musculoskeletal Physiotherapy
+  </h3>
+
+  <p>
+    Support for common muscle, joint and
+    movement-related problems.
+  </p>
+
+</article>
+
+
+
+<article class="service-card">
+
+  <div class="service-number">
+    02
+  </div>
+
+  <h3>
+    Sports Rehabilitation
+  </h3>
+
+  <p>
+    Structured rehabilitation to support
+    safe return to activity.
+  </p>
+
+</article>
+
+
+
+<article class="service-card">
+
+  <div class="service-number">
+    03
+  </div>
+
+  <h3>
+    Therapeutic Exercise
+  </h3>
+
+  <p>
+    Targeted exercises designed to improve
+    strength, mobility and control.
+  </p>
+
+</article>
+
+
+
+<article class="service-card">
+
+  <div class="service-number">
+    04
+  </div>
+
+  <h3>
+    Joint Mobility
+  </h3>
+
+  <p>
+    Movement-focused care to support
+    flexibility and comfortable function.
+  </p>
+
+</article>
+
+
+
+<article class="service-card">
+
+  <div class="service-number">
+    05
+  </div>
+
+  <h3>
+    Functional Rehabilitation
+  </h3>
+
+  <p>
+    Practical rehabilitation focused on
+    everyday movement and independence.
+  </p>
+
+</article>
+
+
+
+<article class="service-card">
+
+  <div class="service-number">
+    06
+  </div>
+
+  <h3>
+    General Physiotherapy Care
+  </h3>
+
+  <p>
+    Personalized physiotherapy support based
+    on individual assessment and goals.
+  </p>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="section">
+
+<div class="cta reveal">
+
+
+<span class="eyebrow">
+  YOUR NEXT STEP
+</span>
+
+
+<h2>
+  Ready to take the next step?
+</h2>
+
+
+<p>
+
+  Schedule an appointment and start working toward
+  better movement and everyday function.
+
+</p>
+
+
+<a
+  href="#appointment"
+  class="btn"
+>
+  Request Appointment
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     APPOINTMENT
+===================================================== -->
+
+<section
+  class="section reveal"
+  id="appointment"
+>
+
+
+<div class="section-head">
+
+<span class="eyebrow">
+  APPOINTMENT
+</span>
+
+
+<h2 class="section-title">
+  Request your appointment.
+</h2>
+
+
+<p class="section-description">
+
+  Choose your preferred date and 30-minute time slot.
+  Your request will be prepared for WhatsApp.
+
+</p>
+
+</div>
+
+
+
+<div class="appointment">
+
+
+<div class="appointment-info">
+
+
+<h3>
+  Simple booking.
+</h3>
+
+
+<p>
+
+  Fill in the details and send your appointment
+  request directly through WhatsApp.
+
+</p>
+
+
+<div class="hours">
+
+<strong>
+  Available Hours
+</strong>
+
+<div>
+  9:00 AM – 1:00 PM
+</div>
+
+<div>
+  4:00 PM – 10:00 PM
+</div>
+
+<br>
+
+<small>
+  30-minute appointment slots
+</small>
+
+</div>
+
+
+</div>
+
+
+
+<form
+  class="form"
+  id="appointmentForm"
+>
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label for="patientName">
+  Patient Name
+</label>
+
+<input
+  id="patientName"
+  type="text"
+  placeholder="Enter patient name"
+  required
+>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="phone">
+  Phone Number
+</label>
+
+<input
+  id="phone"
+  type="tel"
+  placeholder="Enter phone number"
+  required
+>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="date">
+  Preferred Date
+</label>
+
+<input
+  id="date"
+  type="date"
+  required
+>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="time">
+  Preferred Time
+</label>
+
+<select
+  id="time"
+  required
+>
+
+<option value="">
+  Select time
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field full">
+
+<label for="concern">
+  Main Concern
+</label>
+
+<textarea
+  id="concern"
+  placeholder="Briefly describe your concern..."
+  required
+></textarea>
+
+</div>
+
+
+</div>
+
+
+<button
+  class="btn btn-primary"
+  type="submit"
+>
+  Send Appointment Request
+</button>
+
+
+</form>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section
+  class="section reveal"
+  id="location"
+>
+
+
+<div class="section-head">
+
+<span class="eyebrow">
+  LOCATION
+</span>
+
+
+<h2 class="section-title">
+  Visit Physio Wellness.
+</h2>
+
+
+<p class="section-description">
+  Joynagar, Baruipur, West Bengal
+</p>
+
+</div>
+
+
+
+<div class="location-card">
+
+
+<div class="location-info">
+
+<span class="location-icon">
+  📍
+</span>
+
+
+<div>
+
+<h3>
+  Physio Wellness
+</h3>
+
+<p>
+  Joynagar, Baruipur, West Bengal
+</p>
+
+</div>
+
+</div>
+
+
+
+<a
+  class="btn btn-primary"
+  href="https://www.google.com/maps/search/?api=1&query=Joynagar%2CBaruipur%2CWest%20Bengal"
+  target="_blank"
+  rel="noopener"
+>
+  Open in Google Maps
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section
+  class="section reveal"
+  id="faq"
+>
+
+
+<div class="section-head">
+
+<span class="eyebrow">
+  FAQ
+</span>
+
+
+<h2 class="section-title">
+  Frequently asked questions.
+</h2>
+
+</div>
+
+
+
+<div class="faq">
+
+
+<details>
+
+<summary>
+  How long is a session?
+</summary>
+
+<p>
+  Standard appointment slots are 30 minutes.
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+  How can I book an appointment?
+</summary>
+
+<p>
+  Fill out the appointment form and send the
+  generated request through WhatsApp.
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+  What should I bring?
+</summary>
+
+<p>
+  If you have previous medical reports,
+  prescriptions or relevant documents,
+  you may bring them for reference.
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+  Can I choose a preferred time?
+</summary>
+
+<p>
+  Yes. Available 30-minute slots are shown
+  in the appointment form.
+</p>
+
+</details>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+  class="section reveal"
+  id="contact"
+>
+
+
+<div class="section-head">
+
+<span class="eyebrow">
+  CONTACT
+</span>
+
+
+<h2 class="section-title">
+  Get in touch.
+</h2>
+
+
+<p class="section-description">
+
+  For appointments and general enquiries,
+  use any of the contact options below.
+
+</p>
+
+</div>
+
+
+
+<div class="contact-grid">
+
+
+<a
+  class="contact-card"
+  href="tel:+917584814152"
+>
+
+<div class="icon">
+  📞
+</div>
+
+<h3>
+  Call
+</h3>
+
+<p>
+  7584814152
+</p>
+
+</a>
+
+
+
+<a
+  class="contact-card"
+  href="https://wa.me/917584814152"
+  target="_blank"
+  rel="noopener"
+>
+
+<div class="icon">
+  💬
+</div>
+
+<h3>
+  WhatsApp
+</h3>
+
+<p>
+  Send a message
+</p>
+
+</a>
+
+
+
+<a
+  class="contact-card"
+  href="mailto:laskarsahin6152@gmail.com"
+>
+
+<div class="icon">
+  ✉️
+</div>
+
+<h3>
+  Email
+</h3>
+
+<p>
+  laskarsahin6152@gmail.com
+</p>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+
+<div class="footer-inner">
+
+
+<div class="footer-brand">
+
+
+<h3>
+  Physio Wellness
+</h3>
+
+
+<div class="qualification">
+  Bachelor of Physiotherapy (BPT)
+</div>
+
+
+<div class="university">
+  THE NEOTIA UNIVERSITY
+</div>
+
+
+<p>
+
+  Professional physiotherapy care focused on
+  better movement, recovery and everyday function.
+
+</p>
+
+
+</div>
+
+
+
+<div>
+
+<h4>
+  Quick Links
+</h4>
+
+
+<div class="footer-links">
+
+<a href="#home">
+  Home
+</a>
+
+<a href="#about">
+  About
+</a>
+
+<a href="#services">
+  Services
+</a>
+
+<a href="#appointment">
+  Appointment
+</a>
+
+<a href="#location">
+  Location
+</a>
+
+<a href="#contact">
+  Contact
+</a>
+
+</div>
+
+</div>
+
+
+
+<div>
+
+<h4>
+  Contact
+</h4>
+
+
+<div class="footer-contact">
+
+<a href="tel:+917584814152">
+  📞 7584814152
+</a>
+
+
+<a
+  href="https://wa.me/917584814152"
+  target="_blank"
+  rel="noopener"
+>
+  💬 WhatsApp
+</a>
+
+
+<a href="mailto:laskarsahin6152@gmail.com">
+  ✉️ laskarsahin6152@gmail.com
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+© 2026 Physio Wellness. All Rights Reserved.
+
+</div>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     MOBILE ACTIONS
+===================================================== -->
+
+<div class="mobile-actions">
+
+
+<a href="tel:+917584814152">
+  📞 Call
+</a>
+
+
+<a
+  href="https://wa.me/917584814152"
+  target="_blank"
+  rel="noopener"
+>
+  💬 WhatsApp
+</a>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     TOP BUTTON
+===================================================== -->
+
+<button
+  class="top-btn"
+  id="topBtn"
+  aria-label="Back to top"
+>
+  ↑
+</button>
+
+
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn =
+  document.getElementById("menuBtn");
+
+const navLinks =
+  document.getElementById("navLinks");
+
+
+menuBtn.addEventListener(
+  "click",
+  () => {
+
+    navLinks.classList.toggle(
+      "active"
+    );
+
+    menuBtn.textContent =
+      navLinks.classList.contains("active")
+        ? "✕"
+        : "☰";
+
+  }
+);
+
+
+document
+  .querySelectorAll(".nav-links a")
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      () => {
+
+        navLinks.classList.remove(
+          "active"
+        );
+
+        menuBtn.textContent =
+          "☰";
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+const themeBtn =
+  document.getElementById("themeBtn");
+
+
+if(
+  localStorage.getItem(
+    "physioTheme"
+  ) === "dark"
+){
+
+  document.body.classList.add(
+    "dark"
+  );
+
+  themeBtn.textContent =
+    "☀";
+
+}
+
+
+themeBtn.addEventListener(
+  "click",
+  () => {
+
+    document.body.classList.toggle(
+      "dark"
+    );
+
+    const dark =
+      document.body.classList.contains(
+        "dark"
+      );
+
+
+    themeBtn.textContent =
+      dark ? "☀" : "☾";
+
+
+    localStorage.setItem(
+      "physioTheme",
+      dark ? "dark" : "light"
+    );
+
+  }
+);
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+const dateInput =
+  document.getElementById("date");
+
+
+const today =
+  new Date();
+
+
+const yyyy =
+  today.getFullYear();
+
+
+const mm =
+  String(
+    today.getMonth()+1
+  ).padStart(2,"0");
+
+
+const dd =
+  String(
+    today.getDate()
+  ).padStart(2,"0");
+
+
+dateInput.min =
+  `${yyyy}-${mm}-${dd}`;
+
+
+/* =========================================================
+   TIME SLOTS
+========================================================= */
+
+const timeSelect =
+  document.getElementById("time");
+
+
+function addTime(
+  hour,
+  minute
+){
+
+  const ampm =
+    hour >= 12
+      ? "PM"
+      : "AM";
+
+
+  let displayHour =
+    hour % 12;
+
+
+  if(
+    displayHour === 0
+  ){
+    displayHour = 12;
+  }
+
+
+  const minuteText =
+    String(minute)
+      .padStart(2,"0");
+
+
+  const value =
+    `${String(hour).padStart(2,"0")}:${minuteText}`;
+
+
+  const label =
+    `${displayHour}:${minuteText} ${ampm}`;
+
+
+  const option =
+    document.createElement(
+      "option"
+    );
+
+
+  option.value =
+    value;
+
+
+  option.textContent =
+    label;
+
+
+  timeSelect.appendChild(
+    option
+  );
+
+}
+
+
+/* 9 AM - 1 PM */
+
+for(
+  let h=9;
+  h<13;
+  h++
+){
+
+  for(
+    let m=0;
+    m<60;
+    m+=30
+  ){
+
+    addTime(h,m);
+
+  }
+
+}
+
+
+/* 4 PM - 10 PM */
+
+for(
+  let h=16;
+  h<22;
+  h++
+){
+
+  for(
+    let m=0;
+    m<60;
+    m+=30
+  ){
+
+    addTime(h,m);
+
+  }
+
+}
+
+
+/* =========================================================
+   WHATSAPP APPOINTMENT
+========================================================= */
+
+document
+  .getElementById(
+    "appointmentForm"
+  )
+  .addEventListener(
+    "submit",
+    function(e){
+
+      e.preventDefault();
+
+
+      const name =
+        document
+          .getElementById(
+            "patientName"
+          )
+          .value
+          .trim();
+
+
+      const phone =
+        document
+          .getElementById(
+            "phone"
+          )
+          .value
+          .trim();
+
+
+      const date =
+        document
+          .getElementById(
+            "date"
+          )
+          .value;
+
+
+      const time =
+        document
+          .getElementById(
+            "time"
+          )
+          .value;
+
+
+      const concern =
+        document
+          .getElementById(
+            "concern"
+          )
+          .value
+          .trim();
+
+
+      if(
+        !name ||
+        !phone ||
+        !date ||
+        !time ||
+        !concern
+      ){
+
+        alert(
+          "Please fill in all appointment details."
+        );
+
+        return;
+
+      }
+
+
+      const formattedDate =
+        new Date(
+          date + "T00:00:00"
+        ).toLocaleDateString(
+          "en-IN",
+          {
+            day:"2-digit",
+            month:"long",
+            year:"numeric"
+          }
+        );
+
+
+      const selectedTime =
+        document
+          .getElementById(
+            "time"
+          )
+          .selectedOptions[0]
+          .textContent;
+
+
+      const message =
+`Hello Physio Wellness,
+
+I would like to request an appointment.
+
+Patient Name: ${name}
+Phone: ${phone}
+Preferred Date: ${formattedDate}
+Preferred Time: ${selectedTime}
+
+Main Concern:
+${concern}
+
+Thank you.`;
+
+
+      const whatsappURL =
+        "https://wa.me/917584814152?text=" +
+        encodeURIComponent(
+          message
+        );
+
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+    }
+  );
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+  document.querySelectorAll(
+    ".reveal"
+  );
+
+
+const observer =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(
+        entry => {
+
+          if(
+            entry.isIntersecting
+          ){
+
+            entry.target.classList.add(
+              "show"
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        }
+      );
+
+    },
+    {
+      threshold:.12
+    }
+  );
+
+
+revealElements.forEach(
+  element => {
+
+    observer.observe(
+      element
+    );
+
+  }
+);
+
+
+/* =========================================================
+   TOP BUTTON
+========================================================= */
+
+const topBtn =
+  document.getElementById(
+    "topBtn"
+  );
+
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+    if(
+      window.scrollY > 450
+    ){
+
+      topBtn.style.display =
+        "block";
+
+    }else{
+
+      topBtn.style.display =
+        "none";
+
+    }
+
+  }
+);
+
+
+topBtn.addEventListener(
+  "click",
+  () => {
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }
+);
+
+</script>
+
+
+</body>
+</html>
+```
