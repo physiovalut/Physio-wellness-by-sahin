@@ -2048,6 +2048,22 @@ footer{
 }
 
 /* =========================================================
+   PREMIUM APPOINTMENT / CONTACT UPGRADES
+========================================================= */
+.top-book-btn{position:relative;z-index:3;display:inline-flex;align-items:center;justify-content:center;gap:10px;margin:22px auto 0;padding:13px 23px;border-radius:999px;color:#fff;font-weight:1000;background:linear-gradient(90deg,#0f766e,#14b8a6,#22d3ee,#8b5cf6,#ec4899,#14b8a6);background-size:300% 100%;box-shadow:0 12px 35px rgba(20,184,166,.28);animation:bookRainbow 4s linear infinite,bookFloat 2.6s ease-in-out infinite;overflow:hidden;}
+.top-book-btn::before{content:"";position:absolute;inset:1px;border-radius:inherit;background:rgba(255,255,255,.08);pointer-events:none;}
+.top-book-btn span{position:relative;z-index:1}.top-book-icon{animation:bookIcon 1.4s ease-in-out infinite}.top-book-arrow{font-size:18px;transition:.25s}.top-book-btn:hover .top-book-arrow{transform:translateX(5px)}
+@keyframes bookRainbow{to{background-position:300% 0}} @keyframes bookFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-5px) scale(1.025)}} @keyframes bookIcon{50%{transform:rotate(-10deg) scale(1.12)}}
+.appointment-dashboard{margin:0 auto 18px;padding:18px;background:linear-gradient(135deg,rgba(20,184,166,.14),rgba(34,211,238,.10),rgba(139,92,246,.13),rgba(236,72,153,.12));background-size:300% 300%;border:1px solid transparent;border-radius:24px;box-shadow:var(--shadow),0 0 35px rgba(20,184,166,.12);position:relative;overflow:hidden;animation:dashboardColors 8s ease infinite;}
+.appointment-dashboard::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(90deg,#14b8a6,#22d3ee,#8b5cf6,#ec4899,#14b8a6);background-size:300% 100%;animation:bookRainbow 5s linear infinite;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none;}
+@keyframes dashboardColors{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.appointment-dashboard::before{content:"";position:absolute;width:180px;height:180px;right:-70px;top:-90px;border-radius:50%;border:1px solid var(--primary2);opacity:.18;animation:dashboardSpin 9s linear infinite;}
+.dashboard-head,.contact-dashboard-head{display:flex;align-items:center;justify-content:space-between;gap:15px;position:relative;z-index:1}.dashboard-head>div,.contact-dashboard-head>div{display:flex;align-items:center;gap:10px}.dashboard-head strong,.contact-dashboard-head strong{font-size:15px}.dashboard-live,.contact-live{font-size:9px;font-weight:1000;letter-spacing:1.2px;padding:5px 8px;border-radius:999px;background:var(--surface2);color:var(--primary)}.dashboard-live i,.contact-live i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#22c55e;margin-right:5px;animation:livePulse 1.2s infinite}.dashboard-badge{font-size:9px;font-weight:1000;padding:6px 9px;border-radius:999px;background:var(--gradient);color:#fff}.dashboard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:13px;position:relative;z-index:1}.dashboard-stat{padding:12px;border-radius:16px;background:var(--surface2);border:1px solid var(--border);transition:.25s}.dashboard-stat:hover{transform:translateY(-3px);border-color:var(--primary2)}.dashboard-stat span{display:block;color:var(--muted);font-size:10px;font-weight:800;margin-bottom:4px}.dashboard-stat strong{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}@keyframes dashboardSpin{to{transform:rotate(360deg)}} @keyframes livePulse{50%{box-shadow:0 0 0 5px rgba(34,197,94,0)}}
+.appointment-wrap{display:flex;flex-direction:column;gap:20px}.appointment-form{order:1}.appointment-dashboard{order:2}.appointment-info{order:3}
+.contact-dashboard{padding:18px;border-radius:28px;background:var(--surface);border:1px solid transparent;box-shadow:var(--shadow);position:relative;overflow:hidden}.contact-dashboard::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(90deg,#0f766e,#22d3ee,#8b5cf6,#ec4899,#14b8a6);background-size:300% 100%;animation:bookRainbow 6s linear infinite;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none}.contact-dashboard::after{content:"";position:absolute;width:220px;height:220px;right:-100px;bottom:-120px;border-radius:50%;border:1px solid var(--primary2);opacity:.18;animation:dashboardSpin 12s linear infinite reverse}.contact-dashboard .contact-grid{margin-top:14px;position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.contact-orbit{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--gradient);color:#fff;animation:bookFloat 2.8s ease-in-out infinite}.contact-card{position:relative;background:var(--surface2);border:1px solid transparent;border-radius:18px;padding:16px;transition:.25s;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.05)}.contact-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,#14b8a6,#22d3ee,#8b5cf6,#ec4899);background-size:250% 250%;animation:dashboardColors 6s ease infinite;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none}.contact-card:hover{transform:translateY(-4px) scale(1.01);box-shadow:0 12px 28px rgba(20,184,166,.13)}
+
+
+/* =========================================================
    RESPONSIVE
 ========================================================= */
 
@@ -2089,6 +2105,14 @@ footer{
         grid-template-columns:
             repeat(2,1fr);
     }
+}
+
+@media(max-width:650px){
+    .contact-dashboard .contact-grid{grid-template-columns:1fr 1fr;}
+    .dashboard-grid{grid-template-columns:1fr 1fr;}
+    .appointment-dashboard{padding:14px;}
+    .dashboard-stat{padding:10px;}
+    .top-book-btn{width:min(92%,320px);}
 }
 
 @media(max-width:650px){
@@ -2258,6 +2282,142 @@ footer{
 }
 
 </style>
+
+<style id="premium-feature-animation">
+/* Premium animated feature boxes */
+.feature-card, .feature-box, .trust-card, .hero-feature, .why-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent !important;
+  background: linear-gradient(var(--surface, #fff), var(--surface, #fff)) padding-box,
+              linear-gradient(120deg, #00c6ff, #7c3aed, #ff2d95, #00e676, #00c6ff) border-box !important;
+  background-size: auto, 300% 300% !important;
+  animation: premiumBoxBorder 6s ease infinite, premiumBoxFloat 3.5s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+.feature-card::before, .feature-box::before, .trust-card::before, .hero-feature::before, .why-card::before {
+  content:""; position:absolute; inset:-2px; pointer-events:none;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent);
+  transform: translateX(-120%); animation: premiumShine 3.2s ease-in-out infinite;
+}
+@keyframes premiumBoxBorder { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+@keyframes premiumBoxFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+@keyframes premiumShine { 0%,45%{transform:translateX(-120%)} 70%,100%{transform:translateX(120%)} }
+@media (prefers-reduced-motion: reduce){ .feature-card,.feature-box,.trust-card,.hero-feature,.why-card{animation:none} }
+
+/* UNIVERSAL PREMIUM ANIMATED BOX EFFECTS */
+:where(.card,.service-card,.feature-card,.stat-card,.info-card,.testimonial-card,.faq-item,.contact-card,.dashboard-stat,.appointment-form,.appointment-info,.cta-box,.hero-card,.trust-card,.process-card,.pricing-card,.review-card,.benefit-card,.why-card,.about-card,.contact-dashboard,.appointment-dashboard){
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  border:1px solid transparent;
+  background-clip:padding-box;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+:where(.card,.service-card,.feature-card,.stat-card,.info-card,.testimonial-card,.faq-item,.contact-card,.dashboard-stat,.appointment-form,.appointment-info,.cta-box,.hero-card,.trust-card,.process-card,.pricing-card,.review-card,.benefit-card,.why-card,.about-card,.contact-dashboard,.appointment-dashboard)::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  padding:1px;
+  border-radius:inherit;
+  background:linear-gradient(120deg,#ff3b30,#ff9500,#ffd60a,#34c759,#00c7be,#0a84ff,#5856d6,#af52de,#ff2d55,#ff3b30);
+  background-size:400% 400%;
+  animation:premiumBorderFlow 7s linear infinite;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+  z-index:2;
+}
+:where(.card,.service-card,.feature-card,.stat-card,.info-card,.testimonial-card,.faq-item,.contact-card,.dashboard-stat,.appointment-form,.appointment-info,.cta-box,.hero-card,.trust-card,.process-card,.pricing-card,.review-card,.benefit-card,.why-card,.about-card,.contact-dashboard,.appointment-dashboard)::after{
+  content:"";
+  position:absolute;
+  width:45%;
+  height:180%;
+  left:-65%;
+  top:-40%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+  transform:rotate(20deg);
+  animation:premiumShine 4.5s ease-in-out infinite;
+  pointer-events:none;
+  z-index:1;
+}
+:where(.card,.service-card,.feature-card,.stat-card,.info-card,.testimonial-card,.faq-item,.contact-card,.dashboard-stat,.appointment-form,.appointment-info,.cta-box,.hero-card,.trust-card,.process-card,.pricing-card,.review-card,.benefit-card,.why-card,.about-card,.contact-dashboard,.appointment-dashboard):hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 38px rgba(0,0,0,.14);
+}
+@keyframes premiumBorderFlow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes premiumShine{0%,55%{left:-65%;opacity:0}65%{opacity:1}85%,100%{left:125%;opacity:0}}
+@media(prefers-reduced-motion:reduce){
+ :where(.card,.service-card,.feature-card,.stat-card,.info-card,.testimonial-card,.faq-item,.contact-card,.dashboard-stat,.appointment-form,.appointment-info,.cta-box,.hero-card,.trust-card,.process-card,.pricing-card,.review-card,.benefit-card,.why-card,.about-card,.contact-dashboard,.appointment-dashboard)::before,:where(.card,.service-card,.feature-card,.stat-card,.info-card,.testimonial-card,.faq-item,.contact-card,.dashboard-stat,.appointment-form,.appointment-info,.cta-box,.hero-card,.trust-card,.process-card,.pricing-card,.review-card,.benefit-card,.why-card,.about-card,.contact-dashboard,.appointment-dashboard)::after{animation:none}
+}
+</style>
+
+<style id="premium-animated-info-boxes">
+/* Premium animated colour treatment for requested information boxes */
+.trust-item,
+.feature,
+.faq {
+    position: relative;
+    isolation: isolate;
+    border: 2px solid transparent !important;
+    background:
+        linear-gradient(var(--surface), var(--surface)) padding-box,
+        linear-gradient(120deg, #00c6ff, #7c3aed, #ec4899, #f59e0b, #10b981, #00c6ff) border-box !important;
+    background-size: 100% 100%, 300% 300%;
+    animation: requestedBoxGradient 6s ease infinite;
+    box-shadow: 0 8px 28px rgba(20,184,166,.10);
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.trust-item::before,
+.feature::before,
+.faq::before {
+    content: "";
+    position: absolute;
+    inset: -80%;
+    z-index: -1;
+    background: conic-gradient(from 0deg, transparent, rgba(255,255,255,.38), transparent 18%, transparent 50%, rgba(255,255,255,.22), transparent 68%);
+    animation: requestedBoxShine 5s linear infinite;
+    pointer-events: none;
+}
+
+.trust-item:hover,
+.feature:hover,
+.faq:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 38px rgba(124,58,237,.18), 0 0 22px rgba(0,198,255,.12);
+}
+
+.faq {
+    animation-duration: 7s;
+}
+
+.faq-question {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes requestedBoxGradient {
+    0% { background-position: 0 0, 0% 50%; }
+    50% { background-position: 0 0, 100% 50%; }
+    100% { background-position: 0 0, 0% 50%; }
+}
+
+@keyframes requestedBoxShine {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .trust-item, .feature, .faq,
+    .trust-item::before, .feature::before, .faq::before {
+        animation: none !important;
+    }
+}
+</style>
 </head>
 
 <body data-theme="normal">
@@ -2292,12 +2452,12 @@ footer{
 
     <nav class="nav-links" id="navLinks">
 
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#appointment">Appointment</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" data-i18n="home">Home</a>
+        <a href="#about" data-i18n="about">About</a>
+        <a href="#services" data-i18n="services">Services</a>
+        <a href="#appointment" data-i18n="appointment">Appointment</a>
+        <a href="#faq" data-i18n="faq">FAQ</a>
+        <a href="#contact" data-i18n="contact">Contact</a>
 
     </nav>
 
@@ -2309,6 +2469,7 @@ footer{
             aria-label="Themes">
             ◐
         </button>
+                    </select>
 
     </div>
 
@@ -2392,6 +2553,12 @@ footer{
         Professional Physiotherapy • Movement • Recovery
     </div>
 
+    <a href="#appointment" class="top-book-btn">
+        <span class="top-book-icon">📅</span>
+        <span>Book Appointment</span>
+        <span class="top-book-arrow">→</span>
+    </a>
+
 </section>
 
 <!-- =====================================================
@@ -2427,12 +2594,6 @@ footer{
         </p>
 
         <div class="hero-buttons">
-
-            <a
-                href="#appointment"
-                class="btn btn-primary">
-                📅 Book Appointment
-            </a>
 
             <a
                 href="https://wa.me/917584814152"
@@ -2995,6 +3156,28 @@ footer{
 
                 <div class="form-group">
 
+                    <label for="consultMode">
+                        Patient Consult Mode
+                    </label>
+
+                    <select
+                        id="consultMode"
+                        required>
+
+                        <option value="">
+                            Select consultation mode
+                        </option>
+
+                        <option>Online Consultation</option>
+                        <option>Offline / Clinic Visit</option>
+                        <option>Home Visit</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
                     <label for="visitType">
                         Appointment Type
                     </label>
@@ -3046,6 +3229,24 @@ footer{
             </button>
 
         </form>
+
+    <div class="appointment-dashboard reveal">
+        <div class="dashboard-head">
+            <div>
+                <span class="dashboard-live"><i></i> LIVE</span>
+                <strong data-i18n="appointmentDashboard">Appointment Dashboard</strong>
+            </div>
+            <span class="dashboard-badge">30 MIN</span>
+        </div>
+        <div class="dashboard-grid">
+            <div class="dashboard-stat"><span data-i18n="date">📅 Date</span><strong id="dashboardDate">Not selected</strong></div>
+            <div class="dashboard-stat"><span data-i18n="time">⏰ Time</span><strong id="dashboardTime">Not selected</strong></div>
+            <div class="dashboard-stat"><span data-i18n="consultMode">🧑‍⚕️ Consult Mode</span><strong id="dashboardMode">Not selected</strong></div>
+            <div class="dashboard-stat"><span data-i18n="booking">📲 Booking</span><strong id="dashboardStatus">Ready to book</strong></div>
+        </div>
+    </div>
+
+
 
     </div>
 
@@ -3272,15 +3473,20 @@ footer{
 
     </div>
 
-    <div class="contact-grid">
+    <div class="contact-dashboard reveal">
+        <div class="contact-dashboard-head">
+            <div><span class="contact-live"><i></i> CONNECTED</span><strong data-i18n="getInTouch">Get in touch</strong></div>
+            <span class="contact-orbit">✦</span>
+        </div>
+        <div class="contact-grid">
 
-        <div class="contact-card reveal">
+        <div class="contact-card">
 
             <div class="contact-icon">
                 📞
             </div>
 
-            <h3>
+            <h3 data-i18n="phone">
                 Phone
             </h3>
 
@@ -3290,13 +3496,13 @@ footer{
 
         </div>
 
-        <div class="contact-card reveal">
+        <div class="contact-card">
 
             <div class="contact-icon">
                 💬
             </div>
 
-            <h3>
+            <h3 data-i18n="whatsapp">
                 WhatsApp
             </h3>
 
@@ -3310,13 +3516,13 @@ footer{
 
         </div>
 
-        <div class="contact-card reveal">
+        <div class="contact-card">
 
             <div class="contact-icon">
                 ✉️
             </div>
 
-            <h3>
+            <h3 data-i18n="email">
                 Email
             </h3>
 
@@ -3329,13 +3535,13 @@ footer{
 
         </div>
 
-        <div class="contact-card reveal">
+        <div class="contact-card">
 
             <div class="contact-icon">
                 📍
             </div>
 
-            <h3>
+            <h3 data-i18n="location">
                 Location
             </h3>
 
@@ -3346,13 +3552,13 @@ footer{
 
         </div>
 
-        <div class="contact-card reveal">
+        <div class="contact-card">
 
             <div class="contact-icon">
                 🕘
             </div>
 
-            <h3>
+            <h3 data-i18n="morning">
                 Morning
             </h3>
 
@@ -3362,13 +3568,13 @@ footer{
 
         </div>
 
-        <div class="contact-card reveal">
+        <div class="contact-card">
 
             <div class="contact-icon">
                 🌙
             </div>
 
-            <h3>
+            <h3 data-i18n="evening">
                 Evening
             </h3>
 
@@ -3378,6 +3584,7 @@ footer{
 
         </div>
 
+        </div>
     </div>
 
     <div
@@ -3392,7 +3599,7 @@ footer{
             target="_blank"
             class="btn btn-primary">
 
-            📍 Open Location in Google Maps
+            📍 <span data-i18n="openMaps">Open Location in Google Maps</span>
 
         </a>
 
@@ -3758,115 +3965,47 @@ addTimeSlot(22,0);
 
 
 /* =========================================================
+   LIVE APPOINTMENT DASHBOARD
+========================================================= */
+const dashboardDate=document.getElementById("dashboardDate");
+const dashboardTime=document.getElementById("dashboardTime");
+const dashboardMode=document.getElementById("dashboardMode");
+const dashboardStatus=document.getElementById("dashboardStatus");
+const consultMode=document.getElementById("consultMode");
+function updateAppointmentDashboard(){
+    if(!dashboardDate)return;
+    const d=dateInput&&dateInput.value?dateInput.value.split("-").reverse().join("-"):"Not selected";
+    const t=timeSelect&&timeSelect.value?timeSelect.value:"Not selected";
+    const m=consultMode&&consultMode.value?consultMode.value:"Not selected";
+    dashboardDate.textContent=d;dashboardTime.textContent=t;dashboardMode.textContent=m;
+    dashboardStatus.textContent=(d!=="Not selected"&&t!=="Not selected"&&m!=="Not selected")?"Ready to book":"Complete details";
+}
+[dateInput,timeSelect,consultMode].forEach(el=>{if(el)el.addEventListener("change",updateAppointmentDashboard)});
+updateAppointmentDashboard();
+
+/* =========================================================
    WHATSAPP APPOINTMENT
 ========================================================= */
-
-const appointmentForm =
-    document.getElementById(
-        "appointmentForm"
-    );
-
+const appointmentForm=document.getElementById("appointmentForm");
 if(appointmentForm){
-
-    appointmentForm.addEventListener(
-        "submit",
-        function(event){
-
-            event.preventDefault();
-
-            const name =
-                document.getElementById(
-                    "patientName"
-                ).value.trim();
-
-            const phone =
-                document.getElementById(
-                    "patientPhone"
-                ).value.trim();
-
-            const treatment =
-                document.getElementById(
-                    "treatment"
-                ).value;
-
-            const date =
-                document.getElementById(
-                    "appointmentDate"
-                ).value;
-
-            const time =
-                document.getElementById(
-                    "appointmentTime"
-                ).value;
-
-            const visitType =
-                document.getElementById(
-                    "visitType"
-                ).value;
-
-            const message =
-                document.getElementById(
-                    "message"
-                ).value.trim();
-
-
-            if(
-                !name ||
-                !phone ||
-                !treatment ||
-                !date ||
-                !time ||
-                !visitType
-            ){
-
-                alert(
-                    "Please complete all required fields."
-                );
-
-                return;
-
-            }
-
-
-            const formattedDate =
-                date.split("-").reverse().join("-");
-
-
-            const whatsappMessage =
-
-`Hello Dr. Sahin Ahamed Laskar (P.T),
-
-I would like to book a physiotherapy appointment.
-
-👤 Name: ${name}
-📞 Phone: ${phone}
-🩺 Concern: ${treatment}
-📅 Date: ${formattedDate}
-⏰ Time: ${time}
-📋 Appointment Type: ${visitType}
-
-${message ? "📝 Message: " + message : ""}
-
-Thank you.
-Physio Wellness`;
-
-
-            const whatsappURL =
-                "https://wa.me/917584814152?text="
-                +
-                encodeURIComponent(
-                    whatsappMessage
-                );
-
-
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
-
-        }
-    );
-
+    appointmentForm.addEventListener("submit",function(event){
+        event.preventDefault();
+        const name=document.getElementById("patientName").value.trim();
+        const phone=document.getElementById("patientPhone").value.trim();
+        const treatment=document.getElementById("treatment").value;
+        const date=document.getElementById("appointmentDate").value;
+        const time=document.getElementById("appointmentTime").value;
+        const mode=document.getElementById("consultMode").value;
+        const visitType=document.getElementById("visitType").value;
+        const message=document.getElementById("message").value.trim();
+        if(!name||!phone||!treatment||!date||!time||!mode||!visitType){alert("Please complete all required fields.");return;}
+        const formattedDate=date.split("-").reverse().join("-");
+        const whatsappMessage=`Hello Dr. Sahin Ahamed Laskar (P.T),\n\nI would like to book a physiotherapy appointment.\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🩺 Concern: ${treatment}\n📅 Date: ${formattedDate}\n⏰ Time: ${time}\n🧑‍⚕️ Patient Consult Mode: ${mode}\n📋 Appointment Type: ${visitType}\n\n${message?"📝 Message: "+message:""}\nThank you.\nPhysio Wellness`;
+        const whatsappURL="https://wa.me/917584814152?text="+encodeURIComponent(whatsappMessage);
+        dashboardStatus.textContent="Sent to WhatsApp ✓";
+        window.open(whatsappURL,"_blank");
+        setTimeout(()=>{appointmentForm.reset();updateAppointmentDashboard();},350);
+    });
 }
 
 
@@ -3975,5 +4114,8 @@ window.addEventListener(
 
 </script>
 
+
+<script>
+</script>
 </body>
 </html>
