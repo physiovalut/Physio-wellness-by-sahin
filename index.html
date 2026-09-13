@@ -1,42 +1,152 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dr Sahin Ahamed Laskar | Physio Wellness</title>
+<title>Physio Wellness | Dr Sahin Ahamed Laskar</title>
 
 <meta name="description"
-content="Physio Wellness by Dr Sahin Ahamed Laskar, Bachelor of Physiotherapy (BPT), The Neotia University.">
+content="Professional physiotherapy and rehabilitation care by Dr Sahin Ahamed Laskar (P.T), Joynagar, Baruipur, West Bengal.">
 
-<meta name="theme-color" content="#0f766e">
+<meta name="theme-color" content="#0ea5a4">
 
 <style>
 
 /* =========================================================
-   ROOT
+   THEME VARIABLES
 ========================================================= */
 
 :root{
-  --primary:#0f766e;
+  --primary:#0ea5a4;
   --primary2:#14b8a6;
-  --primary3:#5eead4;
+  --primary3:#06b6d4;
 
-  --dark:#10201f;
-  --text:#334442;
-  --muted:#6b7c79;
+  --dark:#102a2d;
+  --text:#365257;
+  --muted:#71868a;
 
-  --bg:#f6faf9;
+  --light:#f5fbfb;
   --white:#ffffff;
+  --card:#ffffff;
+  --input:#fbfefe;
 
-  --soft:#e7f5f2;
-  --border:#dce9e6;
+  --border:#dceeed;
 
-  --shadow:0 20px 60px rgba(15,118,110,.12);
+  --hero-bg:#ffffff;
+  --footer:#102a2d;
 
-  --radius:24px;
+  --shadow:0 20px 50px rgba(16,42,45,.10);
+}
+
+
+/* TEAL */
+body.theme-teal{
+  --primary:#0ea5a4;
+  --primary2:#14b8a6;
+  --primary3:#06b6d4;
+}
+
+
+/* OCEAN */
+body.theme-ocean{
+  --primary:#2563eb;
+  --primary2:#0ea5e9;
+  --primary3:#06b6d4;
+  --light:#f3f8ff;
+  --border:#dbeafe;
+}
+
+
+/* PURPLE */
+body.theme-purple{
+  --primary:#7c3aed;
+  --primary2:#8b5cf6;
+  --primary3:#c026d3;
+  --light:#faf7ff;
+  --border:#e9d5ff;
+}
+
+
+/* ROSE */
+body.theme-rose{
+  --primary:#e11d48;
+  --primary2:#f43f5e;
+  --primary3:#ec4899;
+  --light:#fff7f9;
+  --border:#fce7f3;
+}
+
+
+/* DARK */
+body.theme-dark{
+  --primary:#14b8a6;
+  --primary2:#2dd4bf;
+  --primary3:#22d3ee;
+
+  --dark:#f1fafa;
+  --text:#c5d6d8;
+  --muted:#91a9ad;
+
+  --light:#101c1e;
+  --white:#0d1719;
+  --card:#142326;
+  --input:#101d20;
+
+  --border:#294144;
+
+  --hero-bg:#0b1517;
+  --footer:#070f11;
+
+  --shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+
+/* MIDNIGHT */
+body.theme-midnight{
+  --primary:#60a5fa;
+  --primary2:#818cf8;
+  --primary3:#c084fc;
+
+  --dark:#f4f7ff;
+  --text:#c2c9dc;
+  --muted:#8e98b2;
+
+  --light:#101426;
+  --white:#0b1020;
+  --card:#151b30;
+  --input:#10162a;
+
+  --border:#2a3350;
+
+  --hero-bg:#080c19;
+  --footer:#050814;
+
+  --shadow:0 20px 55px rgba(0,0,0,.45);
+}
+
+
+/* LIGHT */
+body.theme-light{
+  --primary:#0ea5a4;
+  --primary2:#14b8a6;
+  --primary3:#06b6d4;
+
+  --dark:#102a2d;
+  --text:#365257;
+  --muted:#71868a;
+
+  --light:#f5fbfb;
+  --white:#ffffff;
+  --card:#ffffff;
+  --input:#fbfefe;
+
+  --border:#dceeed;
+
+  --hero-bg:#ffffff;
+  --footer:#102a2d;
+
+  --shadow:0 20px 50px rgba(16,42,45,.10);
 }
 
 
@@ -51,27 +161,20 @@ content="Physio Wellness by Dr Sahin Ahamed Laskar, Bachelor of Physiotherapy (B
   scroll-behavior:smooth;
 }
 
-html{
-  overflow-x:hidden;
-}
-
 body{
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+  font-family:Inter,Arial,sans-serif;
+  background:var(--white);
   color:var(--text);
-  background:var(--bg);
-
-  line-height:1.55;
-
+  line-height:1.6;
   overflow-x:hidden;
+  transition:
+    background .45s ease,
+    color .45s ease;
 }
 
 a{
-  color:inherit;
   text-decoration:none;
+  color:inherit;
 }
 
 button,
@@ -83,303 +186,252 @@ textarea{
 
 
 /* =========================================================
-   ANIMATIONS
+   CONTAINER
 ========================================================= */
 
-@keyframes floatUp{
-
-  0%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-10px);
-  }
-
-  100%{
-    transform:translateY(0);
-  }
-
-}
-
-
-@keyframes floatDown{
-
-  0%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(10px);
-  }
-
-  100%{
-    transform:translateY(0);
-  }
-
-}
-
-
-@keyframes rotateSlow{
-
-  from{
-    transform:rotate(0deg);
-  }
-
-  to{
-    transform:rotate(360deg);
-  }
-
-}
-
-
-@keyframes pulseGlow{
-
-  0%{
-    box-shadow:
-      0 0 0 0 rgba(20,184,166,.28);
-  }
-
-  70%{
-    box-shadow:
-      0 0 0 22px rgba(20,184,166,0);
-  }
-
-  100%{
-    box-shadow:
-      0 0 0 0 rgba(20,184,166,0);
-  }
-
-}
-
-
-@keyframes shine{
-
-  0%{
-    background-position:
-      200% center;
-  }
-
-  100%{
-    background-position:
-      -200% center;
-  }
-
-}
-
-
-@keyframes nameGlow{
-
-  0%{
-    filter:
-      drop-shadow(
-        0 0 0 rgba(20,184,166,0)
-      );
-  }
-
-  50%{
-    filter:
-      drop-shadow(
-        0 0 12px rgba(20,184,166,.22)
-      );
-  }
-
-  100%{
-    filter:
-      drop-shadow(
-        0 0 0 rgba(20,184,166,0)
-      );
-  }
-
-}
-
-
-@keyframes reveal{
-
-  from{
-    opacity:0;
-    transform:translateY(25px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
+.container{
+  width:min(1160px,92%);
+  margin:auto;
 }
 
 
 /* =========================================================
-   HEADER
+   NAVBAR
 ========================================================= */
 
-.header{
-
-  position:fixed;
-
+header{
+  position:sticky;
   top:0;
-  left:0;
-
-  width:100%;
-  height:68px;
-
-  background:
-    rgba(255,255,255,.92);
-
-  backdrop-filter:
-    blur(18px);
-
-  border-bottom:
-    1px solid var(--border);
-
   z-index:1000;
-}
 
+  background:color-mix(
+    in srgb,
+    var(--white) 92%,
+    transparent
+  );
+
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid var(--border);
+
+  transition:.4s;
+}
 
 .nav{
-
-  max-width:1200px;
-
-  height:100%;
-
-  margin:auto;
-
-  padding:
-    0 20px;
+  min-height:74px;
 
   display:flex;
-
   align-items:center;
+  justify-content:space-between;
 
-  gap:12px;
+  gap:18px;
 }
-
 
 .logo{
-
-  font-size:20px;
-
-  font-weight:900;
-
-  color:var(--primary);
-
-  letter-spacing:-.6px;
-
-  margin-right:auto;
+  font-size:22px;
+  font-weight:950;
+  color:var(--dark);
+  letter-spacing:-.5px;
 }
 
-
 .logo span{
+  color:var(--primary);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+
+.nav-links a{
+  position:relative;
+  font-weight:750;
+  font-size:14px;
   color:var(--dark);
 }
 
-
-.nav-links{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:23px;
-}
-
-
-.nav-links a{
-
-  position:relative;
-
-  color:var(--text);
-
-  font-size:13px;
-
-  font-weight:800;
-
-  padding:5px 0;
-
-  transition:.25s;
-}
-
-
 .nav-links a::after{
-
   content:"";
 
   position:absolute;
-
-  left:50%;
-  bottom:-3px;
+  left:0;
+  bottom:-7px;
 
   width:0;
   height:2px;
+
+  border-radius:10px;
 
   background:
     linear-gradient(
       90deg,
       var(--primary),
-      var(--primary2)
+      var(--primary3)
     );
-
-  transform:
-    translateX(-50%);
 
   transition:.3s;
 }
-
-
-.nav-links a:hover{
-  color:var(--primary);
-}
-
 
 .nav-links a:hover::after{
   width:100%;
 }
 
 
-.menu-btn{
+/* =========================================================
+   MENU
+========================================================= */
 
+.menu-btn{
   display:none;
 
-  width:41px;
-  height:41px;
+  width:45px;
+  height:45px;
 
-  border:
-    1px solid var(--border);
+  border:0;
+  border-radius:13px;
 
-  border-radius:11px;
-
-  background:white;
-
-  color:var(--primary);
-
-  font-size:20px;
-
-  cursor:pointer;
-}
-
-
-.theme-btn{
-
-  width:40px;
-  height:40px;
-
-  border:
-    1px solid var(--border);
-
-  border-radius:50%;
-
-  background:white;
-
+  background:var(--light);
   color:var(--dark);
 
   cursor:pointer;
 
-  transition:.25s;
+  font-size:23px;
 }
 
 
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.theme-wrap{
+  position:relative;
+}
+
+.theme-btn{
+  width:43px;
+  height:43px;
+
+  border:1px solid var(--border);
+  border-radius:13px;
+
+  background:var(--card);
+  color:var(--dark);
+
+  cursor:pointer;
+
+  font-size:20px;
+
+  display:grid;
+  place-items:center;
+
+  transition:.3s;
+}
+
 .theme-btn:hover{
-  transform:rotate(20deg);
+  transform:translateY(-2px);
+  box-shadow:var(--shadow);
+}
+
+
+/* =========================================================
+   THEME PANEL
+========================================================= */
+
+.theme-panel{
+  position:absolute;
+
+  right:0;
+  top:55px;
+
+  width:230px;
+
+  padding:14px;
+
+  background:var(--card);
+
+  border:1px solid var(--border);
+
+  border-radius:18px;
+
+  box-shadow:var(--shadow);
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:
+    translateY(-10px)
+    scale(.97);
+
+  transition:.25s;
+}
+
+.theme-panel.active{
+  opacity:1;
+  visibility:visible;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.theme-title{
+  font-size:12px;
+  font-weight:900;
+
+  color:var(--muted);
+
+  margin-bottom:10px;
+
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.theme-options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.theme-option{
+  border:1px solid var(--border);
+
+  background:var(--light);
+
+  color:var(--dark);
+
+  padding:10px 8px;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  font-size:12px;
+
+  font-weight:800;
+
+  transition:.25s;
+}
+
+.theme-option:hover{
+  transform:translateY(-2px);
+
+  border-color:var(--primary);
+
+  color:var(--primary);
+}
+
+.theme-option.active{
+  border-color:var(--primary);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary3)
+    );
+
+  color:white;
 }
 
 
@@ -388,87 +440,52 @@ textarea{
 ========================================================= */
 
 .hero{
-
-  padding:
-    100px 20px 45px;
-
   position:relative;
 
+  padding:80px 0 90px;
+
   overflow:hidden;
-}
-
-
-.hero::before{
-
-  content:"";
-
-  position:absolute;
-
-  width:500px;
-  height:500px;
-
-  border-radius:50%;
 
   background:
-    rgba(20,184,166,.07);
+    radial-gradient(
+      circle at 10% 20%,
+      color-mix(in srgb,var(--primary) 12%,transparent),
+      transparent 28%
+    ),
 
-  top:-250px;
-  right:-180px;
+    radial-gradient(
+      circle at 90% 10%,
+      color-mix(in srgb,var(--primary3) 12%,transparent),
+      transparent 25%
+    ),
 
-  filter:blur(10px);
+    var(--hero-bg);
 
-  pointer-events:none;
+  transition:.45s;
 }
 
-
-.hero-inner{
-
-  max-width:1200px;
-
-  margin:auto;
-
+.hero-grid{
   display:grid;
 
   grid-template-columns:
     1.05fr .95fr;
 
-  gap:55px;
-
   align-items:center;
+
+  gap:60px;
 }
-
-
-/* =========================================================
-   DOCTOR NAME
-========================================================= */
-
-.doctor-info{
-
-  margin-bottom:13px;
-
-  animation:
-    reveal .8s ease both;
-}
-
 
 .doctor-name{
-
   position:relative;
 
   display:inline-block;
 
   font-size:
-    clamp(
-      24px,
-      3vw,
-      34px
-    );
-
-  line-height:1.1;
+    clamp(26px,3.5vw,38px);
 
   font-weight:950;
 
-  letter-spacing:-1.3px;
+  letter-spacing:-1.5px;
 
   background:
     linear-gradient(
@@ -480,8 +497,7 @@ textarea{
       var(--dark) 80%
     );
 
-  background-size:
-    250% auto;
+  background-size:250% auto;
 
   -webkit-background-clip:text;
   background-clip:text;
@@ -493,9 +509,7 @@ textarea{
     nameGlow 4s ease-in-out infinite;
 }
 
-
 .doctor-name::after{
-
   content:"";
 
   position:absolute;
@@ -503,7 +517,7 @@ textarea{
   left:0;
   bottom:-7px;
 
-  width:55px;
+  width:58px;
   height:3px;
 
   border-radius:20px;
@@ -516,455 +530,314 @@ textarea{
       transparent
     );
 
-  animation:
-    lineGrow 1.2s ease both;
+  animation:lineGrow 1.2s ease both;
 }
-
-
-@keyframes lineGrow{
-
-  from{
-    width:0;
-  }
-
-  to{
-    width:55px;
-  }
-
-}
-
 
 .doctor-degree{
+  margin-top:15px;
 
-  margin-top:13px;
-
-  color:var(--primary);
-
-  font-size:13px;
-
-  font-weight:900;
-}
-
-
-.doctor-university{
-
-  margin-top:2px;
-
-  color:var(--muted);
-
-  font-size:10px;
-
-  font-weight:800;
-
-  letter-spacing:1.5px;
-
-  text-transform:uppercase;
-}
-
-
-/* =========================================================
-   HERO TEXT
-========================================================= */
-
-.eyebrow{
-
-  display:inline-block;
-
-  color:var(--primary);
-
-  font-size:11px;
-
-  font-weight:900;
-
-  letter-spacing:2.5px;
-
-  margin-bottom:11px;
-
-  animation:
-    reveal .8s .15s ease both;
-}
-
-
-.hero h1{
+  font-weight:850;
 
   color:var(--dark);
 
-  font-size:
-    clamp(
-      46px,
-      6vw,
-      74px
-    );
-
-  line-height:.98;
-
-  letter-spacing:-4px;
-
-  margin-bottom:15px;
-
-  animation:
-    reveal .8s .25s ease both;
+  font-size:17px;
 }
 
+.doctor-university{
+  font-size:13px;
 
-.hero h1 span{
-
-  background:
-    linear-gradient(
-      100deg,
-      var(--primary),
-      var(--primary2),
-      var(--primary)
-    );
-
-  background-size:
-    200% auto;
-
-  -webkit-background-clip:text;
-  background-clip:text;
-
-  -webkit-text-fill-color:transparent;
-
-  animation:
-    shine 4s linear infinite;
-}
-
-
-.hero-text{
-
-  max-width:610px;
+  margin-top:3px;
 
   color:var(--muted);
 
-  font-size:16px;
+  font-weight:700;
 
-  margin-bottom:22px;
-
-  animation:
-    reveal .8s .35s ease both;
+  letter-spacing:.5px;
 }
 
-
-.hero-buttons{
-
-  display:flex;
-
-  gap:10px;
-
-  flex-wrap:wrap;
-
-  animation:
-    reveal .8s .45s ease both;
-}
-
-
-/* =========================================================
-   BUTTON
-========================================================= */
-
-.btn{
-
-  min-height:48px;
-
-  padding:
-    0 21px;
-
-  border-radius:13px;
-
+.badge{
   display:inline-flex;
 
   align-items:center;
 
-  justify-content:center;
+  gap:8px;
 
-  font-size:13px;
+  padding:8px 13px;
 
-  font-weight:900;
+  margin-top:22px;
 
-  border:1px solid transparent;
+  border-radius:999px;
 
-  cursor:pointer;
+  background:
+    color-mix(
+      in srgb,
+      var(--primary) 10%,
+      var(--white)
+    );
 
-  transition:
-    transform .25s,
-    box-shadow .25s,
-    background .25s,
-    border .25s;
+  color:var(--primary);
+
+  font-size:12px;
+
+  font-weight:850;
+}
+
+.badge::before{
+  content:"";
+
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:#12b981;
+
+  box-shadow:
+    0 0 0 6px
+    rgba(18,185,129,.12);
+}
+
+.hero h1{
+  margin-top:20px;
+
+  font-size:
+    clamp(38px,5.5vw,67px);
+
+  line-height:1.03;
+
+  letter-spacing:-3px;
+
+  color:var(--dark);
+
+  max-width:680px;
+}
+
+.hero h1 span{
+  color:var(--primary);
+}
+
+.hero-text{
+  margin-top:20px;
+
+  max-width:620px;
+
+  color:var(--muted);
+
+  font-size:17px;
+}
+
+.hero-buttons{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:13px;
+
+  margin-top:30px;
 }
 
 
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  min-height:50px;
+
+  padding:0 21px;
+
+  border-radius:14px;
+
+  border:1px solid transparent;
+
+  font-weight:850;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
 .btn-primary{
-
-  color:white;
-
   background:
     linear-gradient(
       135deg,
       var(--primary),
-      var(--primary2)
+      var(--primary3)
     );
 
-  box-shadow:
-    0 12px 28px
-    rgba(15,118,110,.22);
-}
+  color:white;
 
+  box-shadow:
+    0 14px 30px
+    color-mix(
+      in srgb,
+      var(--primary) 22%,
+      transparent
+    );
+}
 
 .btn-primary:hover{
-
-  transform:
-    translateY(-3px);
+  transform:translateY(-3px);
 
   box-shadow:
-    0 16px 35px
-    rgba(15,118,110,.3);
+    0 18px 35px
+    color-mix(
+      in srgb,
+      var(--primary) 30%,
+      transparent
+    );
 }
 
-
-.btn-outline{
-
-  color:var(--dark);
-
-  background:white;
+.btn-light{
+  background:var(--card);
 
   border-color:var(--border);
+
+  color:var(--dark);
 }
 
+.btn-light:hover{
+  transform:translateY(-3px);
 
-.btn-outline:hover{
-
-  color:var(--primary);
-
-  border-color:var(--primary);
-
-  transform:
-    translateY(-3px);
+  box-shadow:var(--shadow);
 }
 
 
 /* =========================================================
-   HERO VISUAL
+   HERO ART
 ========================================================= */
 
-.hero-visual{
-
+.hero-art{
   position:relative;
 
-  min-height:410px;
+  min-height:440px;
 
-  overflow:hidden;
+  display:grid;
 
-  border-radius:32px;
-
-  background:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(20,184,166,.22),
-      transparent 27%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(15,118,110,.08),
-      transparent 30%
-    ),
-    linear-gradient(
-      145deg,
-      #e3f5f1,
-      #f9fcfb
-    );
-
-  box-shadow:
-    var(--shadow);
-
-  animation:
-    reveal .9s .2s ease both;
+  place-items:center;
 }
 
-
-.hero-visual::before{
-
-  content:"";
-
+.ring{
   position:absolute;
-
-  width:270px;
-  height:270px;
-
-  border-radius:50%;
 
   border:
     1px solid
-    rgba(15,118,110,.13);
-
-  left:50%;
-  top:50%;
-
-  transform:
-    translate(-50%,-50%);
-
-  animation:
-    pulseGlow 3s infinite;
-}
-
-
-.hero-visual::after{
-
-  content:"";
-
-  position:absolute;
-
-  width:380px;
-  height:380px;
+    color-mix(
+      in srgb,
+      var(--primary) 22%,
+      transparent
+    );
 
   border-radius:50%;
 
-  border:
-    1px dashed
-    rgba(15,118,110,.12);
-
-  left:50%;
-  top:50%;
-
-  transform:
-    translate(-50%,-50%);
-
   animation:
-    rotateSlow 30s linear infinite;
+    rotateSlow 16s linear infinite;
 }
 
+.ring.one{
+  width:360px;
+  height:360px;
+}
 
-/* =========================================================
-   HERO CIRCLE
-========================================================= */
+.ring.two{
+  width:270px;
+  height:270px;
+
+  border-style:dashed;
+
+  animation-duration:11s;
+
+  animation-direction:reverse;
+}
 
 .hero-circle{
+  position:relative;
 
-  position:absolute;
-
-  width:225px;
-  height:225px;
-
-  left:50%;
-  top:50%;
-
-  transform:
-    translate(-50%,-50%);
+  width:190px;
+  height:190px;
 
   border-radius:50%;
 
-  background:white;
+  display:grid;
 
-  border:
-    9px solid #d3ede8;
+  place-items:center;
 
-  display:flex;
+  background:
+    linear-gradient(
+      145deg,
+      var(--card),
+      color-mix(
+        in srgb,
+        var(--primary) 10%,
+        var(--card)
+      )
+    );
 
-  align-items:center;
-
-  justify-content:center;
-
-  text-align:center;
+  border:10px solid var(--card);
 
   box-shadow:
-    0 25px 60px
-    rgba(15,118,110,.15);
+    0 30px 70px
+    color-mix(
+      in srgb,
+      var(--primary) 20%,
+      transparent
+    );
 
-  z-index:2;
-
-  animation:
-    floatUp 5s ease-in-out infinite;
+  animation:pulseGlow 4s ease-in-out infinite;
 }
 
+.hero-circle span{
+  font-size:55px;
 
-.hero-circle strong{
-
-  display:block;
+  font-weight:950;
 
   color:var(--primary);
-
-  font-size:23px;
 }
-
-
-.hero-circle small{
-
-  display:block;
-
-  margin-top:4px;
-
-  color:var(--muted);
-
-  font-size:10px;
-
-  font-weight:800;
-}
-
-
-/* =========================================================
-   FLOATING CARDS
-========================================================= */
 
 .float-card{
-
   position:absolute;
 
-  z-index:5;
+  background:var(--card);
 
-  background:white;
+  padding:13px 16px;
 
-  border:
-    1px solid var(--border);
+  border-radius:16px;
 
-  border-radius:15px;
+  box-shadow:var(--shadow);
 
-  padding:
-    13px 16px;
-
-  box-shadow:
-    0 15px 35px
-    rgba(0,0,0,.07);
-}
-
-
-.float-card strong{
-
-  display:block;
-
-  color:var(--dark);
+  border:1px solid var(--border);
 
   font-size:12px;
+
+  font-weight:850;
+
+  color:var(--dark);
 }
 
-
-.float-card span{
-
-  display:block;
-
-  color:var(--muted);
-
-  font-size:10px;
-
-  margin-top:2px;
-}
-
-
-.card-one{
-
+.float-card.one{
   top:30px;
-  left:24px;
+  right:25px;
 
-  animation:
-    floatDown 4s ease-in-out infinite;
+  animation:floatUp 4s ease-in-out infinite;
 }
 
+.float-card.two{
+  bottom:35px;
+  left:20px;
 
-.card-two{
+  animation:floatDown 5s ease-in-out infinite;
+}
 
-  right:24px;
-  bottom:30px;
+.float-card.three{
+  bottom:10px;
+  right:45px;
 
-  animation:
-    floatUp 4.5s ease-in-out infinite;
+  animation:floatUp 4.5s ease-in-out infinite;
 }
 
 
@@ -973,142 +846,90 @@ textarea{
 ========================================================= */
 
 .trust{
+  padding:20px 0;
 
-  background:white;
+  background:var(--card);
 
-  border-top:
-    1px solid var(--border);
-
-  border-bottom:
-    1px solid var(--border);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
 }
 
-
-.trust-inner{
-
-  max-width:1200px;
-
-  margin:auto;
-
-  padding:
-    14px 20px;
-
+.trust-grid{
   display:grid;
 
   grid-template-columns:
     repeat(3,1fr);
-}
 
+  gap:15px;
+}
 
 .trust-item{
-
   text-align:center;
 
-  padding:6px;
-
-  border-right:
-    1px solid var(--border);
+  padding:12px;
 }
-
-
-.trust-item:last-child{
-  border-right:0;
-}
-
 
 .trust-item strong{
-
   display:block;
 
-  color:var(--primary);
+  color:var(--dark);
 
-  font-size:18px;
+  font-size:19px;
 }
 
-
 .trust-item span{
-
   color:var(--muted);
 
-  font-size:10px;
+  font-size:12px;
 
   font-weight:700;
 }
 
 
 /* =========================================================
-   GENERAL SECTION
+   SECTION
 ========================================================= */
 
-.section{
-
-  max-width:1200px;
-
-  margin:auto;
-
-  padding:
-    68px 20px;
+section{
+  padding:90px 0;
 }
-
 
 .section-head{
-
   max-width:700px;
 
-  margin-bottom:30px;
+  margin:
+    0 auto 45px;
+
+  text-align:center;
 }
 
+.section-tag{
+  color:var(--primary);
 
-.section-title{
+  font-size:12px;
+
+  font-weight:900;
+
+  letter-spacing:1.5px;
+
+  text-transform:uppercase;
+}
+
+.section-head h2{
+  margin-top:8px;
 
   color:var(--dark);
 
   font-size:
-    clamp(
-      32px,
-      4vw,
-      49px
-    );
+    clamp(30px,4vw,45px);
 
-  line-height:1.05;
-
-  letter-spacing:-2.5px;
-
-  margin-bottom:10px;
+  letter-spacing:-1.5px;
 }
 
-
-.section-description{
+.section-head p{
+  margin-top:12px;
 
   color:var(--muted);
-
-  font-size:14px;
-}
-
-
-/* =========================================================
-   REVEAL
-========================================================= */
-
-.reveal{
-
-  opacity:0;
-
-  transform:
-    translateY(25px);
-
-  transition:
-    opacity .8s ease,
-    transform .8s ease;
-}
-
-
-.reveal.show{
-
-  opacity:1;
-
-  transform:
-    translateY(0);
 }
 
 
@@ -1116,191 +937,141 @@ textarea{
    ABOUT
 ========================================================= */
 
-.about-grid{
+.about{
+  background:var(--light);
+}
 
+.about-grid{
   display:grid;
 
-  grid-template-columns:.75fr 1.25fr;
+  grid-template-columns:
+    .85fr 1.15fr;
 
-  gap:50px;
+  gap:60px;
 
   align-items:center;
 }
 
-
 .about-visual{
+  min-height:390px;
 
-  min-height:320px;
+  border-radius:30px;
 
-  border-radius:27px;
+  background:var(--card);
 
-  background:
-    linear-gradient(
-      145deg,
-      #e0f4f0,
-      #f9fcfb
-    );
+  border:1px solid var(--border);
 
-  display:flex;
+  box-shadow:var(--shadow);
 
-  align-items:center;
+  display:grid;
 
-  justify-content:center;
+  place-items:center;
 
   position:relative;
 
   overflow:hidden;
-
-  box-shadow:
-    var(--shadow);
 }
 
-
 .about-visual::before{
-
   content:"";
+
+  width:250px;
+  height:250px;
+
+  border:
+    2px dashed
+    color-mix(
+      in srgb,
+      var(--primary) 28%,
+      transparent
+    );
+
+  border-radius:50%;
 
   position:absolute;
 
-  width:240px;
-  height:240px;
+  animation:
+    rotateSlow 15s linear infinite;
+}
+
+.about-core{
+  width:130px;
+  height:130px;
 
   border-radius:50%;
 
-  border:
-    1px dashed
-    rgba(15,118,110,.18);
-
-  animation:
-    rotateSlow 25s linear infinite;
-}
-
-
-.about-symbol{
-
-  width:175px;
-  height:175px;
-
-  border-radius:50%;
-
-  background:white;
-
-  border:
-    8px solid #d3ebe7;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  text-align:center;
-
-  position:relative;
-
-  z-index:2;
-
-  box-shadow:
-    0 20px 45px
-    rgba(15,118,110,.12);
-
-  animation:
-    pulseGlow 3.5s infinite;
-}
-
-
-.about-symbol strong{
-
-  color:var(--primary);
-
-  font-size:22px;
-
-  line-height:1.15;
-}
-
-
-.about-text h3{
-
-  color:var(--dark);
-
-  font-size:27px;
-
-  line-height:1.15;
-
-  margin-bottom:12px;
-}
-
-
-.about-text > p{
-
-  color:var(--muted);
-
-  font-size:14px;
-
-  margin-bottom:11px;
-}
-
-
-.feature-list{
+  background:
+    linear-gradient(
+      145deg,
+      var(--primary),
+      var(--primary3)
+    );
 
   display:grid;
 
-  gap:10px;
+  place-items:center;
 
-  margin-top:18px;
+  color:white;
+
+  font-size:18px;
+
+  font-weight:950;
+
+  text-align:center;
+
+  padding:20px;
+
+  box-shadow:
+    0 25px 50px
+    color-mix(
+      in srgb,
+      var(--primary) 25%,
+      transparent
+    );
+
+  animation:pulseGlow 4s ease-in-out infinite;
 }
 
+.about-content h3{
+  font-size:30px;
 
-.feature{
+  color:var(--dark);
 
+  letter-spacing:-1px;
+}
+
+.about-content p{
+  margin-top:15px;
+
+  color:var(--muted);
+}
+
+.points{
+  display:grid;
+
+  gap:12px;
+
+  margin-top:22px;
+}
+
+.point{
   display:flex;
 
-  gap:10px;
+  gap:11px;
 
   align-items:flex-start;
 }
 
-
-.feature-icon{
-
-  flex:none;
-
-  width:25px;
-  height:25px;
-
-  border-radius:50%;
-
-  background:var(--soft);
-
+.point b{
   color:var(--primary);
 
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  font-size:12px;
-
-  font-weight:900;
+  font-size:18px;
 }
 
-
-.feature strong{
-
+.point span{
   color:var(--dark);
 
-  font-size:13px;
-}
-
-
-.feature p{
-
-  color:var(--muted);
-
-  font-size:12px;
-
-  margin-top:1px;
+  font-weight:700;
 }
 
 
@@ -1309,40 +1080,35 @@ textarea{
 ========================================================= */
 
 .services-grid{
-
   display:grid;
 
   grid-template-columns:
     repeat(3,1fr);
 
-  gap:14px;
+  gap:20px;
 }
 
-
-.service-card{
-
-  background:white;
-
-  border:
-    1px solid var(--border);
-
-  border-radius:20px;
-
-  padding:23px;
-
+.service{
   position:relative;
+
+  padding:27px;
+
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  background:var(--card);
+
+  box-shadow:
+    0 10px 35px
+    rgba(16,42,45,.05);
 
   overflow:hidden;
 
-  transition:
-    transform .3s,
-    box-shadow .3s,
-    border .3s;
+  transition:.35s;
 }
 
-
-.service-card::before{
-
+.service::before{
   content:"";
 
   position:absolute;
@@ -1351,175 +1117,50 @@ textarea{
   left:0;
 
   width:100%;
-  height:3px;
+  height:4px;
 
   background:
     linear-gradient(
       90deg,
       var(--primary),
-      var(--primary2)
+      var(--primary3)
     );
 
-  transform:
-    scaleX(0);
+  transform:scaleX(0);
 
   transform-origin:left;
 
-  transition:.3s;
+  transition:.35s;
 }
 
+.service:hover{
+  transform:translateY(-7px);
 
-.service-card:hover{
-
-  transform:
-    translateY(-7px);
-
-  box-shadow:
-    var(--shadow);
-
-  border-color:
-    #b8ddd8;
+  box-shadow:var(--shadow);
 }
 
-
-.service-card:hover::before{
+.service:hover::before{
   transform:scaleX(1);
 }
 
-
-.service-number{
-
-  color:var(--primary);
-
-  font-size:10px;
-
-  font-weight:900;
-
-  letter-spacing:2px;
-
-  margin-bottom:14px;
+.service-icon{
+  font-size:31px;
 }
 
-
-.service-card h3{
+.service h3{
+  margin-top:14px;
 
   color:var(--dark);
 
-  font-size:17px;
-
-  line-height:1.25;
-
-  margin-bottom:7px;
+  font-size:19px;
 }
 
-
-.service-card p{
+.service p{
+  margin-top:8px;
 
   color:var(--muted);
 
-  font-size:12px;
-}
-
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.cta{
-
-  max-width:1160px;
-
-  margin:auto;
-
-  padding:
-    50px 40px;
-
-  border-radius:28px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #0f766e,
-      #075f59
-    );
-
-  color:white;
-
-  position:relative;
-
-  overflow:hidden;
-}
-
-
-.cta::before{
-
-  content:"";
-
-  position:absolute;
-
-  width:300px;
-  height:300px;
-
-  border-radius:50%;
-
-  border:
-    1px solid
-    rgba(255,255,255,.12);
-
-  right:-100px;
-  top:-100px;
-
-  animation:
-    rotateSlow 25s linear infinite;
-}
-
-
-.cta .eyebrow{
-  color:#9ce8df;
-}
-
-
-.cta h2{
-
-  font-size:
-    clamp(
-      31px,
-      4vw,
-      45px
-    );
-
-  line-height:1.05;
-
-  margin-bottom:9px;
-
-  position:relative;
-  z-index:2;
-}
-
-
-.cta p{
-
-  max-width:620px;
-
-  opacity:.82;
-
   font-size:14px;
-
-  margin-bottom:20px;
-
-  position:relative;
-  z-index:2;
-}
-
-
-.cta .btn{
-
-  background:white;
-
-  color:var(--primary);
-
-  position:relative;
-  z-index:2;
 }
 
 
@@ -1528,178 +1169,143 @@ textarea{
 ========================================================= */
 
 .appointment{
-
-  display:grid;
-
-  grid-template-columns:.75fr 1.25fr;
-
-  gap:45px;
-
-  align-items:start;
+  background:var(--light);
 }
 
+.appointment-box{
+  max-width:850px;
 
-.appointment-info h3{
+  margin:auto;
 
-  color:var(--dark);
+  background:var(--card);
 
-  font-size:28px;
+  padding:35px;
 
-  margin-bottom:9px;
+  border-radius:28px;
+
+  border:1px solid var(--border);
+
+  box-shadow:var(--shadow);
 }
-
-
-.appointment-info > p{
-
-  color:var(--muted);
-
-  font-size:14px;
-
-  margin-bottom:17px;
-}
-
-
-.hours{
-
-  background:white;
-
-  border:
-    1px solid var(--border);
-
-  border-radius:17px;
-
-  padding:18px;
-}
-
-
-.hours strong{
-
-  color:var(--primary);
-
-  display:block;
-
-  font-size:13px;
-
-  margin-bottom:5px;
-}
-
-
-.hours div{
-  font-size:13px;
-}
-
-
-.hours small{
-
-  color:var(--muted);
-
-  font-size:11px;
-}
-
-
-.form{
-
-  background:white;
-
-  border:
-    1px solid var(--border);
-
-  border-radius:21px;
-
-  padding:25px;
-
-  box-shadow:
-    var(--shadow);
-}
-
 
 .form-grid{
-
   display:grid;
 
   grid-template-columns:
     1fr 1fr;
 
-  gap:13px;
+  gap:18px;
 }
 
-
 .field{
-
   display:flex;
 
   flex-direction:column;
 
-  gap:5px;
+  gap:7px;
 }
-
 
 .field.full{
   grid-column:1/-1;
 }
 
-
 .field label{
+  font-size:13px;
+
+  font-weight:850;
 
   color:var(--dark);
-
-  font-size:11px;
-
-  font-weight:800;
 }
-
 
 .field input,
 .field select,
 .field textarea{
-
   width:100%;
 
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
 
-  border-radius:10px;
+  background:var(--input);
 
-  background:#fbfdfc;
+  border-radius:13px;
 
-  color:var(--dark);
-
-  padding:11px 12px;
+  padding:13px 14px;
 
   outline:none;
 
-  font-size:13px;
+  color:var(--dark);
 
   transition:.25s;
 }
 
-
 .field input:focus,
 .field select:focus,
 .field textarea:focus{
-
-  border-color:
-    var(--primary2);
+  border-color:var(--primary);
 
   box-shadow:
-    0 0 0 3px
-    rgba(20,184,166,.08);
+    0 0 0 4px
+    color-mix(
+      in srgb,
+      var(--primary) 10%,
+      transparent
+    );
 }
 
-
 .field textarea{
-
-  min-height:90px;
+  min-height:100px;
 
   resize:vertical;
 }
 
+.treatment-select{
+  appearance:auto;
 
-.form .btn{
+  cursor:pointer;
 
-  width:100%;
+  font-weight:650;
+}
 
-  margin-top:15px;
+.treatment-select optgroup{
+  color:var(--dark);
+
+  font-weight:900;
+}
+
+.treatment-select option{
+  color:var(--dark);
+
+  padding:8px;
+}
+
+.appointment-note{
+  margin-top:17px;
+
+  padding:14px;
+
+  border-radius:14px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--primary) 8%,
+      var(--card)
+    );
+
+  color:var(--primary);
+
+  font-size:13px;
+
+  font-weight:700;
+}
+
+.form-actions{
+  display:flex;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+  margin-top:20px;
 }
 
 
@@ -1707,16 +1313,31 @@ textarea{
    LOCATION
 ========================================================= */
 
+.location{
+  padding-top:65px;
+}
+
 .location-card{
+  max-width:850px;
 
-  background:white;
+  margin:auto;
 
-  border:
-    1px solid var(--border);
+  padding:30px;
 
-  border-radius:21px;
+  border-radius:25px;
 
-  padding:24px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(
+        in srgb,
+        var(--primary) 7%,
+        var(--card)
+      ),
+      var(--card)
+    );
+
+  border:1px solid var(--border);
 
   display:flex;
 
@@ -1724,58 +1345,47 @@ textarea{
 
   justify-content:space-between;
 
-  gap:25px;
-
-  box-shadow:
-    var(--shadow);
+  gap:20px;
 }
-
 
 .location-info{
-
   display:flex;
 
   align-items:center;
 
-  gap:14px;
+  gap:17px;
 }
-
 
 .location-icon{
+  width:55px;
+  height:55px;
 
-  width:52px;
-  height:52px;
+  border-radius:17px;
 
-  border-radius:15px;
+  background:
+    color-mix(
+      in srgb,
+      var(--primary) 10%,
+      var(--card)
+    );
 
-  background:var(--soft);
+  display:grid;
 
-  display:flex;
+  place-items:center;
 
-  align-items:center;
-
-  justify-content:center;
-
-  font-size:22px;
-
-  animation:
-    pulseGlow 3s infinite;
+  font-size:25px;
 }
-
 
 .location-info h3{
-
   color:var(--dark);
 
-  font-size:17px;
+  font-size:18px;
 }
 
-
 .location-info p{
-
   color:var(--muted);
 
-  font-size:12px;
+  font-size:14px;
 }
 
 
@@ -1784,56 +1394,119 @@ textarea{
 ========================================================= */
 
 .faq{
+  background:var(--light);
+}
 
+.faq-list{
   max-width:850px;
+
+  margin:auto;
 
   display:grid;
 
-  gap:9px;
+  gap:12px;
 }
-
 
 details{
+  background:var(--card);
 
-  background:white;
+  border:1px solid var(--border);
 
-  border:
-    1px solid var(--border);
+  border-radius:15px;
 
-  border-radius:14px;
-
-  padding:15px 18px;
-
-  transition:.25s;
+  padding:18px 20px;
 }
-
-
-details:hover{
-
-  border-color:
-    var(--primary2);
-}
-
 
 summary{
-
   cursor:pointer;
 
+  font-weight:850;
+
   color:var(--dark);
-
-  font-size:13px;
-
-  font-weight:800;
 }
 
-
 details p{
+  margin-top:10px;
 
   color:var(--muted);
 
-  font-size:12px;
+  font-size:14px;
+}
 
-  margin-top:9px;
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+  position:relative;
+
+  overflow:hidden;
+}
+
+.cta-box{
+  position:relative;
+
+  overflow:hidden;
+
+  padding:55px 35px;
+
+  border-radius:30px;
+
+  text-align:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary3)
+    );
+
+  color:white;
+}
+
+.cta-box::before{
+  content:"";
+
+  position:absolute;
+
+  width:300px;
+  height:300px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.20);
+
+  border-radius:50%;
+
+  left:-90px;
+  top:-120px;
+
+  animation:
+    rotateSlow 15s linear infinite;
+}
+
+.cta-box h2{
+  position:relative;
+
+  font-size:
+    clamp(28px,4vw,43px);
+
+  letter-spacing:-1px;
+}
+
+.cta-box p{
+  position:relative;
+
+  margin:12px auto 25px;
+
+  max-width:600px;
+
+  opacity:.9;
+}
+
+.cta-box .btn-light{
+  position:relative;
 }
 
 
@@ -1842,67 +1515,52 @@ details p{
 ========================================================= */
 
 .contact-grid{
-
   display:grid;
 
   grid-template-columns:
     repeat(3,1fr);
 
-  gap:14px;
+  gap:18px;
 }
 
-
 .contact-card{
+  padding:25px;
 
-  background:white;
+  border-radius:20px;
 
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
 
-  border-radius:19px;
+  background:var(--card);
 
-  padding:23px;
+  box-shadow:
+    0 10px 35px
+    rgba(16,42,45,.05);
 
   transition:.3s;
 }
 
-
 .contact-card:hover{
+  transform:translateY(-5px);
 
-  transform:
-    translateY(-6px);
-
-  box-shadow:
-    var(--shadow);
-
-  border-color:
-    #b8ddd8;
+  box-shadow:var(--shadow);
 }
 
-
-.contact-card .icon{
-
-  font-size:22px;
-
-  margin-bottom:11px;
+.contact-card span{
+  font-size:28px;
 }
-
 
 .contact-card h3{
+  margin-top:10px;
 
   color:var(--dark);
-
-  font-size:16px;
-
-  margin-bottom:4px;
 }
 
-
 .contact-card p{
+  margin-top:5px;
 
   color:var(--muted);
 
-  font-size:12px;
+  font-size:14px;
 
   word-break:break-word;
 }
@@ -1912,154 +1570,59 @@ details p{
    FOOTER
 ========================================================= */
 
-.footer{
-
-  background:#091817;
-
-  color:#d7e4e1;
-
-  margin-top:20px;
-}
-
-
-.footer-inner{
-
-  max-width:1200px;
-
-  margin:auto;
-
-  padding:
-    45px 20px 30px;
-
-  display:grid;
-
-  grid-template-columns:
-    1.4fr .7fr .9fr;
-
-  gap:45px;
-}
-
-
-.footer-brand h3{
-
-  font-size:20px;
-
-  font-weight:950;
-
-  background:
-    linear-gradient(
-      100deg,
-      #ffffff,
-      #14b8a6,
-      #ffffff,
-      #14b8a6,
-      #ffffff
-    );
-
-  background-size:
-    250% auto;
-
-  -webkit-background-clip:text;
-  background-clip:text;
-
-  -webkit-text-fill-color:transparent;
-
-  animation:
-    shine 5s linear infinite;
-}
-
-
-.footer-brand .qualification{
-
-  color:#14b8a6;
-
-  font-size:12px;
-
-  font-weight:900;
-
-  margin-top:3px;
-}
-
-
-.footer-brand .university{
-
-  color:#8da29e;
-
-  font-size:9px;
-
-  letter-spacing:1.5px;
-
-  margin-top:1px;
-}
-
-
-.footer-brand p{
-
-  color:#849b96;
-
-  max-width:400px;
-
-  font-size:12px;
-
-  margin-top:11px;
-}
-
-
-.footer h4{
+footer{
+  background:var(--footer);
 
   color:white;
 
-  font-size:13px;
+  padding:38px 0 25px;
 
-  margin-bottom:12px;
+  transition:.4s;
 }
 
-
-.footer-links,
-.footer-contact{
-
+.footer-main{
   display:flex;
 
-  flex-direction:column;
+  align-items:center;
 
-  gap:7px;
+  justify-content:space-between;
+
+  gap:20px;
 }
 
+.footer-brand{
+  font-size:24px;
 
-.footer-links a,
-.footer-contact a{
+  font-weight:950;
 
-  color:#849b96;
+  animation:
+    nameGlow 4s ease-in-out infinite;
+}
 
+.footer-brand span{
+  color:var(--primary2);
+}
+
+.footer-info{
+  text-align:right;
+}
+
+.footer-info p{
   font-size:12px;
 
-  transition:.2s;
+  opacity:.7;
+
+  margin-top:2px;
 }
 
-
-.footer-links a:hover,
-.footer-contact a:hover{
-
-  color:#14b8a6;
-
-  transform:
-    translateX(3px);
-}
-
-
-.footer-bottom{
-
-  border-top:
-    1px solid
-    rgba(255,255,255,.07);
-
+.copyright{
   text-align:center;
 
-  color:#607671;
+  font-size:11px;
 
-  font-size:10px;
+  opacity:.55;
 
-  padding:15px;
+  margin-top:25px;
 }
 
 
@@ -2073,1852 +1636,1716 @@ details p{
 
 
 /* =========================================================
-   TOP BUTTON
+   ANIMATIONS
 ========================================================= */
 
-.top-btn{
+@keyframes shine{
 
-  display:none;
+  to{
+    background-position:250% center;
+  }
 
-  position:fixed;
-
-  right:18px;
-  bottom:20px;
-
-  width:42px;
-  height:42px;
-
-  border:0;
-
-  border-radius:50%;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--primary2)
-    );
-
-  color:white;
-
-  cursor:pointer;
-
-  z-index:900;
-
-  box-shadow:
-    0 10px 25px
-    rgba(15,118,110,.25);
-
-  transition:.25s;
 }
 
+@keyframes nameGlow{
 
-.top-btn:hover{
-  transform:translateY(-4px);
+  0%,100%{
+    filter:
+      drop-shadow(
+        0 0 0
+        rgba(14,165,164,0)
+      );
+  }
+
+  50%{
+    filter:
+      drop-shadow(
+        0 8px 18px
+        rgba(14,165,164,.15)
+      );
+  }
+
+}
+
+@keyframes lineGrow{
+
+  from{
+    width:0;
+    opacity:0;
+  }
+
+  to{
+    width:58px;
+    opacity:1;
+  }
+
+}
+
+@keyframes floatUp{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-13px);
+  }
+
+}
+
+@keyframes floatDown{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(11px);
+  }
+
+}
+
+@keyframes rotateSlow{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+@keyframes pulseGlow{
+
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.035);
+  }
+
 }
 
 
 /* =========================================================
-   DARK MODE
+   REVEAL
 ========================================================= */
 
-body.dark{
+.reveal{
+  opacity:0;
 
-  --dark:#edf7f5;
+  transform:translateY(25px);
 
-  --text:#c9d9d6;
-
-  --muted:#91aaa5;
-
-  --bg:#091514;
-
-  --white:#10201f;
-
-  --soft:#123a36;
-
-  --border:#24423e;
+  transition:.8s ease;
 }
 
+.reveal.show{
+  opacity:1;
 
-body.dark .header{
-
-  background:
-    rgba(9,21,20,.94);
-}
-
-
-body.dark .logo span{
-  color:#edf7f5;
-}
-
-
-body.dark .menu-btn,
-body.dark .theme-btn,
-body.dark .btn-outline,
-body.dark .float-card,
-body.dark .hero-circle,
-body.dark .about-symbol,
-body.dark .form,
-body.dark .service-card,
-body.dark .location-card,
-body.dark .contact-card,
-body.dark details,
-body.dark .mobile-actions{
-
-  background:#10201f;
-
-  color:#edf7f5;
-}
-
-
-body.dark .trust{
-  background:#0c1b1a;
-}
-
-
-body.dark .hero-visual,
-body.dark .about-visual{
-
-  background:
-    linear-gradient(
-      145deg,
-      #10312e,
-      #0c211f
-    );
-}
-
-
-body.dark .field input,
-body.dark .field select,
-body.dark .field textarea{
-
-  background:#0c1b1a;
-
-  color:white;
+  transform:translateY(0);
 }
 
 
 /* =========================================================
-   TABLET
+   RESPONSIVE
 ========================================================= */
 
 @media(max-width:900px){
 
   .menu-btn{
     display:block;
+
+    order:-1;
   }
 
+  .nav{
+    justify-content:flex-start;
+  }
+
+  .logo{
+    margin-left:auto;
+  }
+
+  .theme-wrap{
+    margin-left:8px;
+  }
 
   .nav-links{
-
     position:fixed;
 
-    top:68px;
+    left:15px;
+    top:84px;
 
-    left:-290px;
+    width:min(280px,80%);
 
-    width:270px;
+    padding:18px;
 
-    height:
-      calc(100vh - 68px);
+    border-radius:20px;
 
-    background:white;
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
 
     flex-direction:column;
 
     align-items:flex-start;
 
-    padding:25px 22px;
-
     gap:18px;
 
-    box-shadow:
-      15px 0 40px
-      rgba(0,0,0,.08);
+    transform:translateX(-130%);
 
-    transition:.3s;
+    transition:.35s;
   }
-
 
   .nav-links.active{
-    left:0;
+    transform:translateX(0);
   }
 
-
-  .hero-inner{
-
-    grid-template-columns:1fr;
-
-    gap:28px;
-  }
-
-
-  .hero-visual{
-    min-height:380px;
-  }
-
-
+  .hero-grid,
   .about-grid{
-
     grid-template-columns:1fr;
-
-    gap:28px;
   }
 
-
-  .appointment{
-
-    grid-template-columns:1fr;
-
-    gap:25px;
+  .hero-art{
+    min-height:360px;
   }
-
 
   .services-grid{
-
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns:1fr 1fr;
   }
 
-
-  .footer-inner{
-
-    grid-template-columns:
-      1fr 1fr;
+  .contact-grid{
+    grid-template-columns:1fr;
   }
 
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+@media(max-width:650px){
 
-@media(max-width:600px){
-
-  .header{
-    height:64px;
+  section{
+    padding:65px 0;
   }
-
-
-  .nav{
-    padding:
-      0 14px;
-  }
-
-
-  .nav-links{
-
-    top:64px;
-
-    height:
-      calc(100vh - 64px);
-  }
-
-
-  .logo{
-    font-size:18px;
-  }
-
-
-  .menu-btn{
-
-    width:39px;
-    height:39px;
-  }
-
-
-  .theme-btn{
-
-    width:38px;
-    height:38px;
-  }
-
 
   .hero{
-
-    padding:
-      89px 17px 30px;
+    padding:55px 0 65px;
   }
-
-
-  .doctor-name{
-
-    font-size:24px;
-
-    letter-spacing:-1px;
-  }
-
-
-  .doctor-degree{
-
-    font-size:12px;
-  }
-
-
-  .doctor-university{
-
-    font-size:9px;
-  }
-
 
   .hero h1{
-
-    font-size:46px;
-
-    letter-spacing:-3px;
-
-    margin-bottom:13px;
-  }
-
-
-  .hero-text{
-
-    font-size:14px;
-
-    margin-bottom:18px;
-  }
-
-
-  .hero-visual{
-
-    min-height:315px;
-
-    border-radius:23px;
-  }
-
-
-  .hero-circle{
-
-    width:180px;
-    height:180px;
-  }
-
-
-  .hero-circle strong{
-    font-size:18px;
-  }
-
-
-  .hero-circle small{
-    font-size:9px;
-  }
-
-
-  .card-one{
-
-    top:18px;
-    left:14px;
-  }
-
-
-  .card-two{
-
-    right:14px;
-    bottom:18px;
-  }
-
-
-  .float-card{
-    padding:11px 13px;
-  }
-
-
-  .float-card strong{
-    font-size:10px;
-  }
-
-
-  .float-card span{
-    font-size:8px;
-  }
-
-
-  .trust-inner{
-
-    grid-template-columns:
-      1fr 1fr 1fr;
-
-    padding:
-      10px 7px;
-  }
-
-
-  .trust-item{
-
-    padding:5px 2px;
-  }
-
-
-  .trust-item strong{
-    font-size:14px;
-  }
-
-
-  .trust-item span{
-    font-size:8px;
-  }
-
-
-  .section{
-
-    padding:
-      52px 17px;
-  }
-
-
-  .section-head{
-
-    margin-bottom:24px;
-  }
-
-
-  .section-title{
-
-    font-size:34px;
-
     letter-spacing:-2px;
   }
 
-
-  .section-description{
-    font-size:13px;
+  .hero-text{
+    font-size:15px;
   }
 
-
-  .about-visual{
-    min-height:255px;
+  .hero-art{
+    min-height:300px;
   }
 
-
-  .about-symbol{
-
-    width:150px;
-    height:150px;
+  .ring.one{
+    width:270px;
+    height:270px;
   }
 
-
-  .about-symbol strong{
-    font-size:20px;
+  .ring.two{
+    width:205px;
+    height:205px;
   }
 
+  .hero-circle{
+    width:145px;
+    height:145px;
+  }
+
+  .hero-circle span{
+    font-size:42px;
+  }
+
+  .float-card{
+    font-size:10px;
+
+    padding:10px 12px;
+  }
+
+  .float-card.one{
+    right:0;
+  }
+
+  .float-card.two{
+    left:0;
+  }
+
+  .trust-grid{
+    grid-template-columns:
+      1fr 1fr 1fr;
+
+    gap:5px;
+  }
+
+  .trust-item strong{
+    font-size:15px;
+  }
+
+  .trust-item span{
+    font-size:9px;
+  }
 
   .services-grid{
-
     grid-template-columns:1fr;
-
-    gap:10px;
   }
-
-
-  .service-card{
-    padding:19px;
-  }
-
-
-  .cta{
-
-    margin:
-      0 17px;
-
-    padding:
-      38px 23px;
-
-    border-radius:22px;
-  }
-
-
-  .cta h2{
-    font-size:31px;
-  }
-
-
-  .form{
-    padding:19px;
-  }
-
 
   .form-grid{
-
     grid-template-columns:1fr;
   }
-
 
   .field.full{
     grid-column:auto;
   }
 
+  .appointment-box{
+    padding:22px;
+
+    border-radius:22px;
+  }
 
   .location-card{
-
     flex-direction:column;
 
     align-items:flex-start;
-
-    padding:20px;
   }
 
+  .footer-main{
+    flex-direction:column;
 
-  .location-card .btn{
-    width:100%;
+    text-align:center;
   }
 
-
-  .contact-grid{
-
-    grid-template-columns:1fr;
+  .footer-info{
+    text-align:center;
   }
 
+  .theme-panel{
+    right:-5px;
 
-  .footer-inner{
-
-    grid-template-columns:1fr;
-
-    gap:27px;
-
-    padding:
-      38px 17px 27px;
+    width:215px;
   }
-
 
   .mobile-actions{
-
     position:fixed;
 
-    left:0;
-    right:0;
-    bottom:0;
+    z-index:1200;
+
+    bottom:12px;
+
+    left:12px;
+    right:12px;
 
     display:grid;
 
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
-    background:white;
-
-    border-top:
-      1px solid var(--border);
-
-    z-index:999;
+    gap:10px;
   }
-
 
   .mobile-actions a{
+    min-height:48px;
 
-    padding:
-      13px 8px;
+    display:grid;
 
-    text-align:center;
+    place-items:center;
 
-    font-size:12px;
-
-    font-weight:900;
-  }
-
-
-  .mobile-actions a:first-child{
-    color:var(--primary);
-  }
-
-
-  .mobile-actions a:last-child{
-
-    background:
-      linear-gradient(
-        135deg,
-        var(--primary),
-        var(--primary2)
-      );
+    border-radius:15px;
 
     color:white;
+
+    font-weight:900;
+
+    box-shadow:
+      0 12px 30px
+      rgba(0,0,0,.16);
   }
 
-
-  .top-btn{
-    bottom:70px;
+  .call-btn{
+    background:#0f766e;
   }
 
-}
+  .wa-btn{
+    background:#16a34a;
+  }
 
-
-/* =========================================================
-   REDUCE MOTION
-========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-  *,
-  *::before,
-  *::after{
-
-    animation-duration:.01ms !important;
-
-    animation-iteration-count:1 !important;
-
-    scroll-behavior:auto !important;
-
-    transition-duration:.01ms !important;
+  body{
+    padding-bottom:72px;
   }
 
 }
 
 </style>
-
 </head>
 
 
-<body id="home">
+<body class="theme-teal">
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-<header class="header">
+<header>
 
-<nav class="nav">
+  <div class="container nav">
 
-
-<button
-  class="menu-btn"
-  id="menuBtn"
-  aria-label="Open menu"
->
-  ☰
-</button>
-
-
-<a
-  href="#home"
-  class="logo"
->
-  Physio <span>Wellness</span>
-</a>
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      aria-label="Open menu"
+    >
+      ☰
+    </button>
 
 
-<div
-  class="nav-links"
-  id="navLinks"
->
-
-  <a href="#home">Home</a>
-
-  <a href="#about">About</a>
-
-  <a href="#services">Services</a>
-
-  <a href="#appointment">Appointment</a>
-
-  <a href="#location">Location</a>
-
-  <a href="#faq">FAQ</a>
-
-  <a href="#contact">Contact</a>
-
-</div>
+    <a href="#home" class="logo">
+      Physio <span>Wellness</span>
+    </a>
 
 
-<button
-  class="theme-btn"
-  id="themeBtn"
-  aria-label="Toggle dark mode"
->
-  ☾
-</button>
+    <nav
+      class="nav-links"
+      id="navLinks"
+    >
+
+      <a href="#home">Home</a>
+
+      <a href="#about">About</a>
+
+      <a href="#services">Services</a>
+
+      <a href="#appointment">Appointment</a>
+
+      <a href="#location">Location</a>
+
+      <a href="#contact">Contact</a>
+
+    </nav>
 
 
-</nav>
+    <!-- THEME -->
+
+    <div class="theme-wrap">
+
+      <button
+        class="theme-btn"
+        id="themeBtn"
+        aria-label="Change theme"
+        title="Change Theme"
+      >
+        🎨
+      </button>
+
+
+      <div
+        class="theme-panel"
+        id="themePanel"
+      >
+
+        <div class="theme-title">
+          Choose Theme
+        </div>
+
+
+        <div class="theme-options">
+
+          <button
+            class="theme-option"
+            data-theme="theme-teal"
+          >
+            🌿 Teal
+          </button>
+
+
+          <button
+            class="theme-option"
+            data-theme="theme-ocean"
+          >
+            💙 Ocean
+          </button>
+
+
+          <button
+            class="theme-option"
+            data-theme="theme-purple"
+          >
+            💜 Purple
+          </button>
+
+
+          <button
+            class="theme-option"
+            data-theme="theme-rose"
+          >
+            🌸 Rose
+          </button>
+
+
+          <button
+            class="theme-option"
+            data-theme="theme-light"
+          >
+            ☀️ Light
+          </button>
+
+
+          <button
+            class="theme-option"
+            data-theme="theme-dark"
+          >
+            🌙 Dark
+          </button>
+
+
+          <button
+            class="theme-option"
+            data-theme="theme-midnight"
+          >
+            🖤 Midnight
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </header>
 
 
-
-<!-- =====================================================
-     MAIN
-===================================================== -->
-
-<main>
-
-
-<!-- =====================================================
+<!-- =========================================================
      HERO
-===================================================== -->
+========================================================= -->
 
 <section
   class="hero"
   id="home"
 >
 
-
-<div class="hero-inner">
-
-
-<div class="hero-content">
+  <div class="container hero-grid">
 
 
-<div class="doctor-info">
+    <div class="reveal">
 
-  <div class="doctor-name">
-    Dr Sahin Ahamed Laskar
+
+      <div class="doctor-name">
+        Dr Sahin Ahamed Laskar
+      </div>
+
+
+      <div class="doctor-degree">
+        Bachelor of Physiotherapy (BPT)
+      </div>
+
+
+      <div class="doctor-university">
+        The Neotia University
+      </div>
+
+
+      <div class="badge">
+        Professional Physiotherapy Care
+      </div>
+
+
+      <h1>
+        Move Better.<br>
+        <span>Live Better.</span>
+      </h1>
+
+
+      <p class="hero-text">
+        Helping patients work toward better movement,
+        function and everyday confidence.
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a
+          href="#appointment"
+          class="btn btn-primary"
+        >
+          Book Appointment
+        </a>
+
+
+        <a
+          href="https://wa.me/917584814152"
+          target="_blank"
+          class="btn btn-light"
+        >
+          WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-art reveal">
+
+      <div class="ring one"></div>
+
+      <div class="ring two"></div>
+
+
+      <div class="hero-circle">
+        <span>PW</span>
+      </div>
+
+
+      <div class="float-card one">
+        ✓ Personalized Care
+      </div>
+
+
+      <div class="float-card two">
+        ✓ 30 Min Sessions
+      </div>
+
+
+      <div class="float-card three">
+        ✓ Rehabilitation
+      </div>
+
+    </div>
+
   </div>
-
-  <div class="doctor-degree">
-    Bachelor of Physiotherapy (BPT)
-  </div>
-
-  <div class="doctor-university">
-    The Neotia University
-  </div>
-
-</div>
-
-
-<span class="eyebrow">
-  PHYSIO WELLNESS
-</span>
-
-
-<h1>
-
-  Move Better.<br>
-
-  <span>
-    Live Better.
-  </span>
-
-</h1>
-
-
-<p class="hero-text">
-
-  Helping patients work toward better movement,
-  function and everyday confidence through
-  individualized care.
-
-</p>
-
-
-<div class="hero-buttons">
-
-  <a
-    href="#appointment"
-    class="btn btn-primary"
-  >
-    Book Appointment
-  </a>
-
-
-  <a
-    href="#services"
-    class="btn btn-outline"
-  >
-    Explore Services
-  </a>
-
-</div>
-
-
-</div>
-
-
-
-<!-- HERO VISUAL -->
-
-<div class="hero-visual">
-
-
-<div class="hero-circle">
-
-  <div>
-
-    <strong>
-      Movement
-    </strong>
-
-    <small>
-      Recovery • Function
-    </small>
-
-  </div>
-
-</div>
-
-
-<div class="float-card card-one">
-
-  <strong>
-    Personalized Care
-  </strong>
-
-  <span>
-    Patient-focused approach
-  </span>
-
-</div>
-
-
-<div class="float-card card-two">
-
-  <strong>
-    30 Minute Sessions
-  </strong>
-
-  <span>
-    Structured appointments
-  </span>
-
-</div>
-
-
-</div>
-
-
-</div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      TRUST
-===================================================== -->
+========================================================= -->
 
-<section class="trust">
+<div class="trust">
 
-<div class="trust-inner">
+  <div class="container trust-grid">
 
 
-<div class="trust-item">
+    <div class="trust-item">
 
-  <strong>
-    BPT
-  </strong>
+      <strong>
+        30 Min
+      </strong>
 
-  <span>
-    Qualification
-  </span>
+      <span>
+        Sessions
+      </span>
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <strong>
+        Care
+      </strong>
+
+      <span>
+        Patient Focused
+      </span>
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <strong>
+        Personalized
+      </strong>
+
+      <span>
+        Approach
+      </span>
+
+    </div>
+
+  </div>
 
 </div>
 
 
-<div class="trust-item">
-
-  <strong>
-    30 Min
-  </strong>
-
-  <span>
-    Sessions
-  </span>
-
-</div>
-
-
-<div class="trust-item">
-
-  <strong>
-    Care
-  </strong>
-
-  <span>
-    Patient Focused
-  </span>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
+<!-- =========================================================
      ABOUT
-===================================================== -->
+========================================================= -->
 
 <section
-  class="section reveal"
+  class="about"
   id="about"
 >
 
-
-<div class="section-head">
-
-<span class="eyebrow">
-  ABOUT
-</span>
+  <div class="container about-grid">
 
 
-<h2 class="section-title">
-  Care designed around your movement.
-</h2>
+    <div class="about-visual reveal">
+
+      <div class="about-core">
+        MOVEMENT<br>
+        MATTERS
+      </div>
+
+    </div>
 
 
-<p class="section-description">
+    <div class="about-content reveal">
 
-  A focused approach to physiotherapy that considers
-  your comfort, goals and functional needs.
-
-</p>
-
-</div>
+      <div class="section-tag">
+        About Physio Wellness
+      </div>
 
 
-
-<div class="about-grid">
-
-
-<div class="about-visual">
-
-  <div class="about-symbol">
-
-    <strong>
-      Movement<br>
-      Matters
-    </strong>
-
-  </div>
-
-</div>
+      <h3>
+        Focused on movement,
+        recovery and function.
+      </h3>
 
 
-
-<div class="about-text">
-
-
-<h3>
-  Better movement starts with the right approach.
-</h3>
-
-
-<p>
-
-  Physiotherapy can help improve mobility,
-  strength, flexibility and functional independence
-  through appropriate assessment and exercise-based care.
-
-</p>
+      <p>
+        Physiotherapy can support recovery from pain,
+        injury, surgery, neurological conditions and
+        movement limitations through individualized
+        assessment and rehabilitation.
+      </p>
 
 
-<p>
-
-  Every patient's needs are different. The goal is to
-  develop practical care that supports recovery and
-  helps you return to everyday activities with greater confidence.
-
-</p>
+      <div class="points">
 
 
+        <div class="point">
 
-<div class="feature-list">
+          <b>✓</b>
+
+          <span>
+            Individualized treatment approach
+          </span>
+
+        </div>
 
 
-<div class="feature">
+        <div class="point">
 
-  <div class="feature-icon">
-    ✓
-  </div>
+          <b>✓</b>
 
-  <div>
+          <span>
+            Exercise and rehabilitation focused care
+          </span>
 
-    <strong>
-      Individualized Care
-    </strong>
+        </div>
 
-    <p>
-      Care focused on your specific needs and goals.
-    </p>
+
+        <div class="point">
+
+          <b>✓</b>
+
+          <span>
+            Patient-centered treatment planning
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </div>
 
   </div>
-
-</div>
-
-
-
-<div class="feature">
-
-  <div class="feature-icon">
-    ✓
-  </div>
-
-  <div>
-
-    <strong>
-      Exercise-Based Approach
-    </strong>
-
-    <p>
-      Progressive movement and therapeutic exercise.
-    </p>
-
-  </div>
-
-</div>
-
-
-
-<div class="feature">
-
-  <div class="feature-icon">
-    ✓
-  </div>
-
-  <div>
-
-    <strong>
-      Functional Recovery
-    </strong>
-
-    <p>
-      Focus on everyday movement and function.
-    </p>
-
-  </div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      SERVICES
-===================================================== -->
+========================================================= -->
 
-<section
-  class="section reveal"
-  id="services"
->
+<section id="services">
 
-
-<div class="section-head">
-
-<span class="eyebrow">
-  SERVICES
-</span>
+  <div class="container">
 
 
-<h2 class="section-title">
-  Support for movement, recovery and function.
-</h2>
+    <div class="section-head reveal">
+
+      <div class="section-tag">
+        Services
+      </div>
+
+      <h2>
+        Physiotherapy & Rehabilitation
+      </h2>
+
+      <p>
+        Support for a wide range of musculoskeletal,
+        neurological and rehabilitation needs.
+      </p>
+
+    </div>
 
 
-<p class="section-description">
-
-  Professional physiotherapy care for a range of
-  musculoskeletal and functional needs.
-
-</p>
-
-</div>
+    <div class="services-grid">
 
 
+      <div class="service reveal">
 
-<div class="services-grid">
+        <div class="service-icon">
+          🦴
+        </div>
+
+        <h3>
+          Musculoskeletal Care
+        </h3>
+
+        <p>
+          Back, neck, shoulder, knee, joint and
+          muscle-related conditions.
+        </p>
+
+      </div>
 
 
-<article class="service-card">
+      <div class="service reveal">
 
-  <div class="service-number">
-    01
+        <div class="service-icon">
+          🏃
+        </div>
+
+        <h3>
+          Sports Rehabilitation
+        </h3>
+
+        <p>
+          Recovery and rehabilitation following
+          sports-related injuries.
+        </p>
+
+      </div>
+
+
+      <div class="service reveal">
+
+        <div class="service-icon">
+          🧠
+        </div>
+
+        <h3>
+          Neurological Rehabilitation
+        </h3>
+
+        <p>
+          Rehabilitation focused on mobility,
+          balance, strength and functional movement.
+        </p>
+
+      </div>
+
+
+      <div class="service reveal">
+
+        <div class="service-icon">
+          🏠
+        </div>
+
+        <h3>
+          Home Physiotherapy
+        </h3>
+
+        <p>
+          Physiotherapy support for patients who
+          require care at home.
+        </p>
+
+      </div>
+
+
+      <div class="service reveal">
+
+        <div class="service-icon">
+          🩺
+        </div>
+
+        <h3>
+          Post-Operative Rehabilitation
+        </h3>
+
+        <p>
+          Guided rehabilitation following appropriate
+          surgical procedures.
+        </p>
+
+      </div>
+
+
+      <div class="service reveal">
+
+        <div class="service-icon">
+          💪
+        </div>
+
+        <h3>
+          Exercise Therapy
+        </h3>
+
+        <p>
+          Individualized strengthening, mobility and
+          functional exercise programs.
+        </p>
+
+      </div>
+
+
+    </div>
+
   </div>
-
-  <h3>
-    Musculoskeletal Physiotherapy
-  </h3>
-
-  <p>
-    Support for common muscle, joint and
-    movement-related problems.
-  </p>
-
-</article>
-
-
-
-<article class="service-card">
-
-  <div class="service-number">
-    02
-  </div>
-
-  <h3>
-    Sports Rehabilitation
-  </h3>
-
-  <p>
-    Structured rehabilitation to support
-    safe return to activity.
-  </p>
-
-</article>
-
-
-
-<article class="service-card">
-
-  <div class="service-number">
-    03
-  </div>
-
-  <h3>
-    Therapeutic Exercise
-  </h3>
-
-  <p>
-    Targeted exercises designed to improve
-    strength, mobility and control.
-  </p>
-
-</article>
-
-
-
-<article class="service-card">
-
-  <div class="service-number">
-    04
-  </div>
-
-  <h3>
-    Joint Mobility
-  </h3>
-
-  <p>
-    Movement-focused care to support
-    flexibility and comfortable function.
-  </p>
-
-</article>
-
-
-
-<article class="service-card">
-
-  <div class="service-number">
-    05
-  </div>
-
-  <h3>
-    Functional Rehabilitation
-  </h3>
-
-  <p>
-    Practical rehabilitation focused on
-    everyday movement and independence.
-  </p>
-
-</article>
-
-
-
-<article class="service-card">
-
-  <div class="service-number">
-    06
-  </div>
-
-  <h3>
-    General Physiotherapy Care
-  </h3>
-
-  <p>
-    Personalized physiotherapy support based
-    on individual assessment and goals.
-  </p>
-
-</article>
-
-
-</div>
 
 </section>
 
 
-
-<!-- =====================================================
-     CTA
-===================================================== -->
-
-<section class="section">
-
-<div class="cta reveal">
-
-
-<span class="eyebrow">
-  YOUR NEXT STEP
-</span>
-
-
-<h2>
-  Ready to take the next step?
-</h2>
-
-
-<p>
-
-  Schedule an appointment and start working toward
-  better movement and everyday function.
-
-</p>
-
-
-<a
-  href="#appointment"
-  class="btn"
->
-  Request Appointment
-</a>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
+<!-- =========================================================
      APPOINTMENT
-===================================================== -->
+========================================================= -->
 
 <section
-  class="section reveal"
+  class="appointment"
   id="appointment"
 >
 
+  <div class="container">
 
-<div class="section-head">
 
-<span class="eyebrow">
-  APPOINTMENT
-</span>
+    <div class="section-head reveal">
 
+      <div class="section-tag">
+        Appointment
+      </div>
 
-<h2 class="section-title">
-  Request your appointment.
-</h2>
+      <h2>
+        Book Your Session
+      </h2>
 
+      <p>
+        Choose your preferred treatment or condition,
+        date and available time.
+      </p>
 
-<p class="section-description">
+    </div>
 
-  Choose your preferred date and 30-minute time slot.
-  Your request will be prepared for WhatsApp.
 
-</p>
+    <div class="appointment-box reveal">
 
-</div>
 
+      <form id="appointmentForm">
 
 
-<div class="appointment">
+        <div class="form-grid">
 
 
-<div class="appointment-info">
+          <!-- NAME -->
 
+          <div class="field">
 
-<h3>
-  Simple booking.
-</h3>
+            <label for="patientName">
+              Patient Name *
+            </label>
 
+            <input
+              type="text"
+              id="patientName"
+              placeholder="Enter patient name"
+              required
+            >
 
-<p>
+          </div>
 
-  Fill in the details and send your appointment
-  request directly through WhatsApp.
 
-</p>
+          <!-- PHONE -->
 
+          <div class="field">
 
-<div class="hours">
+            <label for="patientPhone">
+              Phone Number *
+            </label>
 
-<strong>
-  Available Hours
-</strong>
+            <input
+              type="tel"
+              id="patientPhone"
+              placeholder="Enter phone number"
+              required
+            >
 
-<div>
-  9:00 AM – 1:00 PM
-</div>
+          </div>
 
-<div>
-  4:00 PM – 10:00 PM
-</div>
 
-<br>
+          <!-- TREATMENT -->
 
-<small>
-  30-minute appointment slots
-</small>
+          <div class="field full">
 
-</div>
+            <label for="treatment">
+              Select Treatment / Condition *
+            </label>
 
 
-</div>
+            <select
+              id="treatment"
+              class="treatment-select"
+              required
+            >
 
+              <option value="">
+                — Select Treatment / Condition —
+              </option>
 
 
-<form
-  class="form"
-  id="appointmentForm"
->
+              <optgroup label="🦴 Spine & Back Conditions">
 
+                <option>Low Back Pain</option>
+                <option>Neck Pain / Cervical Pain</option>
+                <option>Upper Back Pain</option>
+                <option>Mid Back Pain</option>
+                <option>Tailbone Pain</option>
+                <option>Sciatica</option>
+                <option>Cervical Spondylosis</option>
+                <option>Lumbar Spondylosis</option>
+                <option>Slip Disc / Disc Prolapse</option>
+                <option>Spinal Stenosis</option>
+                <option>Postural Problems</option>
+                <option>Muscle Spasm</option>
 
-<div class="form-grid">
+              </optgroup>
 
 
-<div class="field">
+              <optgroup label="💪 Shoulder Conditions">
 
-<label for="patientName">
-  Patient Name
-</label>
+                <option>Shoulder Pain</option>
+                <option>Frozen Shoulder</option>
+                <option>Rotator Cuff Injury</option>
+                <option>Shoulder Impingement</option>
+                <option>Shoulder Stiffness</option>
+                <option>Shoulder Instability</option>
+                <option>Post-Shoulder Surgery Rehabilitation</option>
 
-<input
-  id="patientName"
-  type="text"
-  placeholder="Enter patient name"
-  required
->
+              </optgroup>
 
-</div>
 
+              <optgroup label="💪 Elbow Conditions">
 
+                <option>Elbow Pain</option>
+                <option>Tennis Elbow</option>
+                <option>Golfer's Elbow</option>
+                <option>Elbow Stiffness</option>
+                <option>Post-Elbow Injury Rehabilitation</option>
 
-<div class="field">
+              </optgroup>
 
-<label for="phone">
-  Phone Number
-</label>
 
-<input
-  id="phone"
-  type="tel"
-  placeholder="Enter phone number"
-  required
->
+              <optgroup label="✋ Wrist & Hand Conditions">
 
-</div>
+                <option>Wrist Pain</option>
+                <option>Carpal Tunnel Syndrome</option>
+                <option>Hand Pain</option>
+                <option>Finger Stiffness</option>
+                <option>Hand Injury Rehabilitation</option>
+                <option>Wrist Injury Rehabilitation</option>
 
+              </optgroup>
 
 
-<div class="field">
+              <optgroup label="🦵 Knee Conditions">
 
-<label for="date">
-  Preferred Date
-</label>
+                <option>Knee Pain</option>
+                <option>Osteoarthritis</option>
+                <option>Rheumatoid Arthritis</option>
+                <option>Knee Arthritis</option>
+                <option>Meniscus Injury</option>
+                <option>ACL Injury</option>
+                <option>PCL Injury</option>
+                <option>MCL Injury</option>
+                <option>LCL Injury</option>
+                <option>Ligament Injury</option>
+                <option>Patellofemoral Pain</option>
+                <option>Knee Stiffness</option>
+                <option>Post-Knee Surgery Rehabilitation</option>
+                <option>Knee Replacement Rehabilitation</option>
 
-<input
-  id="date"
-  type="date"
-  required
->
+              </optgroup>
 
-</div>
 
+              <optgroup label="🦵 Hip & Pelvis Conditions">
 
+                <option>Hip Pain</option>
+                <option>Hip Arthritis</option>
+                <option>Hip Stiffness</option>
+                <option>Hip Muscle Injury</option>
+                <option>Groin Pain</option>
+                <option>Pelvic Pain</option>
+                <option>Post-Hip Surgery Rehabilitation</option>
+                <option>Hip Replacement Rehabilitation</option>
 
-<div class="field">
+              </optgroup>
 
-<label for="time">
-  Preferred Time
-</label>
 
-<select
-  id="time"
-  required
->
+              <optgroup label="🦶 Foot & Ankle Conditions">
 
-<option value="">
-  Select time
-</option>
+                <option>Ankle Pain</option>
+                <option>Ankle Sprain</option>
+                <option>Ankle Instability</option>
+                <option>Heel Pain</option>
+                <option>Plantar Fasciitis</option>
+                <option>Foot Pain</option>
+                <option>Achilles Tendon Injury</option>
+                <option>Achilles Tendinopathy</option>
+                <option>Foot & Ankle Stiffness</option>
+                <option>Post-Ankle Injury Rehabilitation</option>
 
-</select>
+              </optgroup>
 
-</div>
 
+              <optgroup label="🦴 Arthritis & Joint Conditions">
 
+                <option>Osteoarthritis</option>
+                <option>Rheumatoid Arthritis</option>
+                <option>Joint Pain</option>
+                <option>Joint Stiffness</option>
+                <option>Inflammatory Joint Problems</option>
+                <option>Mobility Limitation</option>
 
-<div class="field full">
+              </optgroup>
 
-<label for="concern">
-  Main Concern
-</label>
 
-<textarea
-  id="concern"
-  placeholder="Briefly describe your concern..."
-  required
-></textarea>
+              <optgroup label="🏃 Sports & Athletic Injuries">
 
-</div>
+                <option>Sports Injury</option>
+                <option>Muscle Strain</option>
+                <option>Muscle Tear</option>
+                <option>Hamstring Injury</option>
+                <option>Quadriceps Injury</option>
+                <option>Calf Muscle Injury</option>
+                <option>Groin Injury</option>
+                <option>Tendon Injury</option>
+                <option>Ligament Injury</option>
+                <option>Overuse Injury</option>
+                <option>Post-Sports Injury Rehabilitation</option>
+                <option>Sports Performance Rehabilitation</option>
 
+              </optgroup>
 
-</div>
 
+              <optgroup label="🩹 Fracture & Trauma Rehabilitation">
 
-<button
-  class="btn btn-primary"
-  type="submit"
->
-  Send Appointment Request
-</button>
+                <option>Fracture Rehabilitation</option>
+                <option>Post-Fracture Stiffness</option>
+                <option>Post-Injury Rehabilitation</option>
+                <option>Soft Tissue Injury</option>
+                <option>Trauma Rehabilitation</option>
 
+              </optgroup>
 
-</form>
 
+              <optgroup label="🧠 Neurological Conditions">
 
-</div>
+                <option>Stroke Rehabilitation</option>
+                <option>Paralysis Rehabilitation</option>
+                <option>Hemiplegia</option>
+                <option>Hemiparesis</option>
+                <option>Parkinson's Disease</option>
+                <option>Multiple Sclerosis</option>
+                <option>Spinal Cord Injury</option>
+                <option>Neuropathy</option>
+                <option>Balance Problems</option>
+                <option>Gait Problems</option>
+                <option>Neurological Weakness</option>
+                <option>Coordination Problems</option>
+                <option>Movement Disorders</option>
+                <option>Functional Mobility Problems</option>
+
+              </optgroup>
+
+
+              <optgroup label="👴 Geriatric Rehabilitation">
+
+                <option>Age-Related Weakness</option>
+                <option>Balance & Mobility Problems</option>
+                <option>Fall Prevention</option>
+                <option>Reduced Mobility</option>
+                <option>Joint Stiffness</option>
+                <option>General Deconditioning</option>
+                <option>Functional Independence Training</option>
+
+              </optgroup>
+
+
+              <optgroup label="🫁 Cardiopulmonary Rehabilitation">
+
+                <option>Breathing Problems</option>
+                <option>Respiratory Rehabilitation</option>
+                <option>Post-COVID Rehabilitation</option>
+                <option>Cardiac Rehabilitation</option>
+                <option>Reduced Exercise Tolerance</option>
+                <option>General Cardiopulmonary Rehabilitation</option>
+
+              </optgroup>
+
+
+              <optgroup label="🤰 Women's Health Physiotherapy">
+
+                <option>Pregnancy-Related Musculoskeletal Pain</option>
+                <option>Postnatal Rehabilitation</option>
+                <option>Pelvic Floor Rehabilitation</option>
+                <option>Postpartum Weakness</option>
+                <option>Pregnancy Back Pain</option>
+                <option>Pregnancy Pelvic Pain</option>
+
+              </optgroup>
+
+
+              <optgroup label="👶 Pediatric Rehabilitation">
+
+                <option>Pediatric Developmental Delay</option>
+                <option>Gross Motor Delay</option>
+                <option>Muscle Weakness in Children</option>
+                <option>Balance Problems in Children</option>
+                <option>Pediatric Orthopedic Rehabilitation</option>
+                <option>Pediatric Neurological Rehabilitation</option>
+
+              </optgroup>
+
+
+              <optgroup label="🩺 Post-Operative Rehabilitation">
+
+                <option>Post-Operative Rehabilitation</option>
+                <option>Post-Surgical Rehabilitation</option>
+                <option>Post-Knee Surgery Rehabilitation</option>
+                <option>Post-Hip Surgery Rehabilitation</option>
+                <option>Post-Shoulder Surgery Rehabilitation</option>
+                <option>Post-Spine Surgery Rehabilitation</option>
+                <option>Joint Replacement Rehabilitation</option>
+                <option>Pre-Surgical Physiotherapy</option>
+
+              </optgroup>
+
+
+              <optgroup label="✨ Pain & Chronic Conditions">
+
+                <option>Chronic Pain</option>
+                <option>Chronic Back Pain</option>
+                <option>Chronic Neck Pain</option>
+                <option>Chronic Joint Pain</option>
+                <option>Fibromyalgia</option>
+                <option>Muscle Weakness</option>
+                <option>Deconditioning</option>
+                <option>Mobility Limitation</option>
+
+              </optgroup>
+
+
+              <optgroup label="🏠 General Physiotherapy Services">
+
+                <option>Home Physiotherapy</option>
+                <option>Mobility Training</option>
+                <option>Strengthening Program</option>
+                <option>Exercise Therapy</option>
+                <option>Posture Correction</option>
+                <option>Balance Training</option>
+                <option>Gait Training</option>
+                <option>Functional Rehabilitation</option>
+                <option>General Physiotherapy</option>
+                <option>Other / Not Listed</option>
+
+              </optgroup>
+
+            </select>
+
+          </div>
+
+
+          <!-- DATE -->
+
+          <div class="field">
+
+            <label for="date">
+              Preferred Date *
+            </label>
+
+            <input
+              type="date"
+              id="date"
+              required
+            >
+
+          </div>
+
+
+          <!-- TIME -->
+
+          <div class="field">
+
+            <label for="time">
+              Preferred Time *
+            </label>
+
+            <select
+              id="time"
+              required
+            >
+
+              <option value="">
+                — Select Time —
+              </option>
+
+              <option>9:00 AM</option>
+              <option>9:30 AM</option>
+              <option>10:00 AM</option>
+              <option>10:30 AM</option>
+              <option>11:00 AM</option>
+              <option>11:30 AM</option>
+              <option>12:00 PM</option>
+              <option>12:30 PM</option>
+              <option>1:00 PM</option>
+
+              <option>4:00 PM</option>
+              <option>4:30 PM</option>
+              <option>5:00 PM</option>
+              <option>5:30 PM</option>
+              <option>6:00 PM</option>
+              <option>6:30 PM</option>
+              <option>7:00 PM</option>
+              <option>7:30 PM</option>
+              <option>8:00 PM</option>
+              <option>8:30 PM</option>
+              <option>9:00 PM</option>
+              <option>9:30 PM</option>
+              <option>10:00 PM</option>
+
+            </select>
+
+          </div>
+
+
+          <!-- DETAILS -->
+
+          <div class="field full">
+
+            <label for="concern">
+              Additional Details
+            </label>
+
+            <textarea
+              id="concern"
+              placeholder="Briefly describe your problem or any additional information..."
+            ></textarea>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="appointment-note">
+
+          ⏱️ Appointment sessions are scheduled in
+          30-minute intervals. Your request will open
+          WhatsApp with the appointment details.
+
+        </div>
+
+
+        <div class="form-actions">
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+          >
+            📲 Send Appointment on WhatsApp
+          </button>
+
+
+          <a
+            href="tel:+917584814152"
+            class="btn btn-light"
+          >
+            📞 Call
+          </a>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      LOCATION
-===================================================== -->
+========================================================= -->
 
 <section
-  class="section reveal"
+  class="location"
   id="location"
 >
 
-
-<div class="section-head">
-
-<span class="eyebrow">
-  LOCATION
-</span>
+  <div class="container">
 
 
-<h2 class="section-title">
-  Visit Physio Wellness.
-</h2>
+    <div class="section-head reveal">
+
+      <div class="section-tag">
+        Location
+      </div>
+
+      <h2>
+        Visit Physio Wellness
+      </h2>
+
+    </div>
 
 
-<p class="section-description">
-  Joynagar, Baruipur, West Bengal
-</p>
-
-</div>
+    <div class="location-card reveal">
 
 
+      <div class="location-info">
 
-<div class="location-card">
-
-
-<div class="location-info">
-
-<span class="location-icon">
-  📍
-</span>
+        <div class="location-icon">
+          📍
+        </div>
 
 
-<div>
+        <div>
 
-<h3>
-  Physio Wellness
-</h3>
+          <h3>
+            Joynagar, Baruipur, West Bengal
+          </h3>
 
-<p>
-  Joynagar, Baruipur, West Bengal
-</p>
+          <p>
+            Physiotherapy & Rehabilitation Care
+          </p>
 
-</div>
+        </div>
 
-</div>
-
-
-
-<a
-  class="btn btn-primary"
-  href="https://www.google.com/maps/search/?api=1&query=Joynagar%2CBaruipur%2CWest%20Bengal"
-  target="_blank"
-  rel="noopener"
->
-  Open in Google Maps
-</a>
+      </div>
 
 
-</div>
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Joynagar%2C+Baruipur%2C+West+Bengal"
+        target="_blank"
+        class="btn btn-primary"
+      >
+        Open Maps
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      FAQ
-===================================================== -->
+========================================================= -->
 
-<section
-  class="section reveal"
-  id="faq"
->
+<section class="faq">
 
-
-<div class="section-head">
-
-<span class="eyebrow">
-  FAQ
-</span>
+  <div class="container">
 
 
-<h2 class="section-title">
-  Frequently asked questions.
-</h2>
+    <div class="section-head reveal">
 
-</div>
+      <div class="section-tag">
+        FAQ
+      </div>
 
+      <h2>
+        Frequently Asked Questions
+      </h2>
 
-
-<div class="faq">
-
-
-<details>
-
-<summary>
-  How long is a session?
-</summary>
-
-<p>
-  Standard appointment slots are 30 minutes.
-</p>
-
-</details>
+    </div>
 
 
-
-<details>
-
-<summary>
-  How can I book an appointment?
-</summary>
-
-<p>
-  Fill out the appointment form and send the
-  generated request through WhatsApp.
-</p>
-
-</details>
+    <div class="faq-list">
 
 
+      <details class="reveal">
 
-<details>
+        <summary>
+          How long is one physiotherapy session?
+        </summary>
 
-<summary>
-  What should I bring?
-</summary>
+        <p>
+          Standard appointment slots are arranged in
+          30-minute intervals.
+        </p>
 
-<p>
-  If you have previous medical reports,
-  prescriptions or relevant documents,
-  you may bring them for reference.
-</p>
-
-</details>
+      </details>
 
 
+      <details class="reveal">
 
-<details>
+        <summary>
+          Do I need to select my exact diagnosis?
+        </summary>
 
-<summary>
-  Can I choose a preferred time?
-</summary>
+        <p>
+          No. If you are unsure about your condition,
+          select “Other / Not Listed” or “General
+          Physiotherapy” and describe your problem
+          in the additional details box.
+        </p>
 
-<p>
-  Yes. Available 30-minute slots are shown
-  in the appointment form.
-</p>
-
-</details>
+      </details>
 
 
-</div>
+      <details class="reveal">
+
+        <summary>
+          Is home physiotherapy available?
+        </summary>
+
+        <p>
+          Home Physiotherapy is available as a service
+          option. Please mention it while requesting
+          an appointment.
+        </p>
+
+      </details>
+
+
+      <details class="reveal">
+
+        <summary>
+          How do I request an appointment?
+        </summary>
+
+        <p>
+          Fill in the appointment form and select your
+          treatment or condition. The details will be
+          prepared for WhatsApp.
+        </p>
+
+      </details>
+
+
+    </div>
+
+  </div>
 
 </section>
 
 
+<!-- =========================================================
+     CTA
+========================================================= -->
 
-<!-- =====================================================
+<section class="cta">
+
+  <div class="container">
+
+
+    <div class="cta-box reveal">
+
+      <h2>
+        Ready to take the next step?
+      </h2>
+
+
+      <p>
+        Choose your treatment or condition and request
+        your preferred appointment time.
+      </p>
+
+
+      <a
+        href="#appointment"
+        class="btn btn-light"
+      >
+        Book Appointment
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
      CONTACT
-===================================================== -->
+========================================================= -->
 
-<section
-  class="section reveal"
-  id="contact"
->
+<section id="contact">
 
-
-<div class="section-head">
-
-<span class="eyebrow">
-  CONTACT
-</span>
+  <div class="container">
 
 
-<h2 class="section-title">
-  Get in touch.
-</h2>
+    <div class="section-head reveal">
+
+      <div class="section-tag">
+        Contact
+      </div>
+
+      <h2>
+        Get in Touch
+      </h2>
+
+    </div>
 
 
-<p class="section-description">
-
-  For appointments and general enquiries,
-  use any of the contact options below.
-
-</p>
-
-</div>
+    <div class="contact-grid">
 
 
+      <a
+        href="tel:+917584814152"
+        class="contact-card reveal"
+      >
 
-<div class="contact-grid">
+        <span>📞</span>
 
+        <h3>
+          Phone
+        </h3>
 
-<a
-  class="contact-card"
-  href="tel:+917584814152"
->
+        <p>
+          +91 75848 14152
+        </p>
 
-<div class="icon">
-  📞
-</div>
-
-<h3>
-  Call
-</h3>
-
-<p>
-  7584814152
-</p>
-
-</a>
+      </a>
 
 
+      <a
+        href="https://wa.me/917584814152"
+        target="_blank"
+        class="contact-card reveal"
+      >
 
-<a
-  class="contact-card"
-  href="https://wa.me/917584814152"
-  target="_blank"
-  rel="noopener"
->
+        <span>💬</span>
 
-<div class="icon">
-  💬
-</div>
+        <h3>
+          WhatsApp
+        </h3>
 
-<h3>
-  WhatsApp
-</h3>
+        <p>
+          Chat for appointment
+        </p>
 
-<p>
-  Send a message
-</p>
-
-</a>
+      </a>
 
 
+      <a
+        href="mailto:laskarsahin6152@gmail.com"
+        class="contact-card reveal"
+      >
 
-<a
-  class="contact-card"
-  href="mailto:laskarsahin6152@gmail.com"
->
+        <span>✉️</span>
 
-<div class="icon">
-  ✉️
-</div>
+        <h3>
+          Email
+        </h3>
 
-<h3>
-  Email
-</h3>
+        <p>
+          laskarsahin6152@gmail.com
+        </p>
 
-<p>
-  laskarsahin6152@gmail.com
-</p>
-
-</a>
+      </a>
 
 
-</div>
+    </div>
+
+  </div>
 
 </section>
 
 
-</main>
-
-
-
-<!-- =====================================================
+<!-- =========================================================
      FOOTER
-===================================================== -->
+========================================================= -->
 
-<footer class="footer">
+<footer>
 
-
-<div class="footer-inner">
-
-
-<div class="footer-brand">
+  <div class="container">
 
 
-<h3>
-  Physio Wellness
-</h3>
+    <div class="footer-main">
 
 
-<div class="qualification">
-  Bachelor of Physiotherapy (BPT)
-</div>
+      <div class="footer-brand">
+        Physio <span>Wellness</span>
+      </div>
 
 
-<div class="university">
-  THE NEOTIA UNIVERSITY
-</div>
+      <div class="footer-info">
+
+        <p>
+          Bachelor of Physiotherapy (BPT)
+        </p>
+
+        <p>
+          THE NEOTIA UNIVERSITY
+        </p>
+
+      </div>
 
 
-<p>
-
-  Professional physiotherapy care focused on
-  better movement, recovery and everyday function.
-
-</p>
+    </div>
 
 
-</div>
+    <div class="copyright">
+      © 2026 Physio Wellness. All rights reserved.
+    </div>
 
 
-
-<div>
-
-<h4>
-  Quick Links
-</h4>
-
-
-<div class="footer-links">
-
-<a href="#home">
-  Home
-</a>
-
-<a href="#about">
-  About
-</a>
-
-<a href="#services">
-  Services
-</a>
-
-<a href="#appointment">
-  Appointment
-</a>
-
-<a href="#location">
-  Location
-</a>
-
-<a href="#contact">
-  Contact
-</a>
-
-</div>
-
-</div>
-
-
-
-<div>
-
-<h4>
-  Contact
-</h4>
-
-
-<div class="footer-contact">
-
-<a href="tel:+917584814152">
-  📞 7584814152
-</a>
-
-
-<a
-  href="https://wa.me/917584814152"
-  target="_blank"
-  rel="noopener"
->
-  💬 WhatsApp
-</a>
-
-
-<a href="mailto:laskarsahin6152@gmail.com">
-  ✉️ laskarsahin6152@gmail.com
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-
-<div class="footer-bottom">
-
-© 2026 Physio Wellness. All Rights Reserved.
-
-</div>
-
+  </div>
 
 </footer>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      MOBILE ACTIONS
-===================================================== -->
+========================================================= -->
 
 <div class="mobile-actions">
 
 
-<a href="tel:+917584814152">
-  📞 Call
-</a>
+  <a
+    href="tel:+917584814152"
+    class="call-btn"
+  >
+    📞 Call
+  </a>
 
 
-<a
-  href="https://wa.me/917584814152"
-  target="_blank"
-  rel="noopener"
->
-  💬 WhatsApp
-</a>
+  <a
+    href="https://wa.me/917584814152"
+    target="_blank"
+    class="wa-btn"
+  >
+    💬 WhatsApp
+  </a>
 
 
 </div>
 
 
-
-<!-- =====================================================
-     TOP BUTTON
-===================================================== -->
-
-<button
-  class="top-btn"
-  id="topBtn"
-  aria-label="Back to top"
->
-  ↑
-</button>
-
-
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script>
+
 
 /* =========================================================
    MOBILE MENU
@@ -3935,9 +3362,7 @@ menuBtn.addEventListener(
   "click",
   () => {
 
-    navLinks.classList.toggle(
-      "active"
-    );
+    navLinks.classList.toggle("active");
 
     menuBtn.textContent =
       navLinks.classList.contains("active")
@@ -3956,12 +3381,9 @@ document
       "click",
       () => {
 
-        navLinks.classList.remove(
-          "active"
-        );
+        navLinks.classList.remove("active");
 
-        menuBtn.textContent =
-          "☰";
+        menuBtn.textContent = "☰";
 
       }
     );
@@ -3970,51 +3392,117 @@ document
 
 
 /* =========================================================
-   DARK MODE
+   THEME SYSTEM
 ========================================================= */
 
 const themeBtn =
   document.getElementById("themeBtn");
 
+const themePanel =
+  document.getElementById("themePanel");
 
-if(
-  localStorage.getItem(
-    "physioTheme"
-  ) === "dark"
-){
+const themeOptions =
+  document.querySelectorAll(".theme-option");
 
-  document.body.classList.add(
-    "dark"
+
+const themes = [
+  "theme-teal",
+  "theme-ocean",
+  "theme-purple",
+  "theme-rose",
+  "theme-light",
+  "theme-dark",
+  "theme-midnight"
+];
+
+
+function applyTheme(theme){
+
+  document.body.classList.remove(...themes);
+
+  document.body.classList.add(theme);
+
+  localStorage.setItem(
+    "physioWellnessTheme",
+    theme
   );
 
-  themeBtn.textContent =
-    "☀";
+
+  themeOptions.forEach(option => {
+
+    option.classList.toggle(
+      "active",
+      option.dataset.theme === theme
+    );
+
+  });
 
 }
 
 
+/* Load saved theme */
+
+const savedTheme =
+  localStorage.getItem(
+    "physioWellnessTheme"
+  );
+
+
+applyTheme(
+  savedTheme && themes.includes(savedTheme)
+    ? savedTheme
+    : "theme-teal"
+);
+
+
+/* Open / close theme panel */
+
 themeBtn.addEventListener(
   "click",
-  () => {
+  event => {
 
-    document.body.classList.toggle(
-      "dark"
-    );
+    event.stopPropagation();
 
-    const dark =
-      document.body.classList.contains(
-        "dark"
+    themePanel.classList.toggle("active");
+
+  }
+);
+
+
+/* Select theme */
+
+themeOptions.forEach(option => {
+
+  option.addEventListener(
+    "click",
+    () => {
+
+      applyTheme(
+        option.dataset.theme
       );
 
+      themePanel.classList.remove("active");
 
-    themeBtn.textContent =
-      dark ? "☀" : "☾";
+    }
+  );
+
+});
 
 
-    localStorage.setItem(
-      "physioTheme",
-      dark ? "dark" : "light"
-    );
+/* Close theme panel outside click */
+
+document.addEventListener(
+  "click",
+  event => {
+
+    if(
+      !themePanel.contains(event.target) &&
+      !themeBtn.contains(event.target)
+    ){
+
+      themePanel.classList.remove("active");
+
+    }
 
   }
 );
@@ -4038,7 +3526,7 @@ const yyyy =
 
 const mm =
   String(
-    today.getMonth()+1
+    today.getMonth() + 1
   ).padStart(2,"0");
 
 
@@ -4053,273 +3541,155 @@ dateInput.min =
 
 
 /* =========================================================
-   TIME SLOTS
+   APPOINTMENT / WHATSAPP
 ========================================================= */
 
-const timeSelect =
-  document.getElementById("time");
-
-
-function addTime(
-  hour,
-  minute
-){
-
-  const ampm =
-    hour >= 12
-      ? "PM"
-      : "AM";
-
-
-  let displayHour =
-    hour % 12;
-
-
-  if(
-    displayHour === 0
-  ){
-    displayHour = 12;
-  }
-
-
-  const minuteText =
-    String(minute)
-      .padStart(2,"0");
-
-
-  const value =
-    `${String(hour).padStart(2,"0")}:${minuteText}`;
-
-
-  const label =
-    `${displayHour}:${minuteText} ${ampm}`;
-
-
-  const option =
-    document.createElement(
-      "option"
-    );
-
-
-  option.value =
-    value;
-
-
-  option.textContent =
-    label;
-
-
-  timeSelect.appendChild(
-    option
+const appointmentForm =
+  document.getElementById(
+    "appointmentForm"
   );
 
-}
+
+appointmentForm.addEventListener(
+  "submit",
+  function(e){
+
+    e.preventDefault();
 
 
-/* 9 AM - 1 PM */
-
-for(
-  let h=9;
-  h<13;
-  h++
-){
-
-  for(
-    let m=0;
-    m<60;
-    m+=30
-  ){
-
-    addTime(h,m);
-
-  }
-
-}
+    const patientName =
+      document
+        .getElementById("patientName")
+        .value
+        .trim();
 
 
-/* 4 PM - 10 PM */
-
-for(
-  let h=16;
-  h<22;
-  h++
-){
-
-  for(
-    let m=0;
-    m<60;
-    m+=30
-  ){
-
-    addTime(h,m);
-
-  }
-
-}
+    const patientPhone =
+      document
+        .getElementById("patientPhone")
+        .value
+        .trim();
 
 
-/* =========================================================
-   WHATSAPP APPOINTMENT
-========================================================= */
-
-document
-  .getElementById(
-    "appointmentForm"
-  )
-  .addEventListener(
-    "submit",
-    function(e){
-
-      e.preventDefault();
+    const treatment =
+      document
+        .getElementById("treatment")
+        .value;
 
 
-      const name =
-        document
-          .getElementById(
-            "patientName"
-          )
-          .value
-          .trim();
+    const date =
+      document
+        .getElementById("date")
+        .value;
 
 
-      const phone =
-        document
-          .getElementById(
-            "phone"
-          )
-          .value
-          .trim();
+    const time =
+      document
+        .getElementById("time")
+        .value;
 
 
-      const date =
-        document
-          .getElementById(
-            "date"
-          )
-          .value;
+    const concern =
+      document
+        .getElementById("concern")
+        .value
+        .trim();
 
 
-      const time =
-        document
-          .getElementById(
-            "time"
-          )
-          .value;
+    if(
+      !patientName ||
+      !patientPhone ||
+      !treatment ||
+      !date ||
+      !time
+    ){
 
-
-      const concern =
-        document
-          .getElementById(
-            "concern"
-          )
-          .value
-          .trim();
-
-
-      if(
-        !name ||
-        !phone ||
-        !date ||
-        !time ||
-        !concern
-      ){
-
-        alert(
-          "Please fill in all appointment details."
-        );
-
-        return;
-
-      }
-
-
-      const formattedDate =
-        new Date(
-          date + "T00:00:00"
-        ).toLocaleDateString(
-          "en-IN",
-          {
-            day:"2-digit",
-            month:"long",
-            year:"numeric"
-          }
-        );
-
-
-      const selectedTime =
-        document
-          .getElementById(
-            "time"
-          )
-          .selectedOptions[0]
-          .textContent;
-
-
-      const message =
-`Hello Physio Wellness,
-
-I would like to request an appointment.
-
-Patient Name: ${name}
-Phone: ${phone}
-Preferred Date: ${formattedDate}
-Preferred Time: ${selectedTime}
-
-Main Concern:
-${concern}
-
-Thank you.`;
-
-
-      const whatsappURL =
-        "https://wa.me/917584814152?text=" +
-        encodeURIComponent(
-          message
-        );
-
-
-      window.open(
-        whatsappURL,
-        "_blank"
+      alert(
+        "Please complete all required appointment fields."
       );
 
+      return;
+
     }
-  );
+
+
+    const formattedDate =
+      new Date(
+        date + "T00:00:00"
+      ).toLocaleDateString(
+        "en-IN",
+        {
+          day:"2-digit",
+          month:"long",
+          year:"numeric"
+        }
+      );
+
+
+    const message =
+`Hello Dr Sahin Ahamed Laskar,
+
+I would like to request a physiotherapy appointment.
+
+👤 Patient Name: ${patientName}
+
+📞 Phone: ${patientPhone}
+
+🩺 Treatment / Condition:
+${treatment}
+
+📅 Preferred Date:
+${formattedDate}
+
+⏰ Preferred Time:
+${time}
+
+📝 Additional Details:
+${concern || "Not provided"}
+
+Thank you.
+Physio Wellness`;
+
+
+    const whatsappURL =
+      "https://wa.me/917584814152?text=" +
+      encodeURIComponent(message);
+
+
+    window.open(
+      whatsappURL,
+      "_blank"
+    );
+
+  }
+);
 
 
 /* =========================================================
    SCROLL REVEAL
 ========================================================= */
 
-const revealElements =
-  document.querySelectorAll(
-    ".reveal"
-  );
-
-
 const observer =
   new IntersectionObserver(
     entries => {
 
-      entries.forEach(
-        entry => {
+      entries.forEach(entry => {
 
-          if(
-            entry.isIntersecting
-          ){
+        if(
+          entry.isIntersecting
+        ){
 
-            entry.target.classList.add(
-              "show"
-            );
+          entry.target.classList.add(
+            "show"
+          );
 
-            observer.unobserve(
-              entry.target
-            );
-
-          }
+          observer.unobserve(
+            entry.target
+          );
 
         }
-      );
+
+      });
 
     },
     {
@@ -4328,64 +3698,14 @@ const observer =
   );
 
 
-revealElements.forEach(
-  element => {
-
-    observer.observe(
-      element
-    );
-
-  }
-);
-
-
-/* =========================================================
-   TOP BUTTON
-========================================================= */
-
-const topBtn =
-  document.getElementById(
-    "topBtn"
+document
+  .querySelectorAll(".reveal")
+  .forEach(
+    el => observer.observe(el)
   );
 
 
-window.addEventListener(
-  "scroll",
-  () => {
-
-    if(
-      window.scrollY > 450
-    ){
-
-      topBtn.style.display =
-        "block";
-
-    }else{
-
-      topBtn.style.display =
-        "none";
-
-    }
-
-  }
-);
-
-
-topBtn.addEventListener(
-  "click",
-  () => {
-
-    window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    });
-
-  }
-);
-
 </script>
-
 
 </body>
 </html>
-```
