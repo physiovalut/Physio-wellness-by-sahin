@@ -2000,13 +2000,13 @@ footer{
 }
 
 .mobile-action{
-    padding:13px;
+    padding:8px 10px;
 
     text-align:center;
 
-    border-radius:15px;
+    border-radius:11px;
 
-    font-size:12px;
+    font-size:10px;
 
     font-weight:1000;
 
@@ -2724,6 +2724,34 @@ footer{
 @keyframes waPulse{0%,100%{box-shadow:0 10px 28px rgba(37,211,102,.25)}50%{box-shadow:0 10px 34px rgba(37,211,102,.48)}}
 @media(max-width:600px){.feedback-slide{padding:27px 20px;min-height:270px}.feedback-quote{font-size:1rem}.v23-wa-assistant{right:14px;bottom:14px;padding:9px 12px 9px 9px}.v23-wa-text{font-size:.82rem}}
 @media(prefers-reduced-motion:reduce){.feedback-slide.active,.v23-wa-assistant{animation:none}}
+</style>
+
+<style id="v25-ui-fix">
+/* V25 compact mobile action buttons + non-overlapping help bubble */
+.mobile-actions{gap:6px;left:12px;right:12px;bottom:8px;}
+.mobile-action{min-height:34px;padding:7px 8px;font-size:10px;line-height:1.1;border-radius:10px;}
+.v23-wa-assistant{right:16px;bottom:58px;padding:6px 9px 6px 7px;gap:6px;font-size:.68rem;}
+.v23-wa-icon{width:24px;height:24px;font-size:.85rem;}
+.v23-wa-text{font-size:.68rem;}
+@media(max-width:600px){
+  .mobile-actions{left:10px;right:10px;bottom:7px;gap:5px;}
+  .mobile-action{padding:7px 6px;font-size:9px;min-height:32px;}
+  .v23-wa-assistant{right:10px;bottom:52px;padding:5px 8px 5px 6px;gap:5px;}
+  .v23-wa-icon{width:22px;height:22px;font-size:.78rem;}
+  .v23-wa-text{font-size:.62rem;}
+}
+</style>
+
+<style id="futuristic-dashboard-v28">
+.futuristic-dashboard{position:relative!important;overflow:hidden!important;padding:20px!important;border-radius:28px!important;background:linear-gradient(145deg,var(--surface),var(--surface2))!important;border:1px solid transparent!important;box-shadow:var(--shadow),0 0 0 1px rgba(20,184,166,.08)!important}
+.futuristic-dashboard:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:linear-gradient(110deg,#14b8a6,#22d3ee,#8b5cf6,#ec4899,#14b8a6);background-size:300% 100%;animation:fdBorder 7s linear infinite;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none}
+.futuristic-dashboard:after{content:"";position:absolute;width:260px;height:260px;right:-150px;top:-150px;border:1px solid rgba(34,211,238,.16);border-radius:50%;box-shadow:0 0 0 35px rgba(139,92,246,.025),0 0 0 70px rgba(20,184,166,.02);animation:fdOrbit 14s linear infinite;pointer-events:none}
+@keyframes fdBorder{to{background-position:300% 0}} @keyframes fdOrbit{to{transform:rotate(360deg)}}
+.fd-topline,.fd-main,.fd-countdown-wrap,.fd-actions,.fd-footer{position:relative;z-index:2}.fd-topline{display:flex;align-items:center;justify-content:space-between;gap:12px}.fd-brand{display:flex;align-items:center;gap:11px}.fd-orb{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#14b8a6,#8b5cf6);box-shadow:0 8px 24px rgba(20,184,166,.2);animation:fdOrb 2.6s ease-in-out infinite}.fd-brand strong{display:block;color:var(--text);font-size:15px;line-height:1.2}.fd-kicker{display:block;font-size:8px;letter-spacing:1.5px;font-weight:1000;color:var(--primary);margin-bottom:3px}.fd-live{font-size:9px;font-weight:1000;letter-spacing:1.1px;color:var(--primary);padding:6px 9px;border-radius:999px;background:var(--surface);border:1px solid var(--border)}.fd-live i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#22c55e;margin-right:5px;animation:fdPulse 1.2s infinite}
+@keyframes fdOrb{50%{transform:translateY(-3px) rotate(5deg)}} @keyframes fdPulse{50%{box-shadow:0 0 0 5px rgba(34,197,94,0)}}
+.fd-main{margin-top:16px}.fd-profile-panel{display:flex;align-items:center;gap:11px;padding:13px;border-radius:18px;background:rgba(127,127,127,.07);border:1px solid var(--border)}.fd-avatar{width:43px;height:43px;border-radius:14px;display:grid;place-items:center;font-size:17px;font-weight:1000;color:#fff;background:linear-gradient(135deg,#0f766e,#22d3ee,#8b5cf6);flex:0 0 auto}.fd-profile-copy{min-width:0;flex:1}.fd-profile-copy span,.fd-data span,.fd-countdown-copy span{display:block;font-size:8px;font-weight:1000;letter-spacing:1.2px;color:var(--muted)}.fd-profile-copy strong{display:block;color:var(--text);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:2px 0}.fd-profile-copy small{color:var(--muted);font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}.fd-status-pill{font-size:8px;font-weight:1000;padding:7px 9px;border-radius:999px;background:var(--surface);color:var(--primary);border:1px solid var(--border);white-space:nowrap}.fd-data-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:9px}.fd-data{padding:11px;border-radius:15px;background:var(--surface);border:1px solid var(--border);min-width:0;transition:.25s}.fd-data:hover{transform:translateY(-2px);border-color:var(--primary2)}.fd-data strong{display:block;color:var(--text);font-size:10px;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fd-countdown-wrap{display:flex;align-items:center;gap:13px;margin-top:11px;padding:13px;border-radius:19px;background:linear-gradient(120deg,rgba(20,184,166,.10),rgba(34,211,238,.06),rgba(139,92,246,.10));border:1px solid rgba(20,184,166,.22)}.fd-ring{width:52px;height:52px;min-width:52px;border-radius:50%;padding:2px;background:conic-gradient(#14b8a6,#22d3ee,#8b5cf6,#ec4899,#14b8a6);animation:fdRing 5s linear infinite}.fd-ring-core{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;background:var(--surface);color:var(--primary);font-size:18px}@keyframes fdRing{to{transform:rotate(360deg)}}.fd-countdown-copy{min-width:0;flex:1}.fd-countdown-copy strong{display:block;color:var(--text);font-size:14px;margin:3px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fd-countdown-copy small{display:block;color:var(--muted);font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fd-signal{display:flex;align-items:center;gap:5px;font-size:7px;font-weight:1000;letter-spacing:.8px;color:var(--primary);white-space:nowrap}.fd-signal i{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:fdPulse 1.2s infinite}.fd-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:9px}.futuristic-dashboard .countdown-reminder-btn{font-size:9px;padding:8px 11px;border-radius:10px}.futuristic-dashboard .reminder-status{font-size:8px;color:var(--muted);text-align:right}.fd-footer{display:flex;justify-content:space-between;gap:10px;margin-top:11px;padding-top:10px;border-top:1px solid var(--border);font-size:7px;letter-spacing:.7px;font-weight:900;color:var(--muted)}
+@media(max-width:700px){.fd-data-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fd-signal{display:none}.fd-profile-panel{align-items:flex-start}.fd-status-pill{margin-left:auto}.futuristic-dashboard{padding:15px!important}}
+@media(prefers-reduced-motion:reduce){.futuristic-dashboard:before,.futuristic-dashboard:after,.fd-orb,.fd-live i,.fd-ring,.fd-ring-core{animation:none!important}}
 </style>
 </head>
 
@@ -3537,34 +3565,35 @@ footer{
 
         </form>
 
-    <div class="appointment-dashboard">
-        <div class="dashboard-head">
-            <div>
-                <span class="dashboard-live"><i></i> LIVE</span>
-                <strong data-i18n="appointmentDashboard">Appointment Dashboard</strong>
+    <div class="appointment-dashboard futuristic-dashboard" id="patientDashboard">
+        <div class="fd-topline">
+            <div class="fd-brand"><span class="fd-orb">✦</span><div><span class="fd-kicker">PATIENT COMMAND CENTER</span><strong>Smart Appointment Dashboard</strong></div></div>
+            <span class="fd-live"><i></i> LIVE</span>
+        </div>
+        <div class="fd-main">
+            <div class="fd-profile-panel">
+                <div class="fd-avatar" id="dashboardAvatar">P</div>
+                <div class="fd-profile-copy"><span>PATIENT</span><strong id="dashboardPatient">Not entered</strong><small id="dashboardTreatment">Concern not selected</small></div>
+                <div class="fd-status-pill" id="dashboardStatus">Complete details</div>
             </div>
-            <span class="dashboard-badge">30 MIN</span>
-        </div>
-        <div class="dashboard-note">Live preview updates as you fill the appointment form.</div>
-        <div class="dashboard-grid">
-            <div class="dashboard-stat"><span>👤 Patient</span><strong id="dashboardPatient">Not entered</strong></div>
-            <div class="dashboard-stat"><span>🩺 Concern</span><strong id="dashboardTreatment">Not selected</strong></div>
-            <div class="dashboard-stat"><span>📅 Date</span><strong id="dashboardDate">Not selected</strong></div>
-            <div class="dashboard-stat"><span>⏰ Time</span><strong id="dashboardTime">Not selected</strong></div>
-            <div class="dashboard-stat"><span>🧑‍⚕️ Consult Mode</span><strong id="dashboardMode">Not selected</strong></div>
-            <div class="dashboard-stat"><span>📋 Appointment</span><strong id="dashboardVisitType">Not selected</strong></div>
-            <div class="dashboard-stat"><span>📲 Booking</span><strong id="dashboardStatus">Complete details</strong></div>
-        </div>
-        <div class="appointment-countdown" id="appointmentCountdown" aria-live="polite">
-            <div class="countdown-icon">⏳</div>
-            <div class="countdown-content">
-                <span class="countdown-label">APPOINTMENT COUNTDOWN</span>
-                <strong id="countdownText">Select a date &amp; time to start</strong>
-                <small id="countdownSubtext">Your live appointment countdown will appear here.</small>
+            <div class="fd-data-grid">
+                <div class="fd-data"><span>📅 APPOINTMENT</span><strong id="dashboardDate">Not selected</strong></div>
+                <div class="fd-data"><span>⏰ TIME SLOT</span><strong id="dashboardTime">Not selected</strong></div>
+                <div class="fd-data"><span>🧑‍⚕️ CONSULT MODE</span><strong id="dashboardMode">Not selected</strong></div>
+                <div class="fd-data"><span>📋 SESSION</span><strong id="dashboardVisitType">Not selected</strong></div>
             </div>
         </div>
+        <div class="fd-countdown-wrap">
+            <div class="fd-ring"><div class="fd-ring-core">⏳</div></div>
+            <div class="fd-countdown-copy"><span>UPCOMING SESSION</span><strong id="countdownText">Select a date &amp; time to start</strong><small id="countdownSubtext">Your live appointment countdown will appear here.</small></div>
+            <div class="fd-signal"><i></i><span>LIVE TRACKING</span></div>
+        </div>
+        <div class="fd-actions">
+            <button type="button" id="enableReminderBtn" class="countdown-reminder-btn">🔔 Enable Patient Reminder</button>
+            <span id="reminderStatus" class="reminder-status">Reminder not enabled</span>
+        </div>
+        
     </div>
-
 
 
     </div>
@@ -3727,37 +3756,6 @@ footer{
             </div>
 
         </div>
-
-    </div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     CTA
-===================================================== -->
-
-<section class="cta">
-
-<div class="container">
-
-    <div class="cta-box reveal">
-
-        <h2>
-            Ready to move better?
-        </h2>
-
-        <p>
-            Take the next step toward better movement,
-            function and recovery.
-        </p>
-
-        <a
-            href="#appointment"
-            class="btn">
-            Book Appointment →
-        </a>
 
     </div>
 
@@ -3957,21 +3955,8 @@ footer{
 
 <div class="mobile-actions">
 
-    <a
-        href="tel:+917584814152"
-        class="mobile-action call-action">
-
-        📞 Call
-
-    </a>
-
-    <a
-        href="https://wa.me/917584814152"
-        target="_blank"
-        class="mobile-action whatsapp-action">
-
-        💬 WhatsApp
-
+    <a href="tel:+917584814152" class="mobile-action call-action" aria-label="Call Physio Wellness" title="Call">
+        📞
     </a>
 
 </div>
@@ -4307,6 +4292,8 @@ function updateAppointmentDashboard(){
     const mode=consultMode&&consultMode.value?consultMode.value:"Not selected";
     const type=visitType&&visitType.value?visitType.value:"Not selected";
     if(dashboardPatient)dashboardPatient.textContent=name;
+    const dashboardAvatar=document.getElementById("dashboardAvatar");
+    if(dashboardAvatar)dashboardAvatar.textContent=(name&&name!=="Not entered"?name.charAt(0).toUpperCase():"P");
     if(dashboardTreatment)dashboardTreatment.textContent=concern;
     dashboardDate.textContent=date;
     dashboardTime.textContent=time;
@@ -4318,25 +4305,69 @@ function updateAppointmentDashboard(){
 }
 
 /* =========================================================
-   LIVE APPOINTMENT COUNTDOWN
+   LIVE APPOINTMENT COUNTDOWN + PATIENT REMINDER
 ========================================================= */
 const countdownText=document.getElementById("countdownText");
 const countdownSubtext=document.getElementById("countdownSubtext");
 const countdownBox=document.getElementById("appointmentCountdown");
+const enableReminderBtn=document.getElementById("enableReminderBtn");
+const reminderStatus=document.getElementById("reminderStatus");
 let countdownTimer=null;
+let reminderTimer=null;
+const APPOINTMENT_STORAGE_KEY="physio-last-appointment";
+
+function getSavedAppointment(){
+    try{return JSON.parse(localStorage.getItem(APPOINTMENT_STORAGE_KEY)||"null");}
+    catch(e){return null;}
+}
+
+function saveAppointment(data){
+    try{localStorage.setItem(APPOINTMENT_STORAGE_KEY,JSON.stringify(data));}catch(e){}
+}
 
 function getAppointmentDateTime(){
-    if(!dateInput||!timeSelect||!dateInput.value||!timeSelect.value)return null;
-    const match=timeSelect.value.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+    let date=dateInput&&dateInput.value;
+    let time=timeSelect&&timeSelect.value;
+    if(!date||!time){
+        const saved=getSavedAppointment();
+        if(saved){date=saved.date;time=saved.time;}
+    }
+    if(!date||!time)return null;
+    const match=time.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
     if(!match)return null;
     let hour=parseInt(match[1],10);
     const minute=parseInt(match[2],10);
     const meridiem=match[3].toUpperCase();
     if(meridiem==="PM"&&hour!==12)hour+=12;
     if(meridiem==="AM"&&hour===12)hour=0;
-    const parts=dateInput.value.split("-").map(Number);
+    const parts=date.split("-").map(Number);
     const target=new Date(parts[0],parts[1]-1,parts[2],hour,minute,0,0);
     return isNaN(target.getTime())?null:target;
+}
+
+function setReminderStatus(text){
+    if(reminderStatus)reminderStatus.textContent=text;
+}
+
+function showPatientNotification(title,body){
+    if("Notification" in window && Notification.permission==="granted")new Notification(title,{body});
+}
+
+function scheduleAppointmentReminder(target){
+    if(reminderTimer){clearTimeout(reminderTimer);reminderTimer=null;}
+    const saved=getSavedAppointment();
+    if(!saved||saved.reminder!==true)return;
+    const delay=target.getTime()-Date.now();
+    if(delay<=0){setReminderStatus("Appointment time reached");return;}
+    const reminderDelay=Math.max(0,delay-30*60*1000);
+    reminderTimer=setTimeout(()=>{
+        showPatientNotification("Physio Wellness Reminder","Your physiotherapy consultation is in 30 minutes.");
+        setReminderStatus("30-minute reminder sent");
+        setTimeout(()=>{
+            showPatientNotification("Physio Wellness","Your physiotherapy consultation time is now.");
+            setReminderStatus("Appointment time reached");
+        },Math.max(0,target.getTime()-Date.now()));
+    },reminderDelay);
 }
 
 function updateAppointmentCountdown(){
@@ -4346,14 +4377,17 @@ function updateAppointmentCountdown(){
     if(!target){
         countdownText.textContent="Select a date & time to start";
         countdownSubtext.textContent="Your live appointment countdown will appear here.";
+        setReminderStatus("Reminder not enabled");
         if(countdownBox)countdownBox.removeAttribute("data-state");
         return;
     }
+    const saved=getSavedAppointment();
+    if(saved&&saved.reminder===true)setReminderStatus("🔔 Patient reminder enabled");
     function tick(){
         const diff=target.getTime()-Date.now();
         if(diff<=0){
             countdownText.textContent="Your appointment time is now";
-            countdownSubtext.textContent="Please check your appointment details or contact Physio Wellness.";
+            countdownSubtext.textContent="Please join/attend your consultation or contact Physio Wellness.";
             if(countdownBox)countdownBox.dataset.state="now";
             clearInterval(countdownTimer);
             countdownTimer=null;
@@ -4373,6 +4407,49 @@ function updateAppointmentCountdown(){
     }
     tick();
     countdownTimer=setInterval(tick,1000);
+    scheduleAppointmentReminder(target);
+}
+
+if(enableReminderBtn){
+    enableReminderBtn.addEventListener("click",async()=>{
+        const target=getAppointmentDateTime();
+        if(!target){alert("Please select an appointment date and time first.");return;}
+        if(target.getTime()<=Date.now()){alert("Please select a future appointment time.");return;}
+        if("Notification" in window && window.isSecureContext){
+            try{
+                const permission=await Notification.requestPermission();
+                if(permission!=="granted"){
+                setReminderStatus("Browser notification blocked — in-page reminder will still work");
+                const saved=getSavedAppointment()||{};
+                saved.date=dateInput.value||saved.date;
+                saved.time=timeSelect.value||saved.time;
+                saved.reminder=false;
+                saved.inPageReminder=true;
+                saveAppointment(saved);
+                scheduleAppointmentReminder(target);
+                return;
+            }
+            }catch(e){setReminderStatus("Browser notifications unavailable");return;}
+        }else{
+            const saved=getSavedAppointment()||{};
+            saved.date=dateInput.value||saved.date;
+            saved.time=timeSelect.value||saved.time;
+            saved.reminder=false;
+            saved.inPageReminder=true;
+            saveAppointment(saved);
+            setReminderStatus("In-page reminder enabled (browser notification unavailable)");
+            scheduleAppointmentReminder(target);
+            return;
+        }
+        const saved=getSavedAppointment()||{};
+        saved.date=dateInput.value||saved.date;
+        saved.time=timeSelect.value||saved.time;
+        saved.reminder=true;
+        saveAppointment(saved);
+        setReminderStatus("🔔 Patient reminder enabled");
+        scheduleAppointmentReminder(target);
+        showPatientNotification("Physio Wellness","Patient reminder is enabled for your appointment.");
+    });
 }
 
 
@@ -4404,9 +4481,11 @@ if(appointmentForm){
         const whatsappMessage=`Hello Dr. Sahin Ahamed Laskar (P.T),\n\nI would like to book a physiotherapy appointment.\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🩺 Concern: ${treatment}\n📅 Date: ${formattedDate}\n⏰ Time: ${time}\n🧑‍⚕️ Patient Consult Mode: ${mode}\n📋 Appointment Type: ${visitType}\n\n${message?"📝 Message: "+message:""}\nThank you.\nPhysio Wellness`;
         const whatsappURL="https://wa.me/917584814152?text="+encodeURIComponent(whatsappMessage);
         dashboardStatus.textContent="Opening WhatsApp…";
+        saveAppointment({date,time,name,phone,treatment,mode,visitType,message,reminder:(getSavedAppointment()||{}).reminder===true});
         window.open(whatsappURL,"_blank");
         appointmentForm.reset();
         updateAppointmentDashboard();
+        updateAppointmentCountdown();
     });
 }
 
@@ -4521,29 +4600,6 @@ window.addEventListener(
 
 
 /* =========================================================
-   V23 PATIENT FEEDBACK SLIDER
-========================================================= */
-(function(){
-  const slides=[...document.querySelectorAll('.feedback-slide')];
-  const dots=[...document.querySelectorAll('.feedback-dot')];
-  const prev=document.getElementById('feedbackPrev');
-  const next=document.getElementById('feedbackNext');
-  if(!slides.length)return;
-  let index=0;
-  let timer;
-  function showFeedback(i){
-    index=(i+slides.length)%slides.length;
-    slides.forEach((slide,n)=>slide.classList.toggle('active',n===index));
-    dots.forEach((dot,n)=>dot.classList.toggle('active',n===index));
-  }
-  function restart(){clearInterval(timer);timer=setInterval(()=>showFeedback(index+1),5500)}
-  prev?.addEventListener('click',()=>{showFeedback(index-1);restart()});
-  next?.addEventListener('click',()=>{showFeedback(index+1);restart()});
-  dots.forEach(dot=>dot.addEventListener('click',()=>{showFeedback(Number(dot.dataset.feedback));restart()}));
-  restart();
-})();
-
-/* =========================================================
    V23 SMART THEME MEMORY — reinforce saved theme on reload
 ========================================================= */
 (function(){
@@ -4553,8 +4609,75 @@ window.addEventListener(
 </script>
 
 <!-- V23 Floating WhatsApp Assistant -->
-<a class="v23-wa-assistant" href="https://wa.me/917584814152?text=Hello%20Dr.%20Sahin%20Ahamed%20Laskar%20(P.T),%20I%20need%20help%20with%20a%20physiotherapy%20appointment." target="_blank" rel="noopener" aria-label="Need help? Chat with us on WhatsApp">
-  <span class="v23-wa-icon">☏</span><span class="v23-wa-text">Need help? Chat with us</span>
+<a class="v23-wa-assistant" href="https://wa.me/917584814152?text=Hello%20Dr.%20Sahin%20Ahamed%20Laskar%20(P.T),%20I%20need%20help%20with%20a%20physiotherapy%20appointment." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" title="Chat with us">
+  <span class="v23-wa-icon">💬</span>
 </a>
+
+<style id="v26-dashboard-icons">
+/* V26 — compact actions + useful patient dashboard */
+.mobile-actions{left:14px;right:auto;bottom:12px;gap:6px;}
+.mobile-action{width:38px;height:38px;min-height:38px;padding:0;display:grid;place-items:center;font-size:17px;border-radius:12px;}
+.v23-wa-assistant{right:16px;bottom:58px;width:42px;height:42px;padding:0;display:grid;place-items:center;gap:0;border-radius:50%;font-size:0;}
+.v23-wa-icon{width:42px;height:42px;font-size:18px;background:transparent;}
+.v23-wa-text{display:none;}
+.quick-care-dashboard{padding:18px 0 30px;}
+.quick-dashboard-card{position:relative;overflow:hidden;padding:20px;border-radius:26px;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow);}
+.quick-dashboard-card:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(90deg,#14b8a6,#22d3ee,#8b5cf6,#ec4899,#14b8a6);background-size:300% 100%;animation:quickDashBorder 7s linear infinite;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none;}
+.quick-dashboard-head,.quick-dashboard-head>div{display:flex;align-items:center;gap:11px;position:relative;z-index:1;}
+.quick-dashboard-head{justify-content:space-between;}
+.quick-dashboard-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:var(--surface2);font-size:20px;}
+.quick-dashboard-kicker{display:block;font-size:9px;letter-spacing:1.4px;font-weight:1000;color:var(--primary);}
+.quick-dashboard-head h3{margin:2px 0 0;color:var(--text);font-size:17px;}
+.quick-dashboard-live{font-size:9px;font-weight:1000;color:var(--primary);background:var(--surface2);padding:6px 9px;border-radius:999px;}
+.quick-dashboard-live i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#22c55e;margin-right:5px;animation:quickLive 1.4s infinite;}
+.quick-dashboard-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:15px;position:relative;z-index:1;}
+.quick-dashboard-item{display:flex;align-items:center;gap:9px;padding:12px;border-radius:16px;background:var(--surface2);border:1px solid var(--border);min-width:0;}
+.quick-dashboard-item>span{font-size:18px;}
+.quick-dashboard-item small{display:block;color:var(--muted);font-size:9px;font-weight:800;margin-bottom:3px;}
+.quick-dashboard-item strong{display:block;color:var(--text);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.quick-dashboard-actions{display:flex;gap:9px;margin-top:13px;position:relative;z-index:1;}
+.quick-dashboard-btn{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:8px 12px;border-radius:11px;text-decoration:none;background:var(--gradient);color:#fff!important;font-size:10px;font-weight:900;}
+.quick-dashboard-btn.secondary{background:var(--surface2);color:var(--text)!important;border:1px solid var(--border);}
+@keyframes quickDashBorder{to{background-position:300% 0;}}
+@keyframes quickLive{50%{box-shadow:0 0 0 5px rgba(34,197,94,0);}}
+@media(max-width:700px){.quick-dashboard-card{padding:15px;border-radius:22px}.quick-dashboard-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.quick-dashboard-item{padding:10px}.quick-dashboard-actions{flex-wrap:wrap}.quick-dashboard-btn{flex:1;min-width:135px}.mobile-actions{bottom:10px;left:10px}.mobile-action{width:36px;height:36px;font-size:16px}.v23-wa-assistant{right:10px;bottom:53px;width:39px;height:39px}.v23-wa-icon{width:39px;height:39px;font-size:17px;}}
+@media(prefers-reduced-motion:reduce){.quick-dashboard-card:before,.quick-dashboard-live i{animation:none;}}
+</style>
+
+<script id="v26-dashboard-script">
+(function(){
+  const KEY="physio-last-appointment";
+  const a=document.getElementById('quickDashAppointment'), c=document.getElementById('quickDashCountdown'), m=document.getElementById('quickDashMode'), n=document.getElementById('quickDashNext');
+  if(!a)return;
+  function read(){try{return JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){return null}}
+  function targetFrom(data){
+    if(!data||!data.date||!data.time)return null;
+    const x=data.time.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i); if(!x)return null;
+    let h=+x[1],min=+x[2]; if(x[3].toUpperCase()==='PM'&&h!==12)h+=12; if(x[3].toUpperCase()==='AM'&&h===12)h=0;
+    const p=data.date.split('-').map(Number); const d=new Date(p[0],p[1]-1,p[2],h,min,0,0); return isNaN(d)?null:d;
+  }
+  function update(){
+    const data=read();
+    if(!data){a.textContent='Not booked';c.textContent='Waiting for booking';m.textContent='Choose a mode';n.textContent='Book your appointment';return;}
+    a.textContent=(data.date?data.date.split('-').reverse().join('-'):'')+' • '+(data.time||'');
+    m.textContent=data.mode||'Selected';
+    const target=targetFrom(data);
+    if(!target){c.textContent='Date/time unavailable';n.textContent='Check appointment details';return;}
+    const diff=target-Date.now();
+    if(diff<=0){c.textContent='Appointment time reached';n.textContent='Attend your consultation';return;}
+    const total=Math.floor(diff/1000),days=Math.floor(total/86400),hours=Math.floor(total%86400/3600),mins=Math.floor(total%3600/60);
+    c.textContent=(days?days+'d ':'')+hours+'h '+mins+'m';
+    n.textContent='Prepare for your appointment';
+  }
+  update(); setInterval(update,1000); window.addEventListener('storage',update);
+  [document.getElementById('appointmentDate'),document.getElementById('appointmentTime'),document.getElementById('consultMode')].forEach(el=>el&&el.addEventListener('change',update));
+})();
+</script>
+
+
+
+
+
+
 </body>
 </html>
